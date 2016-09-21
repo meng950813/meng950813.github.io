@@ -18,7 +18,7 @@
 <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hello World 副本2">
-<meta property="og:url" content="http://git@github.com:meng950813/github.io.git/2016/09/20/hello-world - 副本 (2)/index.html">
+<meta property="og:url" content="http://git@github.com/meng950813/github.io.git/2016/09/20/hello-world - 副本 (2)/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.">
 <meta property="og:updated_time" content="2016-09-21T02:33:50.850Z">
@@ -72,7 +72,7 @@
         isCategory: false,
         fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
         scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
-        search: undefined
+        search: true
     }
 </script>
 
@@ -104,6 +104,13 @@
 
         
 
+        
+            <form id="search-form">
+            <input type="text" id="local-search-input" name="q" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off" searchonload="true" />
+            <i class="fa fa-times" onclick="resetSearch()"></i>
+            </form>
+            <div id="local-search-result"></div>
+            <p class='no-result'>No results found <i class='fa fa-spinner fa-pulse'></i></p>
         
 
 
@@ -315,8 +322,8 @@
         <p><span>发布时间:</span>2016-09-20, 14:16:04</p>
         <p><span>最后更新:</span>2016-09-21, 10:33:50</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2016/09/20/hello-world - 副本 (2)/" title="Hello World 副本2">http://git@github.com:meng950813/github.io.git/2016/09/20/hello-world - 副本 (2)/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://git@github.com:meng950813/github.io.git/2016/09/20/hello-world - 副本 (2)/　　作者: CMeng" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2016/09/20/hello-world - 副本 (2)/" title="Hello World 副本2">http://git@github.com/meng950813/github.io.git/2016/09/20/hello-world - 副本 (2)/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://git@github.com/meng950813/github.io.git/2016/09/20/hello-world - 副本 (2)/　　作者: CMeng" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -399,6 +406,25 @@
 
 
     
+      <div class="duoshuo" id="comments">
+    <div id="comment-box" ></div>
+    <div class="ds-thread" id="ds-thread" data-thread-key="2016/09/20/hello-world - 副本 (2)/" data-title="Hello World 副本2" data-url="http://git@github.com/meng950813/github.io.git/2016/09/20/hello-world - 副本 (2)/"></div>
+    <script>
+        var duoshuoQuery = {short_name:"cmeng"};
+        var loadComment = function(){
+            var d = document, s = d.createElement('script');
+            s.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+            s.async = true; s.charset = 'UTF-8';
+            (d.head || d.body).appendChild(s);
+        }
+
+        
+    </script>
+    
+    <script> loadComment(); </script>
+
+</div>
+    
 
 
 
@@ -440,24 +466,6 @@
             </div>
         </div>
         
-            <div class="visit">
-                
-                    <span id="busuanzi_container_site_pv" style='display:none'>
-                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
-                        </span>
-                    </span>
-                
-                
-                    <span>| </span>
-                
-                
-                    <span id="busuanzi_container_page_pv" style='display:none'>
-                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
-                        </span>
-                    </span>
-                
-            </div>
-        
     </div>
 </footer>
     </div>
@@ -473,7 +481,7 @@
                 $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
             }
             else {
-                var backgroundnum = 5;
+                var backgroundnum = 4;
                 var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
                 $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
             }
