@@ -5,8 +5,8 @@
     
     <entry>
       <title><![CDATA[记首次使用hexo的尴尬历程]]></title>
-      <url>git@github.com:meng950813/meng950813.hexoblog.io.git/2016/09/21/%E8%AE%B0%E9%A6%96%E6%AC%A1%E4%BD%BF%E7%94%A8hexo%E7%9A%84%E5%B0%B4%E5%B0%AC%E5%8E%86%E7%A8%8B/</url>
-      <content type="html"><![CDATA[<p>2016年9月19日，第一次听说<a href="https://hexo.io" target="_blank" rel="external">Hexo</a>。据说用这个框架可以很快搭建出一个漂亮的博客，正好有朋友有这方面的需求，于是第二天尝试了一下，嗯，效果挺好，不过我想说说遇到的坑。。。<br><a id="more"></a><br>我使用的主题是 <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" rel="external">Yelee</a>，<a href="https://hexo.io/themes" target="_blank" rel="external">Hexo主题传送门</a></p>
+      <url>https://github.com/meng950813/meng950813.hexoblog.io.git/2016/09/21/%E8%AE%B0%E9%A6%96%E6%AC%A1%E4%BD%BF%E7%94%A8hexo%E7%9A%84%E5%B0%B4%E5%B0%AC%E5%8E%86%E7%A8%8B/</url>
+      <content type="html"><![CDATA[<p>2016年9月19日，第一次听说<a href="https://hexo.io" target="_blank" rel="external">Hexo</a>。据说用这个框架可以很快搭建出一个漂亮的博客，正好有朋友有这方面的需求，于是第二天尝试了一下，嗯，效果挺好，不过我想说说遇到的坑。。。<br><a id="more"></a><br>我使用的主题是 <a href="https://github.com/MOxFIVE/hexo-theme-yelee">Yelee</a>，<a href="https://hexo.io/themes" target="_blank" rel="external">Hexo主题传送门</a></p>
 <h3 id="坑1-–-站内搜索"><a href="#坑1-–-站内搜索" class="headerlink" title="坑1 – 站内搜索"></a>坑1 – 站内搜索</h3><p>本来一行命令就可以解决的事到我这边却莫名其妙的出了问题。。。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install --save hexo-generator-search</div></pre></td></tr></table></figure>
 <p>最让我恼火的是不知道什么原因就好了，感觉一个多小时的查找都付之东流了。。。<br>不过我发现这个主题在手机和平板的竖屏状态下是没有搜索栏的，看了一下代码发现作者把搜索栏放到了左边栏的位置，竖屏后不好调整代码位置，索性直接隐藏了。我想尝试将搜索框完善一下，不过这样要改动的地方不会少，漫漫长路。。。</p>
@@ -16,7 +16,7 @@
 <h3 id="坑3-–-上传"><a href="#坑3-–-上传" class="headerlink" title="坑3 – 上传:"></a>坑3 – 上传:</h3><p>历经重重艰辛，终于到了上传的时刻。<br><img src="https://ws1.sinaimg.cn/large/0065ewYjgw1f81fut0ujwj302s02sdfv.jpg" alt="激动的图"><br>满怀期待的输入了 <strong> hexo d </strong>,Duang 的一下就弹出了一堆警告，仔细一看是编码问题：windows的CRLF,linux的LF，两家一直不对付，不过好在不影响效果,也就无所谓了。<br>然而紧接着就是一个华丽的报错：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Error: bash: /dev/tty/:No such device or address</div><div class="line">error: failed to execute proment script (<span class="built_in">exit</span> code 1)</div></pre></td></tr></table></figure>
 <p><img src="https://ws1.sinaimg.cn/large/0065ewYjgw1f81gr9pmbtj30q70eidiu.jpg" alt="报错"></p>
-<p>在网上折腾半小时之后我才想起来用的 <strong> ssh </strong>上传到 github,<br><strong> _config.yml </strong>文件的配置里居然用的 https,被自己蠢哭了。。。</p>
+<p>在网上折腾半小时之后我才想起来用的 <strong> ssh </strong>上传到 github,<strong> _config.yml </strong>文件的配置里居然用的 https,被自己蠢哭了。。。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">  <span class="built_in">type</span>: git</div><div class="line">  repo: https://github.com/xxx/xxx.xxx.io.git</div><div class="line">  branch: [master]</div></pre></td></tr></table></figure>
 <p>问题解决，继续上传，<strong> hexo d </strong>,还是老一套的警告，没有报错证明确实是配置文件的协议有问题，然而就在我等这下文的时候它却华丽丽的停下了！没错，没有一点点防备的停下了，没有开始上传的提示，也没有报错，就这么停了。。。<br><img src="https://ws4.sinaimg.cn/large/0065ewYjgw1f81g6wqae2j30i40d242p.jpg" alt="hexo d"><br>当时我就懵逼了，不过经历一下午的坎坷，抗打击能力确实有所提高。。。话说我应该高兴吗。。。<br><img src="https://ws3.sinaimg.cn/large/0065ewYjgw1f81gf80qdij302s02smx4.jpg" alt="泪奔"><br>我决定等一等再说，不管是电脑卡了还是网络延迟又或者是后台传输（当然这是最好的情况）都不宜强行中断，而且当时网络确实不咋地。终于在我吃完饭之后看到了成功的讯号。。。话说时间也太长了吧。。。<br><img src="https://ws4.sinaimg.cn/large/0065ewYjgw1f81gnf925vj30ls05ijsn.jpg" alt="上传成功"></p>
 <p>顺带提一句，我的同学告诉我hexo-deployer-git 插件使用ssh上传内容到github,但同时这个插件却没有输入密码的部分，因此总是报错：权限不足，于是他告诫我ssh不要有密码。我将ssh密码置为空之后果然没有出现他所说的报错。<br>但是从程序员的角度来说，虽然ssh本身有一层加密，但不能设密码这一点算是个小缺点。事实上本人并没有亲自试过能不能带密码上传，同学的错误代码也没有保留下来，因此希望有识之士试过之后告诉我。。。</p>
@@ -25,7 +25,7 @@
     
     <entry>
       <title><![CDATA[Hello World]]></title>
-      <url>git@github.com:meng950813/meng950813.hexoblog.io.git/2016/09/20/hello-world/</url>
+      <url>https://github.com/meng950813/meng950813.hexoblog.io.git/2016/09/20/hello-world/</url>
       <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
 <a id="more"></a>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div><div class="line">$ hexo new <span class="string">"My New Post"</span></div><div class="line">$ hexo new <span class="string">"My New Post"</span></div><div class="line">$ hexo new <span class="string">"My New Post"</span></div><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
@@ -44,19 +44,19 @@
     
     <entry>
       <title><![CDATA[404 Not Found：该页无法显示]]></title>
-      <url>git@github.com:meng950813/meng950813.hexoblog.io.git//404.html</url>
+      <url>https://github.com/meng950813/meng950813.hexoblog.io.git//404.html</url>
       <content type="html"></content>
     </entry>
     
     <entry>
       <title><![CDATA[About me]]></title>
-      <url>git@github.com:meng950813/meng950813.hexoblog.io.git/about/index.html</url>
+      <url>https://github.com/meng950813/meng950813.hexoblog.io.git/about/index.html</url>
       <content type="html"></content>
     </entry>
     
     <entry>
       <title><![CDATA[tags]]></title>
-      <url>git@github.com:meng950813/meng950813.hexoblog.io.git/tags/index.html</url>
+      <url>https://github.com/meng950813/meng950813.hexoblog.io.git/tags/index.html</url>
       <content type="html"></content>
     </entry>
     
