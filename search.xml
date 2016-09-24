@@ -4,22 +4,17 @@
   
     
     <entry>
-      <title><![CDATA[培训日记__jquery]]></title>
-      <url>https://github.com/meng950813/meng950813.github.io.git/2016/09/22/%E5%9F%B9%E8%AE%AD%E6%97%A5%E8%AE%B0_jquery/</url>
-      <content type="html"><![CDATA[<h3 id="jQuery-document-ready-function-…-VS-DOM-window-onload-function-…"><a href="#jQuery-document-ready-function-…-VS-DOM-window-onload-function-…" class="headerlink" title="jQuery: $(document).ready(function(){…}) VS DOM: window.onload=function(){…}"></a>jQuery: $(document).ready(function(){…}) VS DOM: window.onload=function(){…}</h3><p>ready 的底层事件：DOM中的ondocumentcontentloaded:只要DOM树加载完成，就会触发<br>window.onload 在页面全部加载完成之后触发</p>
-<a id="more"></a>
-<p><strong>大致流程如图所示：</strong><br><img src="https://ws3.sinaimg.cn/large/0065ewYjgw1f825osk8jtj30kj06e0tj.jpg" alt="流程图"></p>
-<p><strong>举例测试</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">&lt;body&gt;</div><div class="line">  &lt;h1&gt;页面加载完成事件&lt;/h1&gt;</div><div class="line">  &lt;script&gt;</div><div class="line">    console.time(<span class="string">"docReady"</span>);</div><div class="line">    console.time(<span class="string">"winLoad"</span>);</div><div class="line">  &lt;/script&gt;</div><div class="line">  &lt;script src=<span class="string">"../jquery-1.11.3.js"</span>&gt;&lt;/script&gt;</div><div class="line">  &lt;script&gt;</div><div class="line">    window.onload=<span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">        console.log(<span class="string">"window.onload..."</span>);</div><div class="line">        console.timeEnd(<span class="string">"winLoad"</span>);</div><div class="line">    &#125;</div><div class="line">    $(document).ready(<span class="keyword">function</span>($) &#123;</div><div class="line">        console.log(<span class="string">"document ready..."</span>);</div><div class="line">        console.timeEnd(<span class="string">"docReady"</span>);</div><div class="line">    &#125;);</div><div class="line">    </div><div class="line">  &lt;/script&gt;</div><div class="line"> &lt;/body&gt;</div></pre></td></tr></table></figure></p>
-<p><strong>执行结果</strong><br><img src="https://ws1.sinaimg.cn/large/0065ewYjgw1f825p93mq0j30fl02bmxb.jpg" alt="执行结果"></p>
-<p>&nbsp;&nbsp;事实上：将script放在body结尾也能实现 ready 的功能：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">&lt;body&gt;</div><div class="line">  &lt;h1&gt;页面加载完成事件&lt;/h1&gt;</div><div class="line">  &lt;script&gt;</div><div class="line">    console.time(<span class="string">"docReady"</span>);</div><div class="line">    console.time(<span class="string">"winLoad"</span>);</div><div class="line">  &lt;/script&gt;</div><div class="line">  &lt;script src=<span class="string">"../jquery-1.11.3.js"</span>&gt;&lt;/script&gt;</div><div class="line">  &lt;script&gt;</div><div class="line">    window.onload=<span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">        console.log(<span class="string">"window.onload..."</span>);</div><div class="line">        console.timeEnd(<span class="string">"winLoad"</span>);</div><div class="line">    &#125;</div><div class="line">    console.log(<span class="string">"document ready..."</span>);</div><div class="line">    console.timeEnd(<span class="string">"docReady"</span>);    </div><div class="line">  &lt;/script&gt;</div><div class="line"> &lt;/body&gt;</div></pre></td></tr></table></figure></p>
-<h3 id="显示-隐藏"><a href="#显示-隐藏" class="headerlink" title="显示/隐藏"></a>显示/隐藏</h3><p>&nbsp;&nbsp;jQuery中有 <strong>show()</strong>，<strong>hide()</strong>控制内容的显示和隐藏，但只能完成一个功能<br>toggle()函数可以同时完成显示和隐藏的功能<br>在不加参数的情况下：<strong>show(),hide(),toggle()</strong> 函数通过改变元素的 <strong>display</strong> 属性实现显示和隐藏，没有动画效果<br>加上参数：函数设置 <strong>overflow:hidden</strong>,通过将元素的 <strong>width，height和opacity</strong>属性逐渐变为 <strong>0</strong> 实现过度效果</p>
-<h3 id="动画函数-animate"><a href="#动画函数-animate" class="headerlink" title="动画函数 animate()"></a>动画函数 animate()</h3><p>&nbsp;&nbsp; <strong>$(…).animate(parmes,speed,easing,fn)</strong><br>参数：<br>    parmes: css属性的目标值：{属性:值,属性:值 … }<br>        注意： <strong>css 属性名要去横线,变驼峰;值是字符串而且要加单位</strong> ==&gt;marginLeft:’12px’<br>    speed: 速度：数字（单位：ms）/字符串”slow/normal/fast”<br>    easing: 过度方式：linear(匀速)，ease(慢到快)。。。<br><strong>动画中的排队和并发(串行和并行)</strong><br>一个 <strong><em>animate</em></strong> 函数中修改的属性会同时修改，多个 <strong><em>animate</em></strong> 函数时会等前一个动画变换完再变换。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$(...).animate(&#123;width:<span class="string">'200px'</span>,height:<span class="string">'200px'</span>&#125;,1000);</div></pre></td></tr></table></figure>
-<p>执行效果：该元素的宽和高在1秒内都变为200px</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$(...).animate(&#123;width:<span class="string">'200px'</span>&#125;,1000).animate(&#123;height:<span class="string">'200px'</span>&#125;,2000);</div></pre></td></tr></table></figure>
-<p>执行效果：该元素的宽在1秒内都变为200px后，高在2秒内变为200px</p>
-<p><strong>js回调函数中的 this 指window，animate函数中的回调函数指当前对象</strong> </p>
+      <title><![CDATA[鄙视题]]></title>
+      <url>https://github.com/meng950813/meng950813.github.io.git/2016/09/23/%E9%84%99%E8%A7%86%E9%A2%98/</url>
+      <content type="html"><![CDATA[<h2 id="jQuery"><a href="#jQuery" class="headerlink" title="jQuery"></a>jQuery</h2><h3 id="each-source-function-index-value-…-VS-…-each-function-index-element-…"><a href="#each-source-function-index-value-…-VS-…-each-function-index-element-…" class="headerlink" title="$.each(source,function(index,value){…}) VS $(…).each(function(index,element){…})"></a>$.each(source,function(index,value){…}) VS $(…).each(function(index,element){…})</h3><p>$.each 是 jQuery 全局方法,存储在jQuery全局对象上,主要遍历普通数组</p>
+<p>$(…).each 是 jQuery 对象方法,存储在原型对象 jQuery.fn 上,主要用于对查询结果中的每个 DOM 元素执行操作</p>
 ]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[恼人的this]]></title>
+      <url>https://github.com/meng950813/meng950813.github.io.git/2016/09/23/%E6%81%BC%E4%BA%BA%E7%9A%84this/</url>
+      <content type="html"></content>
     </entry>
     
     <entry>
@@ -41,6 +36,25 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">  <span class="built_in">type</span>: git</div><div class="line">  repo: git@github.com:xxx/xxx.xxx.io.git</div><div class="line">  branch: [master]</div></pre></td></tr></table></figure>
 <p>问题解决，继续上传，<strong> hexo d </strong>,还是老一套的警告，没有报错证明确实是配置文件的协议有问题，然而就在我等这下文的时候它却华丽丽的停下了！没错，没有一点点防备的停下了，没有开始上传的提示，也没有报错，就这么停了。。。<br><img src="https://ws4.sinaimg.cn/large/0065ewYjgw1f81g6wqae2j30i40d242p.jpg" alt="hexo d"><br>当时我就懵逼了，不过经历一下午的坎坷，抗打击能力确实有所提高。。。话说我应该高兴吗。。。<br><img src="https://ws3.sinaimg.cn/large/0065ewYjgw1f81gf80qdij302s02smx4.jpg" alt="泪奔"><br>我决定等一等再说，不管是电脑卡了还是网络延迟又或者是后台传输（当然这是最好的情况）都不宜强行中断，而且当时网络确实不咋地。终于在我吃完饭之后看到了成功的讯号。。。话说时间也太长了吧。。。<br><img src="https://ws4.sinaimg.cn/large/0065ewYjgw1f81gnf925vj30ls05ijsn.jpg" alt="上传成功"></p>
 <p>顺带提一句，我的同学告诉我hexo-deployer-git 插件使用ssh上传内容到github,但同时这个插件却没有输入密码的部分，因此总是报错：权限不足，于是他告诫我ssh不要有密码。我将ssh密码置为空之后果然没有出现他所说的报错。<br>但是从程序员的角度来说，虽然ssh本身有一层加密，但不能设密码这一点算是个小缺点。事实上本人并没有亲自试过能不能带密码上传，同学的错误代码也没有保留下来，因此希望有识之士试过之后告诉我。。。</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[培训日记__jquery]]></title>
+      <url>https://github.com/meng950813/meng950813.github.io.git/2016/09/20/%E5%9F%B9%E8%AE%AD%E6%97%A5%E8%AE%B0_jquery/</url>
+      <content type="html"><![CDATA[<h3 id="jQuery-document-ready-function-…-VS-DOM-window-onload-function-…"><a href="#jQuery-document-ready-function-…-VS-DOM-window-onload-function-…" class="headerlink" title="jQuery: $(document).ready(function(){…}) VS DOM: window.onload=function(){…}"></a>jQuery: $(document).ready(function(){…}) VS DOM: window.onload=function(){…}</h3><p>ready 的底层事件：DOM中的ondocumentcontentloaded:只要DOM树加载完成，就会触发<br>window.onload 在页面全部加载完成之后触发</p>
+<a id="more"></a>
+<p><strong>大致流程如图所示：</strong><br><img src="https://ws3.sinaimg.cn/large/0065ewYjgw1f825osk8jtj30kj06e0tj.jpg" alt="流程图"></p>
+<p><strong>举例测试</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">&lt;body&gt;</div><div class="line">  &lt;h1&gt;页面加载完成事件&lt;/h1&gt;</div><div class="line">  &lt;script&gt;</div><div class="line">    console.time(<span class="string">"docReady"</span>);</div><div class="line">    console.time(<span class="string">"winLoad"</span>);</div><div class="line">  &lt;/script&gt;</div><div class="line">  &lt;script src=<span class="string">"../jquery-1.11.3.js"</span>&gt;&lt;/script&gt;</div><div class="line">  &lt;script&gt;</div><div class="line">    window.onload=<span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">        console.log(<span class="string">"window.onload..."</span>);</div><div class="line">        console.timeEnd(<span class="string">"winLoad"</span>);</div><div class="line">    &#125;</div><div class="line">    $(document).ready(<span class="keyword">function</span>($) &#123;</div><div class="line">        console.log(<span class="string">"document ready..."</span>);</div><div class="line">        console.timeEnd(<span class="string">"docReady"</span>);</div><div class="line">    &#125;);</div><div class="line">    </div><div class="line">  &lt;/script&gt;</div><div class="line"> &lt;/body&gt;</div></pre></td></tr></table></figure></p>
+<p><strong>执行结果</strong><br><img src="https://ws1.sinaimg.cn/large/0065ewYjgw1f825p93mq0j30fl02bmxb.jpg" alt="执行结果"></p>
+<p>&nbsp;&nbsp;事实上：将script放在body结尾也能实现 ready 的功能：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">&lt;body&gt;</div><div class="line">  &lt;h1&gt;页面加载完成事件&lt;/h1&gt;</div><div class="line">  &lt;script&gt;</div><div class="line">    console.time(<span class="string">"docReady"</span>);</div><div class="line">    console.time(<span class="string">"winLoad"</span>);</div><div class="line">  &lt;/script&gt;</div><div class="line">  &lt;script src=<span class="string">"../jquery-1.11.3.js"</span>&gt;&lt;/script&gt;</div><div class="line">  &lt;script&gt;</div><div class="line">    window.onload=<span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">        console.log(<span class="string">"window.onload..."</span>);</div><div class="line">        console.timeEnd(<span class="string">"winLoad"</span>);</div><div class="line">    &#125;</div><div class="line">    console.log(<span class="string">"document ready..."</span>);</div><div class="line">    console.timeEnd(<span class="string">"docReady"</span>);    </div><div class="line">  &lt;/script&gt;</div><div class="line"> &lt;/body&gt;</div></pre></td></tr></table></figure></p>
+<h3 id="显示-隐藏"><a href="#显示-隐藏" class="headerlink" title="显示/隐藏"></a>显示/隐藏</h3><p>&nbsp;&nbsp;jQuery中有 <strong>show()</strong>，<strong>hide()</strong>控制内容的显示和隐藏，但只能完成一个功能<br>toggle()函数可以同时完成显示和隐藏的功能<br>在不加参数的情况下：<strong>show(),hide(),toggle()</strong> 函数通过改变元素的 <strong>display</strong> 属性实现显示和隐藏，没有动画效果<br>加上参数：函数设置 <strong>overflow:hidden</strong>,通过将元素的 <strong>width，height和opacity</strong>属性逐渐变为 <strong>0</strong> 实现过度效果</p>
+<h3 id="动画函数-animate"><a href="#动画函数-animate" class="headerlink" title="动画函数 animate()"></a>动画函数 animate()</h3><p>&nbsp;&nbsp; <strong>$(…).animate(parmes,speed,easing,fn)</strong><br>参数：<br>    parmes: css属性的目标值：{属性:值,属性:值 … }<br>        注意： <strong>css 属性名要去横线,变驼峰;值是字符串而且要加单位</strong> ==&gt;marginLeft:’12px’<br>    speed: 速度：数字（单位：ms）/字符串”slow/normal/fast”<br>    easing: 过度方式：linear(匀速)，ease(慢到快)。。。<br><strong>动画中的排队和并发(串行和并行)</strong><br>一个 <strong><em>animate</em></strong> 函数中修改的属性会同时修改，多个 <strong><em>animate</em></strong> 函数时会等前一个动画变换完再变换。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$(...).animate(&#123;width:<span class="string">'200px'</span>,height:<span class="string">'200px'</span>&#125;,1000);</div></pre></td></tr></table></figure>
+<p>执行效果：该元素的宽和高在1秒内都变为200px</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$(...).animate(&#123;width:<span class="string">'200px'</span>&#125;,1000).animate(&#123;height:<span class="string">'200px'</span>&#125;,2000);</div></pre></td></tr></table></figure>
+<p>执行效果：该元素的宽在1秒内都变为200px后，高在2秒内变为200px</p>
+<p><strong>js回调函数中的 this 指window，animate函数中的回调函数指当前对象</strong> </p>
 ]]></content>
     </entry>
     
@@ -76,15 +90,15 @@
     </entry>
     
     <entry>
-      <title><![CDATA[tags]]></title>
-      <url>https://github.com/meng950813/meng950813.github.io.git/tags/index.html</url>
-      <content type="html"></content>
-    </entry>
-    
-    <entry>
       <title><![CDATA[个人小游戏]]></title>
       <url>https://github.com/meng950813/meng950813.github.io.git/mygames/index.html</url>
       <content type="html"><![CDATA[<h2 id="五子棋-nbsp-nbsp-俄罗斯方块"><a href="#五子棋-nbsp-nbsp-俄罗斯方块" class="headerlink" title="五子棋 &nbsp;&nbsp;俄罗斯方块"></a><a href="wuziqi.html">五子棋</a> &nbsp;&nbsp;<a href="">俄罗斯方块</a></h2>]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[tags]]></title>
+      <url>https://github.com/meng950813/meng950813.github.io.git/tags/index.html</url>
+      <content type="html"></content>
     </entry>
     
   

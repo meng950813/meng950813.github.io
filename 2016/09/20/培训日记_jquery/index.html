@@ -15,13 +15,19 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="404 Not Found：该页无法显示">
-<meta property="og:url" content="https://github.com/meng950813/meng950813.github.io.git/404.html">
+<meta name="description" content="jQuery: $(document).ready(function(){…}) VS DOM: window.onload=function(){…}ready 的底层事件：DOM中的ondocumentcontentloaded:只要DOM树加载完成，就会触发window.onload 在页面全部加载完成之后触发">
+<meta property="og:type" content="article">
+<meta property="og:title" content="培训日记__jquery">
+<meta property="og:url" content="https://github.com/meng950813/meng950813.github.io.git/2016/09/20/培训日记_jquery/index.html">
 <meta property="og:site_name" content="CM's Hexo Blog">
-<meta property="og:updated_time" content="2016-09-21T01:58:45.652Z">
+<meta property="og:description" content="jQuery: $(document).ready(function(){…}) VS DOM: window.onload=function(){…}ready 的底层事件：DOM中的ondocumentcontentloaded:只要DOM树加载完成，就会触发window.onload 在页面全部加载完成之后触发">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/0065ewYjgw1f825osk8jtj30kj06e0tj.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/0065ewYjgw1f825p93mq0j30fl02bmxb.jpg">
+<meta property="og:updated_time" content="2016-09-23T08:24:21.928Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="404 Not Found：该页无法显示">
+<meta name="twitter:title" content="培训日记__jquery">
+<meta name="twitter:description" content="jQuery: $(document).ready(function(){…}) VS DOM: window.onload=function(){…}ready 的底层事件：DOM中的ondocumentcontentloaded:只要DOM树加载完成，就会触发window.onload 在页面全部加载完成之后触发">
+<meta name="twitter:image" content="https://ws3.sinaimg.cn/large/0065ewYjgw1f825osk8jtj30kj06e0tj.jpg">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -53,7 +59,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>404 Not Found：该页无法显示 | CM&#39;s Hexo Blog</title>
+<title>培训日记__jquery | CM&#39;s Hexo Blog</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -63,7 +69,7 @@
         fancybox: true,
         animate: true,
         isHome: false,
-        isPost: false,
+        isPost: true,
         isArchive: false,
         isTag: false,
         isCategory: false,
@@ -272,11 +278,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="page-undefined" class="article article-type-page" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-培训日记_jquery" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/404.html" class="article-date">
-      <time datetime="2016-09-21T01:58:45.652Z" itemprop="datePublished">2016-09-21</time>
+      <a href="/2016/09/20/培训日记_jquery/" class="article-date">
+      <time datetime="2016-09-20T06:53:15.000Z" itemprop="datePublished">2016-09-20</time>
 </a>
 
 
@@ -291,7 +297,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      404 Not Found：该页无法显示
+      培训日记__jquery
     </h1>
   
 
@@ -299,8 +305,16 @@
       
       <div class="article-info article-info-post">
         
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/培训/">培训</a>
+    </div>
+
 
         
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jquery/">jquery</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/鄙视题/">鄙视题</a></li></ul>
+    </div>
+
         <div class="clearfix"></div>
       </div>
       
@@ -308,26 +322,20 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-              <style>
-    .article-meta { display: none; }
-    #container .article .article-title { padding-right: 0; }
-    .article-header {
-        padding: 0;
-        padding-top: 26px;
-        border-left: none;
-        text-align: center;
-    }
-    .article-header:hover { border-left: none; }
-    .article-title { font-size: 1.6em }
-    .article-entry hr { margin: 0;}
-    .article-meta,
-    #container .article-info-post.article-info { display: none;}
-    #container .article .article-title { padding: 0; }
-</style>
+        <h3 id="jQuery-document-ready-function-…-VS-DOM-window-onload-function-…"><a href="#jQuery-document-ready-function-…-VS-DOM-window-onload-function-…" class="headerlink" title="jQuery: $(document).ready(function(){…}) VS DOM: window.onload=function(){…}"></a>jQuery: $(document).ready(function(){…}) VS DOM: window.onload=function(){…}</h3><p>ready 的底层事件：DOM中的ondocumentcontentloaded:只要DOM树加载完成，就会触发<br>window.onload 在页面全部加载完成之后触发</p>
+<a id="more"></a>
+<p><strong>大致流程如图所示：</strong><br><img src="https://ws3.sinaimg.cn/large/0065ewYjgw1f825osk8jtj30kj06e0tj.jpg" alt="流程图"></p>
+<p><strong>举例测试</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">&lt;body&gt;</div><div class="line">  &lt;h1&gt;页面加载完成事件&lt;/h1&gt;</div><div class="line">  &lt;script&gt;</div><div class="line">    console.time(<span class="string">"docReady"</span>);</div><div class="line">    console.time(<span class="string">"winLoad"</span>);</div><div class="line">  &lt;/script&gt;</div><div class="line">  &lt;script src=<span class="string">"../jquery-1.11.3.js"</span>&gt;&lt;/script&gt;</div><div class="line">  &lt;script&gt;</div><div class="line">    window.onload=<span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">        console.log(<span class="string">"window.onload..."</span>);</div><div class="line">        console.timeEnd(<span class="string">"winLoad"</span>);</div><div class="line">    &#125;</div><div class="line">    $(document).ready(<span class="keyword">function</span>($) &#123;</div><div class="line">        console.log(<span class="string">"document ready..."</span>);</div><div class="line">        console.timeEnd(<span class="string">"docReady"</span>);</div><div class="line">    &#125;);</div><div class="line">    </div><div class="line">  &lt;/script&gt;</div><div class="line"> &lt;/body&gt;</div></pre></td></tr></table></figure></p>
+<p><strong>执行结果</strong><br><img src="https://ws1.sinaimg.cn/large/0065ewYjgw1f825p93mq0j30fl02bmxb.jpg" alt="执行结果"></p>
+<p>&nbsp;&nbsp;事实上：将script放在body结尾也能实现 ready 的功能：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">&lt;body&gt;</div><div class="line">  &lt;h1&gt;页面加载完成事件&lt;/h1&gt;</div><div class="line">  &lt;script&gt;</div><div class="line">    console.time(<span class="string">"docReady"</span>);</div><div class="line">    console.time(<span class="string">"winLoad"</span>);</div><div class="line">  &lt;/script&gt;</div><div class="line">  &lt;script src=<span class="string">"../jquery-1.11.3.js"</span>&gt;&lt;/script&gt;</div><div class="line">  &lt;script&gt;</div><div class="line">    window.onload=<span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">        console.log(<span class="string">"window.onload..."</span>);</div><div class="line">        console.timeEnd(<span class="string">"winLoad"</span>);</div><div class="line">    &#125;</div><div class="line">    console.log(<span class="string">"document ready..."</span>);</div><div class="line">    console.timeEnd(<span class="string">"docReady"</span>);    </div><div class="line">  &lt;/script&gt;</div><div class="line"> &lt;/body&gt;</div></pre></td></tr></table></figure></p>
+<h3 id="显示-隐藏"><a href="#显示-隐藏" class="headerlink" title="显示/隐藏"></a>显示/隐藏</h3><p>&nbsp;&nbsp;jQuery中有 <strong>show()</strong>，<strong>hide()</strong>控制内容的显示和隐藏，但只能完成一个功能<br>toggle()函数可以同时完成显示和隐藏的功能<br>在不加参数的情况下：<strong>show(),hide(),toggle()</strong> 函数通过改变元素的 <strong>display</strong> 属性实现显示和隐藏，没有动画效果<br>加上参数：函数设置 <strong>overflow:hidden</strong>,通过将元素的 <strong>width，height和opacity</strong>属性逐渐变为 <strong>0</strong> 实现过度效果</p>
+<h3 id="动画函数-animate"><a href="#动画函数-animate" class="headerlink" title="动画函数 animate()"></a>动画函数 animate()</h3><p>&nbsp;&nbsp; <strong>$(…).animate(parmes,speed,easing,fn)</strong><br>参数：<br>    parmes: css属性的目标值：{属性:值,属性:值 … }<br>        注意： <strong>css 属性名要去横线,变驼峰;值是字符串而且要加单位</strong> ==&gt;marginLeft:’12px’<br>    speed: 速度：数字（单位：ms）/字符串”slow/normal/fast”<br>    easing: 过度方式：linear(匀速)，ease(慢到快)。。。<br><strong>动画中的排队和并发(串行和并行)</strong><br>一个 <strong><em>animate</em></strong> 函数中修改的属性会同时修改，多个 <strong><em>animate</em></strong> 函数时会等前一个动画变换完再变换。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$(...).animate(&#123;width:<span class="string">'200px'</span>,height:<span class="string">'200px'</span>&#125;,1000);</div></pre></td></tr></table></figure>
+<p>执行效果：该元素的宽和高在1秒内都变为200px</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$(...).animate(&#123;width:<span class="string">'200px'</span>&#125;,1000).animate(&#123;height:<span class="string">'200px'</span>&#125;,2000);</div></pre></td></tr></table></figure>
+<p>执行效果：该元素的宽在1秒内都变为200px后，高在2秒内变为200px</p>
+<p><strong>js回调函数中的 this 指window，animate函数中的回调函数指当前对象</strong> </p>
 
-
-          
-        
       
     </div>
     
@@ -336,8 +344,48 @@
     
 
 
+    <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2016/09/21/记首次使用hexo的尴尬历程/">
+                    记首次使用hexo的尴尬历程
+                </a>
+            </div>
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2016/09/20/hello-world/">
+                    Hello World
+                </a>
+            </div>
+        
+    </nav>
+
   
 </article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#jQuery-document-ready-function-…-VS-DOM-window-onload-function-…"><span class="toc-number">1.</span> <span class="toc-text">jQuery: $(document).ready(function(){…}) VS DOM: window.onload=function(){…}</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#显示-隐藏"><span class="toc-number">2.</span> <span class="toc-text">显示/隐藏</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#动画函数-animate"><span class="toc-number">3.</span> <span class="toc-text">动画函数 animate()</span></a></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
 
 
 
@@ -355,7 +403,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"404 Not Found：该页无法显示　| CM's Hexo Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"培训日记__jquery　| CM's Hexo Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -368,6 +416,47 @@
 
 
 
+    
+      <div class="duoshuo" id="comments">
+    <div id="comment-box" ></div>
+    <div class="ds-thread" id="ds-thread" data-thread-key="2016/09/20/培训日记_jquery/" data-title="培训日记__jquery" data-url="https://github.com/meng950813/meng950813.github.io.git/2016/09/20/培训日记_jquery/"></div>
+    <script>
+        var duoshuoQuery = {short_name:"cmeng"};
+        var loadComment = function(){
+            var d = document, s = d.createElement('script');
+            s.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+            s.async = true; s.charset = 'UTF-8';
+            (d.head || d.body).appendChild(s);
+        }
+
+        
+    </script>
+    
+    <script> loadComment(); </script>
+
+</div>
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2016/09/21/记首次使用hexo的尴尬历程/" title="上一篇: 记首次使用hexo的尴尬历程">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2016/09/20/hello-world/" title="下一篇: Hello World">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/09/23/鄙视题/">鄙视题</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/23/恼人的this/">恼人的this</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/21/记首次使用hexo的尴尬历程/">记首次使用hexo的尴尬历程</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/20/培训日记_jquery/">培训日记__jquery</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/20/hello-world/">Hello World</a></li></ul>
 
 
 
