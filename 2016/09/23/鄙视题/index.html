@@ -407,7 +407,8 @@ $(…).each 是 jQuery 对象方法,存储在原型对象 jQuery.fn 上,主要�
         var duoshuoQuery = {short_name:"cmeng"};
         var loadComment = function(){
             var d = document, s = d.createElement('script');
-            s.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+            // s.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+            s.src ="http://meng950813.github.io/js/embed.js";
             s.async = true; s.charset = 'UTF-8';
             (d.head || d.body).appendChild(s);
         }
