@@ -84,15 +84,15 @@
     </entry>
     
     <entry>
-      <title><![CDATA[About me]]></title>
-      <url>https://github.com/meng950813/meng950813.github.io.git/about/index.html</url>
-      <content type="html"></content>
-    </entry>
-    
-    <entry>
       <title><![CDATA[个人小游戏]]></title>
       <url>https://github.com/meng950813/meng950813.github.io.git/mygames/index.html</url>
       <content type="html"><![CDATA[<h2 id="五子棋-nbsp-nbsp-俄罗斯方块"><a href="#五子棋-nbsp-nbsp-俄罗斯方块" class="headerlink" title="五子棋 &nbsp;&nbsp;俄罗斯方块"></a><a href="wuziqi.html">五子棋</a> &nbsp;&nbsp;<a href="">俄罗斯方块</a></h2>]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[About me]]></title>
+      <url>https://github.com/meng950813/meng950813.github.io.git/about/index.html</url>
+      <content type="html"></content>
     </entry>
     
     <entry>
