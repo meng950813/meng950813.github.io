@@ -78,6 +78,12 @@
   
     
     <entry>
+      <title><![CDATA[About me]]></title>
+      <url>http://www.cmeng.cc/about/index.html</url>
+      <content type="html"></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[404]]></title>
       <url>http://www.cmeng.cc//404.html</url>
       <content type="html"><![CDATA[<p>&lt;!DOCTYPE HTML&gt;</p>
@@ -85,8 +91,8 @@
     </entry>
     
     <entry>
-      <title><![CDATA[About me]]></title>
-      <url>http://www.cmeng.cc/about/index.html</url>
+      <title><![CDATA[tags]]></title>
+      <url>http://www.cmeng.cc/tags/index.html</url>
       <content type="html"></content>
     </entry>
     
@@ -94,12 +100,6 @@
       <title><![CDATA[个人小游戏]]></title>
       <url>http://www.cmeng.cc/mygames/index.html</url>
       <content type="html"><![CDATA[<h2 id="五子棋-nbsp-nbsp-俄罗斯方块"><a href="#五子棋-nbsp-nbsp-俄罗斯方块" class="headerlink" title="五子棋 &nbsp;&nbsp;俄罗斯方块"></a><a href="wuziqi.html">五子棋</a> &nbsp;&nbsp;<a href="">俄罗斯方块</a></h2>]]></content>
-    </entry>
-    
-    <entry>
-      <title><![CDATA[tags]]></title>
-      <url>http://www.cmeng.cc/tags/index.html</url>
-      <content type="html"></content>
     </entry>
     
   
