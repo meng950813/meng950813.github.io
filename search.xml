@@ -5,7 +5,7 @@
     
     <entry>
       <title><![CDATA[鄙视题]]></title>
-      <url>http://www.cmeng.cc/blog/2016/09/23/%E9%84%99%E8%A7%86%E9%A2%98/</url>
+      <url>http://www.cmeng.cc/2016/09/23/%E9%84%99%E8%A7%86%E9%A2%98/</url>
       <content type="html"><![CDATA[<h2 id="jQuery"><a href="#jQuery" class="headerlink" title="jQuery"></a>jQuery</h2><h3 id="each-source-function-index-value-…-VS-…-each-function-index-element-…"><a href="#each-source-function-index-value-…-VS-…-each-function-index-element-…" class="headerlink" title="$.each(source,function(index,value){…}) VS $(…).each(function(index,element){…})"></a>$.each(source,function(index,value){…}) VS $(…).each(function(index,element){…})</h3><p>$.each 是 jQuery 全局方法,存储在jQuery全局对象上,主要遍历普通数组</p>
 <p>$(…).each 是 jQuery 对象方法,存储在原型对象 jQuery.fn 上,主要用于对查询结果中的每个 DOM 元素执行操作</p>
 ]]></content>
@@ -13,13 +13,13 @@
     
     <entry>
       <title><![CDATA[恼人的this]]></title>
-      <url>http://www.cmeng.cc/blog/2016/09/23/%E6%81%BC%E4%BA%BA%E7%9A%84this/</url>
+      <url>http://www.cmeng.cc/2016/09/23/%E6%81%BC%E4%BA%BA%E7%9A%84this/</url>
       <content type="html"></content>
     </entry>
     
     <entry>
       <title><![CDATA[记首次使用hexo的尴尬历程]]></title>
-      <url>http://www.cmeng.cc/blog/2016/09/21/%E8%AE%B0%E9%A6%96%E6%AC%A1%E4%BD%BF%E7%94%A8hexo%E7%9A%84%E5%B0%B4%E5%B0%AC%E5%8E%86%E7%A8%8B/</url>
+      <url>http://www.cmeng.cc/2016/09/21/%E8%AE%B0%E9%A6%96%E6%AC%A1%E4%BD%BF%E7%94%A8hexo%E7%9A%84%E5%B0%B4%E5%B0%AC%E5%8E%86%E7%A8%8B/</url>
       <content type="html"><![CDATA[<p>2016年9月19号，第一次听说<a href="https://hexo.io" target="_blank" rel="external">Hexo</a>。据说用这个框架可以很快搭建出一个漂亮的博客，正好有朋友有这方面的需求，于是第二天尝试了一下，嗯，效果挺好，不过我想说说遇到的坑。。。<br><a id="more"></a><br>我使用的主题是 <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" rel="external">Yelee</a>，<a href="https://hexo.io/themes" target="_blank" rel="external">Hexo主题传送门</a></p>
 <h3 id="坑1-站内搜索"><a href="#坑1-站内搜索" class="headerlink" title="坑1 : 站内搜索"></a>坑1 : 站内搜索</h3><p>本来一行命令就可以解决的事到我这边却莫名其妙的出了问题。。。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install --save hexo-generator-search</div></pre></td></tr></table></figure>
@@ -41,7 +41,7 @@
     
     <entry>
       <title><![CDATA[培训日记__jquery]]></title>
-      <url>http://www.cmeng.cc/blog/2016/09/20/%E5%9F%B9%E8%AE%AD%E6%97%A5%E8%AE%B0_jquery/</url>
+      <url>http://www.cmeng.cc/2016/09/20/%E5%9F%B9%E8%AE%AD%E6%97%A5%E8%AE%B0_jquery/</url>
       <content type="html"><![CDATA[<h3 id="jQuery-document-ready-function-…-VS-DOM-window-onload-function-…"><a href="#jQuery-document-ready-function-…-VS-DOM-window-onload-function-…" class="headerlink" title="jQuery: $(document).ready(function(){…}) VS DOM: window.onload=function(){…}"></a>jQuery: $(document).ready(function(){…}) VS DOM: window.onload=function(){…}</h3><p>ready 的底层事件：DOM中的ondocumentcontentloaded:只要DOM树加载完成，就会触发<br>window.onload 在页面全部加载完成之后触发</p>
 <a id="more"></a>
 <p><strong>大致流程如图所示：</strong><br><img src="https://ws3.sinaimg.cn/large/0065ewYjgw1f825osk8jtj30kj06e0tj.jpg" alt="流程图"></p>
@@ -60,7 +60,7 @@
     
     <entry>
       <title><![CDATA[Hello World]]></title>
-      <url>http://www.cmeng.cc/blog/2016/09/20/hello-world/</url>
+      <url>http://www.cmeng.cc/2016/09/20/hello-world/</url>
       <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
 <a id="more"></a>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div><div class="line">$ hexo new <span class="string">"My New Post"</span></div><div class="line">$ hexo new <span class="string">"My New Post"</span></div><div class="line">$ hexo new <span class="string">"My New Post"</span></div><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
@@ -85,6 +85,12 @@
     </entry>
     
     <entry>
+      <title><![CDATA[About me]]></title>
+      <url>http://www.cmeng.cc/about/index.html</url>
+      <content type="html"></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[个人小游戏]]></title>
       <url>http://www.cmeng.cc/mygames/index.html</url>
       <content type="html"><![CDATA[<h2 id="五子棋-nbsp-nbsp-俄罗斯方块"><a href="#五子棋-nbsp-nbsp-俄罗斯方块" class="headerlink" title="五子棋 &nbsp;&nbsp;俄罗斯方块"></a><a href="wuziqi.html">五子棋</a> &nbsp;&nbsp;<a href="">俄罗斯方块</a></h2>]]></content>
@@ -93,12 +99,6 @@
     <entry>
       <title><![CDATA[tags]]></title>
       <url>http://www.cmeng.cc/tags/index.html</url>
-      <content type="html"></content>
-    </entry>
-    
-    <entry>
-      <title><![CDATA[About me]]></title>
-      <url>http://www.cmeng.cc/about/index.html</url>
       <content type="html"></content>
     </entry>
     
