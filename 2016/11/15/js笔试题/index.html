@@ -22,7 +22,9 @@
 <meta property="og:site_name" content="CM's Hexo Blog">
 <meta property="og:description" content="javascript 笔试题最近朋友给我推荐了几道关于javascript闭包和面向对象的面试题，兴冲冲的看了一下，本来就没想过会很简单，但是看完之后依然一脸懵逼，写这篇博客梳理一遍知识点同时也引以为戒。。。不过做完这些题之后不禁想到了一本书。。。">
 <meta property="og:image" content="http://ww3.sinaimg.cn/large/0065ewYjgw1f9t6gul26fj301s01s0si.jpg">
-<meta property="og:updated_time" content="2016-11-16T12:48:03.014Z">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/0065ewYjgw1f9ubqdokwfj30ej041wej.jpg">
+<meta property="og:image" content="http://ww4.sinaimg.cn/large/0065ewYjgw1f9ubutjfw4j30fi08iglx.jpg">
+<meta property="og:updated_time" content="2016-11-16T14:41:11.537Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="js笔试题">
 <meta name="twitter:description" content="javascript 笔试题最近朋友给我推荐了几道关于javascript闭包和面向对象的面试题，兴冲冲的看了一下，本来就没想过会很简单，但是看完之后依然一脸懵逼，写这篇博客梳理一遍知识点同时也引以为戒。。。不过做完这些题之后不禁想到了一本书。。。">
@@ -147,13 +149,13 @@
                 <div class="tips-box hide">
                     <div class="tips-arrow"></div>
                     <ul class="tips-inner">
-                        <li>菜单</li>
-                        <li>标签</li>
+                        <li>Menu</li>
+                        <li>Tags</li>
                         
-                        <li>友情链接</li>
+                        <li>Friends</li>
                         
                         
-                        <li>关于我</li>
+                        <li>About Me</li>
                         
                     </ul>
                 </div>
@@ -275,7 +277,7 @@
             </nav>
         </header>                
     </div>
-    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
+    <link class="menu-list" tags="Tags" friends="Friends" about="About Me"/>
 </nav>
       <div class="body-wrap"><article id="post-js笔试题" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -344,10 +346,11 @@ descriptor
 <hr>
 <h2 id="考点-：闭包-函数"><a href="#考点-：闭包-函数" class="headerlink" title="考点 ：闭包 函数"></a>考点 ：闭包 函数</h2><p>####先来一道简单的打底<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">var a=0,b=0;</div><div class="line">var A=<span class="keyword">function</span>(a)&#123;</div><div class="line">  A=<span class="keyword">function</span>(b)&#123;</div><div class="line">    console.log(a+b++);</div><div class="line">  &#125;</div><div class="line">  console.log(a);</div><div class="line">&#125;</div><div class="line">A(1);//1</div><div class="line">A(12);//13</div></pre></td></tr></table></figure></p>
 <p><strong> 分析： </strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">1.1): A(1) --&gt; 首次执行，A被重新赋值，输出参数 1，运行结束后：</div><div class="line">          A = function(b)&#123; // 此时变量 a=1 已被闭包保护</div><div class="line">            console.log( a + b++);</div><div class="line">          &#125;</div><div class="line">1.2): A(12) --&gt; console.log(a + 12++); ==&gt; 输出 13</div></pre></td></tr></table></figure></p>
-<p><strong> 运行效果： </strong></p>
+<p><strong> 运行效果： </strong><br><img src="http://ww1.sinaimg.cn/large/0065ewYjgw1f9ubqdokwfj30ej041wej.jpg" alt="运行效果"></p>
 <hr>
 <h4 id="下面才是正餐："><a href="#下面才是正餐：" class="headerlink" title="下面才是正餐："></a>下面才是正餐：</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span> fun(n,o)&#123;</div><div class="line">   console.log(o);</div><div class="line">   <span class="built_in">return</span>&#123;</div><div class="line">     fun:<span class="keyword">function</span>(m)&#123;</div><div class="line">       <span class="built_in">return</span> fun(m,n);</div><div class="line">     &#125;</div><div class="line">   &#125;</div><div class="line"> &#125;</div><div class="line"> var a=fun(0); a.fun(1); a.fun(2); a.fun(3);</div><div class="line">    //undefined     0        0          0    </div><div class="line"> var b=fun(0).fun(1).fun(2).fun(3);</div><div class="line">  //undefined   0      1      2     </div><div class="line"> var c=fun(0).fun(1); c.fun(2); c.fun(3);</div><div class="line">  //undefined   0          1         1</div></pre></td></tr></table></figure>
 <h4 id="提问：三行代码输出的结果分别是什么"><a href="#提问：三行代码输出的结果分别是什么" class="headerlink" title="提问：三行代码输出的结果分别是什么"></a>提问：三行代码输出的结果分别是什么</h4><p><strong> 分析： </strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">第一行：</div><div class="line">  1.1): var a = fun(0) =&gt; 并没有传出参数 o =&gt; 输出 undefined，</div><div class="line">      a = &#123;  // 此时参数 n=0 已被闭包保护</div><div class="line">          fun:function(m)&#123;</div><div class="line">            return fun(m,n);</div><div class="line">       &#125;</div><div class="line">  1.2): a.fun(1) ==&gt; function(m=1)&#123; return fun(m,n);&#125;</div><div class="line">        输出闭包变量 n 的值，即 0;</div><div class="line">        而调用过程并没有修改变量 n, 所以 n = 0</div><div class="line">      ==&gt; a.fun(2) 输出 0</div><div class="line">      ==&gt; a.fun(3) 输出 0</div><div class="line">      ...</div><div class="line">      ==&gt; a.fun(x) 输出 0</div><div class="line"></div><div class="line">第二行: </div><div class="line">  2.1): 同 1.1</div><div class="line">  2.2): b.fun(1) ==&gt; function(m=1)&#123; return fun(m,n=0);&#125; ==&gt; 输出 n ,即 0</div><div class="line">     b = &#123;  // 此时 n 依然被闭包保护，不过值变为新的参数 1，</div><div class="line">          fun:function(m)&#123;</div><div class="line">            return fun(m,n &lt;== 1);</div><div class="line">       &#125;</div><div class="line">  2.3): 类似 2.2 推导， 输出：1，闭包变量 n = 2;</div><div class="line">    可得：本题链式调用每次输出闭包变量 n 值，n 的值为上次调用传入的参数</div><div class="line">    ... .fun(x-1).fun(x)  ==&gt; 最后输出 x-1</div><div class="line"></div><div class="line">第三行：</div><div class="line">  3.1): 同 2.1,2.2; 运行结束后：闭包变量 n -&gt; undefined -&gt; 0 -&gt; 1 </div><div class="line">  3.2): 同 1.2, 单步调用不修改变量 n, ==&gt; 一直输出 变量 n=&gt;1</div></pre></td></tr></table></figure></p>
+<p><strong> 运行结果 </strong><br><img src="http://ww4.sinaimg.cn/large/0065ewYjgw1f9ubutjfw4j30fi08iglx.jpg" alt="运行结果"></p>
 <hr>
 <h2 id="未完待续。。。"><a href="#未完待续。。。" class="headerlink" title="未完待续。。。"></a>未完待续。。。</h2>
       
@@ -368,8 +371,8 @@ descriptor
         
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/blog/2016/09/23/鄙视题/">
-                    鄙视题
+                <a href="/blog/2016/09/23/恼人的this/">
+                    恼人的this
                 </a>
             </div>
         
@@ -379,7 +382,7 @@ descriptor
 </article>
 
     <div id="toc" class="toc-article">
-        <strong class="toc-title">文章目录</strong>
+        <strong class="toc-title">Contents</strong>
         
             <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#javascript-笔试题"><span class="toc-number">1.</span> <span class="toc-text">javascript 笔试题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#考点：变量作用域"><span class="toc-number">2.</span> <span class="toc-text">考点：变量作用域</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#知识点：js-中所有未定义直接使用的变量都默认为全局变量"><span class="toc-number">2.0.1.</span> <span class="toc-text">知识点：js 中所有未定义直接使用的变量都默认为全局变量</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#考点：setTimeout-函数特性"><span class="toc-number">2.1.</span> <span class="toc-text">考点：setTimeout 函数特性</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#知识点：-setTimeout-函数会在当前作用域中最后执行"><span class="toc-number">2.1.1.</span> <span class="toc-text">知识点： setTimeout 函数会在当前作用域中最后执行</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#考点：闭包-gt-取闭包保护的内容"><span class="toc-number">3.</span> <span class="toc-text">考点：闭包 -> 取闭包保护的内容</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#问：不改变以上代码，如何获得闭包中的person"><span class="toc-number">3.0.1.</span> <span class="toc-text">问：不改变以上代码，如何获得闭包中的person</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#解决办法"><span class="toc-number">3.0.2.</span> <span class="toc-text">解决办法</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#考点-：闭包-函数"><span class="toc-number">4.</span> <span class="toc-text">考点 ：闭包 函数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#下面才是正餐："><span class="toc-number">4.0.1.</span> <span class="toc-text">下面才是正餐：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#提问：三行代码输出的结果分别是什么"><span class="toc-number">4.0.2.</span> <span class="toc-text">提问：三行代码输出的结果分别是什么</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#未完待续。。。"><span class="toc-number">5.</span> <span class="toc-text">未完待续。。。</span></a></li></ol>
         
@@ -395,10 +398,10 @@ descriptor
         }
     </style>
 
-    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+    <input type="button" id="tocButton" value="Hide"  title="Show or Hide Table of Contents">
 
     <script>
-        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+        yiliaConfig.toc = ["Hide", "Show", !!"false"];
     </script>
 
 
@@ -457,21 +460,21 @@ descriptor
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/blog/2016/11/15/js笔试题-2/" title="上一篇: js笔试题-2">
+            <a href="/blog/2016/11/15/js笔试题-2/" title="Pre: js笔试题-2">
                 <i class="fa fa-angle-left"></i>
             </a>
         
 
-        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        <a title="Mini Archives"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/blog/2016/09/23/鄙视题/" title="下一篇: 鄙视题">
+            <a href="/blog/2016/09/23/恼人的this/" title="Next: 恼人的this">
                 <i class="fa fa-angle-right"></i>
             </a>
         
     </div>
 
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/blog/2016/11/15/js笔试题-2/">js笔试题-2</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/11/15/js笔试题/">js笔试题</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/09/23/鄙视题/">鄙视题</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/09/23/恼人的this/">恼人的this</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/09/21/记首次使用hexo的尴尬历程/">记首次使用hexo的尴尬历程</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/09/20/jquery小记/">jquery小记</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/09/20/hello-world/">Hello World</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/blog/2016/11/15/js笔试题-2/">js笔试题-2</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/11/15/js笔试题/">js笔试题</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/09/23/恼人的this/">恼人的this</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/09/21/记首次使用hexo的尴尬历程/">记首次使用hexo的尴尬历程</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/09/20/jquery小记/">jquery小记</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/09/20/hello-world/">Hello World</a></li></ul>
 
 
 
@@ -488,14 +491,14 @@ descriptor
                 2016 CMeng
             </div>
             <div class="footer-right">
-                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+                <a href="http://hexo.io/" target="_blank" title="A fast, simple &amp; powerful blog framework">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="Another simple and elegant theme for Hexo  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
             </div>
         </div>
         
             <div class="visit">
                 
                     <span id="busuanzi_container_site_pv" style='display:none'>
-                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        <span id="site-visit" title="Site Visitors"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
                         </span>
                     </span>
                 
@@ -504,7 +507,7 @@ descriptor
                 
                 
                     <span id="busuanzi_container_page_pv" style='display:none'>
-                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        <span id="page-visit"  title="Page Hits"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
                         </span>
                     </span>
                 
@@ -537,9 +540,9 @@ descriptor
 
 
 <div class="scroll" id="scroll">
-    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
-    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
-    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+    <a href="#" title="Back to Top"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="Comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="Go to Bottom"><i class="fa fa-arrow-down"></i></a>
 </div>
 <script>
     // Open in New Window
