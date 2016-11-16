@@ -15,19 +15,19 @@
 
 
 
-<meta name="description" content="jQuery$.each(source,function(index,value){…}) VS $(…).each(function(index,element){…})$.each 是 jQuery 全局方法,存储在jQuery全局对象上,主要遍历普通数组
-$(…).each 是 jQuery 对象方法,存储在原型对象 jQuery.fn 上,主要用于对查询结果中的每个 DOM 元素执行操作">
+<meta name="description" content="jQuery: $(document).ready(function(){…}) VS DOM: window.onload=function(){…}ready 的底层事件：DOM中的ondocumentcontentloaded:只要DOM树加载完成，就会触发window.onload 在页面全部加载完成之后触发">
 <meta property="og:type" content="article">
-<meta property="og:title" content="鄙视题">
-<meta property="og:url" content="http://www.cmeng.cc/2016/09/23/鄙视题/index.html">
+<meta property="og:title" content="jquery">
+<meta property="og:url" content="http://www.cmeng.cc/2016/09/20/jquery/index.html">
 <meta property="og:site_name" content="CM's Hexo Blog">
-<meta property="og:description" content="jQuery$.each(source,function(index,value){…}) VS $(…).each(function(index,element){…})$.each 是 jQuery 全局方法,存储在jQuery全局对象上,主要遍历普通数组
-$(…).each 是 jQuery 对象方法,存储在原型对象 jQuery.fn 上,主要用于对查询结果中的每个 DOM 元素执行操作">
-<meta property="og:updated_time" content="2016-09-24T01:15:24.400Z">
+<meta property="og:description" content="jQuery: $(document).ready(function(){…}) VS DOM: window.onload=function(){…}ready 的底层事件：DOM中的ondocumentcontentloaded:只要DOM树加载完成，就会触发window.onload 在页面全部加载完成之后触发">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/0065ewYjgw1f825osk8jtj30kj06e0tj.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/0065ewYjgw1f825p93mq0j30fl02bmxb.jpg">
+<meta property="og:updated_time" content="2016-11-16T16:56:14.043Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="鄙视题">
-<meta name="twitter:description" content="jQuery$.each(source,function(index,value){…}) VS $(…).each(function(index,element){…})$.each 是 jQuery 全局方法,存储在jQuery全局对象上,主要遍历普通数组
-$(…).each 是 jQuery 对象方法,存储在原型对象 jQuery.fn 上,主要用于对查询结果中的每个 DOM 元素执行操作">
+<meta name="twitter:title" content="jquery">
+<meta name="twitter:description" content="jQuery: $(document).ready(function(){…}) VS DOM: window.onload=function(){…}ready 的底层事件：DOM中的ondocumentcontentloaded:只要DOM树加载完成，就会触发window.onload 在页面全部加载完成之后触发">
+<meta name="twitter:image" content="https://ws3.sinaimg.cn/large/0065ewYjgw1f825osk8jtj30kj06e0tj.jpg">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -52,14 +52,14 @@ $(…).each 是 jQuery 对象方法,存储在原型对象 jQuery.fn 上,主要�
     <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
 
 
-<link rel="stylesheet" href="/blog/css/style.css">
+<link rel="stylesheet" href="/css/style.css">
 
 
 
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>鄙视题 | CM&#39;s Hexo Blog</title>
+<title>jquery | CM&#39;s Hexo Blog</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -100,11 +100,11 @@ $(…).each 是 jQuery 对象方法,存储在原型对象 jQuery.fn 上,主要�
     <div class="overlay"></div>
 <div class="intrude-less">
     <header id="header" class="inner">
-        <a href="/blog/" class="profilepic">
+        <a href="/" class="profilepic">
             <img src="/img/avatar.png" class="animated zoomIn">
         </a>
         <hgroup>
-          <h1 class="header-author"><a href="/blog/">CMeng</a></h1>
+          <h1 class="header-author"><a href="/">CMeng</a></h1>
         </hgroup>
 
         
@@ -167,15 +167,15 @@ $(…).each 是 jQuery 对象方法,存储在原型对象 jQuery.fn 上,主要�
                     <nav class="header-menu">
                         <ul>
                         
-                            <li><a href="/blog/">主页</a></li>
+                            <li><a href="/">主页</a></li>
                         
-                            <li><a href="/blog/archives/">所有文章</a></li>
+                            <li><a href="/archives/">所有文章</a></li>
                         
-                            <li><a href="/blog/tags/">标签云</a></li>
+                            <li><a href="/tags/">标签云</a></li>
                         
-                            <li><a href="/blog/about/">关于我</a></li>
+                            <li><a href="/about/">关于我</a></li>
                         
-                            <li><a href="/blog/mygames/">小游戏</a></li>
+                            <li><a href="/mygames/">小游戏</a></li>
                         
                         </ul>
                     </nav>
@@ -199,7 +199,7 @@ $(…).each 是 jQuery 对象方法,存储在原型对象 jQuery.fn 上,主要�
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/github/">github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/java/">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/jquery/">jquery</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/js/">js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/笔试题/">笔试题</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/闭包/">闭包</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/面向对象/">面向对象</a></li></ul>
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/">github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jquery/">jquery</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js/">js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/笔试题/">笔试题</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/闭包/">闭包</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面向对象/">面向对象</a></li></ul>
                     </div>
                 </section>
                 
@@ -236,25 +236,25 @@ $(…).each 是 jQuery 对象方法,存储在原型对象 jQuery.fn 上,主要�
       </div>
     <div class="intrude-less">
         <header id="header" class="inner">
-            <a href="/blog/" class="profilepic">
+            <a href="/" class="profilepic">
                 <img src="/img/avatar.png" class="animated zoomIn">
             </a>
             <hgroup>
-              <h1 class="header-author"><a href="/blog/" title="回到主页">CMeng</a></h1>
+              <h1 class="header-author"><a href="/" title="回到主页">CMeng</a></h1>
             </hgroup>
             
             <nav class="header-menu">
                 <ul>
                 
-                    <li><a href="/blog/">主页</a></li>
+                    <li><a href="/">主页</a></li>
                 
-                    <li><a href="/blog/archives/">所有文章</a></li>
+                    <li><a href="/archives/">所有文章</a></li>
                 
-                    <li><a href="/blog/tags/">标签云</a></li>
+                    <li><a href="/tags/">标签云</a></li>
                 
-                    <li><a href="/blog/about/">关于我</a></li>
+                    <li><a href="/about/">关于我</a></li>
                 
-                    <li><a href="/blog/mygames/">小游戏</a></li>
+                    <li><a href="/mygames/">小游戏</a></li>
                 
                 <div class="clearfix"></div>
                 </ul>
@@ -278,11 +278,11 @@ $(…).each 是 jQuery 对象方法,存储在原型对象 jQuery.fn 上,主要�
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-鄙视题" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-jquery" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/blog/2016/09/23/鄙视题/" class="article-date">
-      <time datetime="2016-09-23T07:03:51.000Z" itemprop="datePublished">2016-09-23</time>
+      <a href="/2016/09/20/jquery/" class="article-date">
+      <time datetime="2016-09-20T06:53:15.000Z" itemprop="datePublished">2016-09-20</time>
 </a>
 
 
@@ -297,7 +297,7 @@ $(…).each 是 jQuery 对象方法,存储在原型对象 jQuery.fn 上,主要�
         
   
     <h1 class="article-title" itemprop="name">
-      鄙视题
+      jquery
     </h1>
   
 
@@ -306,13 +306,13 @@ $(…).each 是 jQuery 对象方法,存储在原型对象 jQuery.fn 上,主要�
       <div class="article-info article-info-post">
         
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/blog/categories/鄙视题/">鄙视题</a>
+    <a class="article-category-link" href="/categories/jQuery/">jQuery</a>
     </div>
 
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/jquery/">jquery</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jquery/">jquery</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -322,8 +322,19 @@ $(…).each 是 jQuery 对象方法,存储在原型对象 jQuery.fn 上,主要�
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h2 id="jQuery"><a href="#jQuery" class="headerlink" title="jQuery"></a>jQuery</h2><h3 id="each-source-function-index-value-…-VS-…-each-function-index-element-…"><a href="#each-source-function-index-value-…-VS-…-each-function-index-element-…" class="headerlink" title="$.each(source,function(index,value){…}) VS $(…).each(function(index,element){…})"></a>$.each(source,function(index,value){…}) VS $(…).each(function(index,element){…})</h3><p>$.each 是 jQuery 全局方法,存储在jQuery全局对象上,主要遍历普通数组</p>
-<p>$(…).each 是 jQuery 对象方法,存储在原型对象 jQuery.fn 上,主要用于对查询结果中的每个 DOM 元素执行操作</p>
+        <h3 id="jQuery-document-ready-function-…-VS-DOM-window-onload-function-…"><a href="#jQuery-document-ready-function-…-VS-DOM-window-onload-function-…" class="headerlink" title="jQuery: $(document).ready(function(){…}) VS DOM: window.onload=function(){…}"></a>jQuery: $(document).ready(function(){…}) VS DOM: window.onload=function(){…}</h3><p>ready 的底层事件：DOM中的ondocumentcontentloaded:只要DOM树加载完成，就会触发<br>window.onload 在页面全部加载完成之后触发</p>
+<a id="more"></a>
+<p><strong>大致流程如图所示：</strong><br><img src="https://ws3.sinaimg.cn/large/0065ewYjgw1f825osk8jtj30kj06e0tj.jpg" alt="流程图"></p>
+<p><strong>举例测试</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">&lt;body&gt;</div><div class="line">  &lt;h1&gt;页面加载完成事件&lt;/h1&gt;</div><div class="line">  &lt;script&gt;</div><div class="line">    console.time(<span class="string">"docReady"</span>);</div><div class="line">    console.time(<span class="string">"winLoad"</span>);</div><div class="line">  &lt;/script&gt;</div><div class="line">  &lt;script src=<span class="string">"../jquery-1.11.3.js"</span>&gt;&lt;/script&gt;</div><div class="line">  &lt;script&gt;</div><div class="line">    window.onload=<span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">        console.log(<span class="string">"window.onload..."</span>);</div><div class="line">        console.timeEnd(<span class="string">"winLoad"</span>);</div><div class="line">    &#125;</div><div class="line">    $(document).ready(<span class="keyword">function</span>($) &#123;</div><div class="line">        console.log(<span class="string">"document ready..."</span>);</div><div class="line">        console.timeEnd(<span class="string">"docReady"</span>);</div><div class="line">    &#125;);</div><div class="line">    </div><div class="line">  &lt;/script&gt;</div><div class="line"> &lt;/body&gt;</div></pre></td></tr></table></figure></p>
+<p><strong>执行结果</strong><br><img src="https://ws1.sinaimg.cn/large/0065ewYjgw1f825p93mq0j30fl02bmxb.jpg" alt="执行结果"></p>
+<p>&nbsp;&nbsp;事实上：将script放在body结尾也能实现 ready 的功能：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">&lt;body&gt;</div><div class="line">  &lt;h1&gt;页面加载完成事件&lt;/h1&gt;</div><div class="line">  &lt;script&gt;</div><div class="line">    console.time(<span class="string">"docReady"</span>);</div><div class="line">    console.time(<span class="string">"winLoad"</span>);</div><div class="line">  &lt;/script&gt;</div><div class="line">  &lt;script src=<span class="string">"../jquery-1.11.3.js"</span>&gt;&lt;/script&gt;</div><div class="line">  &lt;script&gt;</div><div class="line">    window.onload=<span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">        console.log(<span class="string">"window.onload..."</span>);</div><div class="line">        console.timeEnd(<span class="string">"winLoad"</span>);</div><div class="line">    &#125;</div><div class="line">    console.log(<span class="string">"document ready..."</span>);</div><div class="line">    console.timeEnd(<span class="string">"docReady"</span>);    </div><div class="line">  &lt;/script&gt;</div><div class="line"> &lt;/body&gt;</div></pre></td></tr></table></figure></p>
+<h3 id="显示-隐藏"><a href="#显示-隐藏" class="headerlink" title="显示/隐藏"></a>显示/隐藏</h3><p>&nbsp;&nbsp;jQuery中有 <strong>show()</strong>，<strong>hide()</strong>控制内容的显示和隐藏，但只能完成一个功能<br>toggle()函数可以同时完成显示和隐藏的功能<br>在不加参数的情况下：<strong>show(),hide(),toggle()</strong> 函数通过改变元素的 <strong>display</strong> 属性实现显示和隐藏，没有动画效果<br>加上参数：函数设置 <strong>overflow:hidden</strong>,通过将元素的 <strong>width，height和opacity</strong>属性逐渐变为 <strong>0</strong> 实现过度效果</p>
+<h3 id="动画函数-animate"><a href="#动画函数-animate" class="headerlink" title="动画函数 animate()"></a>动画函数 animate()</h3><p>&nbsp;&nbsp; <strong>$(…).animate(parmes,speed,easing,fn)</strong><br>参数：<br>    parmes: css属性的目标值：{属性:值,属性:值 … }<br>        注意： <strong>css 属性名要去横线,变驼峰;值是字符串而且要加单位</strong> ==&gt;marginLeft:’12px’<br>    speed: 速度：数字（单位：ms）/字符串”slow/normal/fast”<br>    easing: 过度方式：linear(匀速)，ease(慢到快)。。。<br><strong>动画中的排队和并发(串行和并行)</strong><br>一个 <strong><em>animate</em></strong> 函数中修改的属性会同时修改，多个 <strong><em>animate</em></strong> 函数时会等前一个动画变换完再变换。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$(...).animate(&#123;width:<span class="string">'200px'</span>,height:<span class="string">'200px'</span>&#125;,1000);</div></pre></td></tr></table></figure>
+<p>执行效果：该元素的宽和高在1秒内都变为200px</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$(...).animate(&#123;width:<span class="string">'200px'</span>&#125;,1000).animate(&#123;height:<span class="string">'200px'</span>&#125;,2000);</div></pre></td></tr></table></figure>
+<p>执行效果：该元素的宽在1秒内都变为200px后，高在2秒内变为200px</p>
+<p><strong>js回调函数中的 this 指window，animate函数中的回调函数指当前对象</strong> </p>
 
       
     </div>
@@ -336,15 +347,15 @@ $(…).each 是 jQuery 对象方法,存储在原型对象 jQuery.fn 上,主要�
     <nav id="article-nav">
         
             <div id="article-nav-newer" class="article-nav-title">
-                <a href="/blog/2016/11/15/js笔试题/">
-                    jsTopic
+                <a href="/2016/09/21/The awkward experience of first use Hexo/">
+                    The awkward experience of first use Hexo
                 </a>
             </div>
         
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/blog/2016/09/23/恼人的this/">
-                    trouble_this
+                <a href="/2016/09/20/hello-world/">
+                    Hello World
                 </a>
             </div>
         
@@ -356,7 +367,7 @@ $(…).each 是 jQuery 对象方法,存储在原型对象 jQuery.fn 上,主要�
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#jQuery"><span class="toc-number">1.</span> <span class="toc-text">jQuery</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#each-source-function-index-value-…-VS-…-each-function-index-element-…"><span class="toc-number">1.1.</span> <span class="toc-text">$.each(source,function(index,value){…}) VS $(…).each(function(index,element){…})</span></a></li></ol></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#jQuery-document-ready-function-…-VS-DOM-window-onload-function-…"><span class="toc-number">1.</span> <span class="toc-text">jQuery: $(document).ready(function(){…}) VS DOM: window.onload=function(){…}</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#显示-隐藏"><span class="toc-number">2.</span> <span class="toc-text">显示/隐藏</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#动画函数-animate"><span class="toc-number">3.</span> <span class="toc-text">动画函数 animate()</span></a></li></ol>
         
     </div>
     <style>
@@ -392,7 +403,7 @@ $(…).each 是 jQuery 对象方法,存储在原型对象 jQuery.fn 上,主要�
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"鄙视题　| CM's Hexo Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"jquery　| CM's Hexo Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -408,7 +419,7 @@ $(…).each 是 jQuery 对象方法,存储在原型对象 jQuery.fn 上,主要�
     
       <div class="duoshuo" id="comments">
     <div id="comment-box" ></div>
-    <div class="ds-thread" id="ds-thread" data-thread-key="2016/09/23/鄙视题/" data-title="鄙视题" data-url="http://www.cmeng.cc/blog/2016/09/23/鄙视题/"></div>
+    <div class="ds-thread" id="ds-thread" data-thread-key="2016/09/20/jquery/" data-title="jquery" data-url="http://www.cmeng.cc/2016/09/20/jquery/"></div>
     <script>
         var duoshuoQuery = {short_name:"cmeng"};
         var loadComment = function(){
@@ -432,7 +443,7 @@ $(…).each 是 jQuery 对象方法,存储在原型对象 jQuery.fn 上,主要�
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/blog/2016/11/15/js笔试题/" title="上一篇: jsTopic">
+            <a href="/2016/09/21/The awkward experience of first use Hexo/" title="上一篇: The awkward experience of first use Hexo">
                 <i class="fa fa-angle-left"></i>
             </a>
         
@@ -440,13 +451,13 @@ $(…).each 是 jQuery 对象方法,存储在原型对象 jQuery.fn 上,主要�
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/blog/2016/09/23/恼人的this/" title="下一篇: trouble_this">
+            <a href="/2016/09/20/hello-world/" title="下一篇: Hello World">
                 <i class="fa fa-angle-right"></i>
             </a>
         
     </div>
 
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/blog/2016/11/15/js笔试题-2/">jsTopic_2</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/11/15/js笔试题/">jsTopic</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/09/23/鄙视题/">鄙视题</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/09/23/恼人的this/">trouble_this</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/09/21/记首次使用hexo的尴尬历程/">awkwardExperienceOfHexo</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/09/20/jquery小记/">jquery</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/09/20/hello-world/">Hello World</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/11/15/Javascript Written Test-2/">Javascript Written Test-2</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/15/Javascript Written Test/">Javascript Written Test</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/23/The trouble this/">trouble_this</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/21/The awkward experience of first use Hexo/">The awkward experience of first use Hexo</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/20/jquery/">jquery</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/20/hello-world/">Hello World</a></li></ul>
 
 
 
@@ -489,7 +500,7 @@ $(…).each 是 jQuery 对象方法,存储在原型对象 jQuery.fn 上,主要�
 </footer>
     </div>
     
-<script data-main="/blog/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
 
     <script>
         $(document).ready(function() {

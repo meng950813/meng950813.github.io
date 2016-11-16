@@ -17,16 +17,16 @@
 
 <meta name="description" content="javascript 笔试题最近朋友给我推荐了几道关于javascript闭包和面向对象的面试题，兴冲冲的看了一下，本来就没想过会很简单，但是看完之后依然一脸懵逼，写这篇博客梳理一遍知识点同时也引以为戒。。。不过做完这些题之后不禁想到了一本书。。。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="jsTopic">
-<meta property="og:url" content="http://www.cmeng.cc/2016/11/15/js笔试题/index.html">
+<meta property="og:title" content="Javascript Written Test">
+<meta property="og:url" content="http://www.cmeng.cc/2016/11/15/Javascript Written Test/index.html">
 <meta property="og:site_name" content="CM's Hexo Blog">
 <meta property="og:description" content="javascript 笔试题最近朋友给我推荐了几道关于javascript闭包和面向对象的面试题，兴冲冲的看了一下，本来就没想过会很简单，但是看完之后依然一脸懵逼，写这篇博客梳理一遍知识点同时也引以为戒。。。不过做完这些题之后不禁想到了一本书。。。">
 <meta property="og:image" content="http://ww3.sinaimg.cn/large/0065ewYjgw1f9t6gul26fj301s01s0si.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/0065ewYjgw1f9ubqdokwfj30ej041wej.jpg">
 <meta property="og:image" content="http://ww4.sinaimg.cn/large/0065ewYjgw1f9ubutjfw4j30fi08iglx.jpg">
-<meta property="og:updated_time" content="2016-11-16T16:56:58.139Z">
+<meta property="og:updated_time" content="2016-11-16T17:23:19.675Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="jsTopic">
+<meta name="twitter:title" content="Javascript Written Test">
 <meta name="twitter:description" content="javascript 笔试题最近朋友给我推荐了几道关于javascript闭包和面向对象的面试题，兴冲冲的看了一下，本来就没想过会很简单，但是看完之后依然一脸懵逼，写这篇博客梳理一遍知识点同时也引以为戒。。。不过做完这些题之后不禁想到了一本书。。。">
 <meta name="twitter:image" content="http://ww3.sinaimg.cn/large/0065ewYjgw1f9t6gul26fj301s01s0si.jpg">
 
@@ -53,14 +53,14 @@
     <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
 
 
-<link rel="stylesheet" href="/blog/css/style.css">
+<link rel="stylesheet" href="/css/style.css">
 
 
 
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>jsTopic | CM&#39;s Hexo Blog</title>
+<title>Javascript Written Test | CM&#39;s Hexo Blog</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -101,11 +101,11 @@
     <div class="overlay"></div>
 <div class="intrude-less">
     <header id="header" class="inner">
-        <a href="/blog/" class="profilepic">
+        <a href="/" class="profilepic">
             <img src="/img/avatar.png" class="animated zoomIn">
         </a>
         <hgroup>
-          <h1 class="header-author"><a href="/blog/">CMeng</a></h1>
+          <h1 class="header-author"><a href="/">CMeng</a></h1>
         </hgroup>
 
         
@@ -168,15 +168,15 @@
                     <nav class="header-menu">
                         <ul>
                         
-                            <li><a href="/blog/">主页</a></li>
+                            <li><a href="/">主页</a></li>
                         
-                            <li><a href="/blog/archives/">所有文章</a></li>
+                            <li><a href="/archives/">所有文章</a></li>
                         
-                            <li><a href="/blog/tags/">标签云</a></li>
+                            <li><a href="/tags/">标签云</a></li>
                         
-                            <li><a href="/blog/about/">关于我</a></li>
+                            <li><a href="/about/">关于我</a></li>
                         
-                            <li><a href="/blog/mygames/">小游戏</a></li>
+                            <li><a href="/mygames/">小游戏</a></li>
                         
                         </ul>
                     </nav>
@@ -200,7 +200,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/github/">github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/java/">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/jquery/">jquery</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/js/">js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/笔试题/">笔试题</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/闭包/">闭包</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/面向对象/">面向对象</a></li></ul>
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/">github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jquery/">jquery</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js/">js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/笔试题/">笔试题</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/闭包/">闭包</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面向对象/">面向对象</a></li></ul>
                     </div>
                 </section>
                 
@@ -237,25 +237,25 @@
       </div>
     <div class="intrude-less">
         <header id="header" class="inner">
-            <a href="/blog/" class="profilepic">
+            <a href="/" class="profilepic">
                 <img src="/img/avatar.png" class="animated zoomIn">
             </a>
             <hgroup>
-              <h1 class="header-author"><a href="/blog/" title="回到主页">CMeng</a></h1>
+              <h1 class="header-author"><a href="/" title="回到主页">CMeng</a></h1>
             </hgroup>
             
             <nav class="header-menu">
                 <ul>
                 
-                    <li><a href="/blog/">主页</a></li>
+                    <li><a href="/">主页</a></li>
                 
-                    <li><a href="/blog/archives/">所有文章</a></li>
+                    <li><a href="/archives/">所有文章</a></li>
                 
-                    <li><a href="/blog/tags/">标签云</a></li>
+                    <li><a href="/tags/">标签云</a></li>
                 
-                    <li><a href="/blog/about/">关于我</a></li>
+                    <li><a href="/about/">关于我</a></li>
                 
-                    <li><a href="/blog/mygames/">小游戏</a></li>
+                    <li><a href="/mygames/">小游戏</a></li>
                 
                 <div class="clearfix"></div>
                 </ul>
@@ -279,10 +279,10 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-js笔试题" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-Javascript Written Test" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/blog/2016/11/15/js笔试题/" class="article-date">
+      <a href="/2016/11/15/Javascript Written Test/" class="article-date">
       <time datetime="2016-11-15T14:26:37.000Z" itemprop="datePublished">2016-11-15</time>
 </a>
 
@@ -298,7 +298,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      jsTopic
+      Javascript Written Test
     </h1>
   
 
@@ -307,13 +307,13 @@
       <div class="article-info article-info-post">
         
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/blog/categories/Javascript/">Javascript</a><a class="article-category-link" href="/blog/categories/Javascript/闭包/">闭包</a>
+    <a class="article-category-link" href="/categories/Javascript/">Javascript</a><a class="article-category-link" href="/categories/Javascript/闭包/">闭包</a>
     </div>
 
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/js/">js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/笔试题/">笔试题</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/闭包/">闭包</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/笔试题/">笔试题</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/闭包/">闭包</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -364,15 +364,15 @@ descriptor
     <nav id="article-nav">
         
             <div id="article-nav-newer" class="article-nav-title">
-                <a href="/blog/2016/11/15/js笔试题-2/">
-                    jsTopic_2
+                <a href="/2016/11/15/Javascript Written Test-2/">
+                    Javascript Written Test-2
                 </a>
             </div>
         
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/blog/2016/09/23/鄙视题/">
-                    鄙视题
+                <a href="/2016/09/23/The trouble this/">
+                    trouble_this
                 </a>
             </div>
         
@@ -420,7 +420,7 @@ descriptor
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"jsTopic　| CM's Hexo Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"Javascript Written Test　| CM's Hexo Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -436,7 +436,7 @@ descriptor
     
       <div class="duoshuo" id="comments">
     <div id="comment-box" ></div>
-    <div class="ds-thread" id="ds-thread" data-thread-key="2016/11/15/js笔试题/" data-title="jsTopic" data-url="http://www.cmeng.cc/blog/2016/11/15/js笔试题/"></div>
+    <div class="ds-thread" id="ds-thread" data-thread-key="2016/11/15/Javascript Written Test/" data-title="Javascript Written Test" data-url="http://www.cmeng.cc/2016/11/15/Javascript Written Test/"></div>
     <script>
         var duoshuoQuery = {short_name:"cmeng"};
         var loadComment = function(){
@@ -460,7 +460,7 @@ descriptor
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/blog/2016/11/15/js笔试题-2/" title="上一篇: jsTopic_2">
+            <a href="/2016/11/15/Javascript Written Test-2/" title="上一篇: Javascript Written Test-2">
                 <i class="fa fa-angle-left"></i>
             </a>
         
@@ -468,13 +468,13 @@ descriptor
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/blog/2016/09/23/鄙视题/" title="下一篇: 鄙视题">
+            <a href="/2016/09/23/The trouble this/" title="下一篇: trouble_this">
                 <i class="fa fa-angle-right"></i>
             </a>
         
     </div>
 
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/blog/2016/11/15/js笔试题-2/">jsTopic_2</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/11/15/js笔试题/">jsTopic</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/09/23/鄙视题/">鄙视题</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/09/23/恼人的this/">trouble_this</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/09/21/记首次使用hexo的尴尬历程/">awkwardExperienceOfHexo</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/09/20/jquery小记/">jquery</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/09/20/hello-world/">Hello World</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/11/15/Javascript Written Test-2/">Javascript Written Test-2</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/15/Javascript Written Test/">Javascript Written Test</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/23/The trouble this/">trouble_this</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/21/The awkward experience of first use Hexo/">The awkward experience of first use Hexo</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/20/jquery/">jquery</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/20/hello-world/">Hello World</a></li></ul>
 
 
 
@@ -517,7 +517,7 @@ descriptor
 </footer>
     </div>
     
-<script data-main="/blog/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
 
     <script>
         $(document).ready(function() {
