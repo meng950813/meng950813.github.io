@@ -15,22 +15,19 @@
 
 
 
-<meta name="description" content="2016年9月19号，第一次听说Hexo。据说用这个框架可以很快搭建出一个漂亮的博客，正好有朋友有这方面的需求，于是第二天尝试了一下，嗯，效果挺好，不过我想说说遇到的坑。。。">
+<meta name="description" content="javascript 笔试题 续这些题目涉及对象的闭包,有万恶之源  this  , 于是我把它们单独拉出一个板块，文章最后是我看完这些题之后含泪推荐一本书。。。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="记首次使用hexo的尴尬历程">
-<meta property="og:url" content="http://www.cmeng.cc/2016/09/21/记首次使用hexo的尴尬历程/index.html">
+<meta property="og:title" content="js笔试题-2">
+<meta property="og:url" content="http://www.cmeng.cc/2016/11/15/js笔试题-2/index.html">
 <meta property="og:site_name" content="CM's Hexo Blog">
-<meta property="og:description" content="2016年9月19号，第一次听说Hexo。据说用这个框架可以很快搭建出一个漂亮的博客，正好有朋友有这方面的需求，于是第二天尝试了一下，嗯，效果挺好，不过我想说说遇到的坑。。。">
-<meta property="og:image" content="https://ws1.sinaimg.cn/large/0065ewYjgw1f81fut0ujwj302s02sdfv.jpg">
-<meta property="og:image" content="https://ws1.sinaimg.cn/large/0065ewYjgw1f81gr9pmbtj30q70eidiu.jpg">
-<meta property="og:image" content="https://ws4.sinaimg.cn/large/0065ewYjgw1f81g6wqae2j30i40d242p.jpg">
-<meta property="og:image" content="https://ws3.sinaimg.cn/large/0065ewYjgw1f81gf80qdij302s02smx4.jpg">
-<meta property="og:image" content="https://ws4.sinaimg.cn/large/0065ewYjgw1f81gnf925vj30ls05ijsn.jpg">
-<meta property="og:updated_time" content="2016-11-16T01:15:17.175Z">
+<meta property="og:description" content="javascript 笔试题 续这些题目涉及对象的闭包,有万恶之源  this  , 于是我把它们单独拉出一个板块，文章最后是我看完这些题之后含泪推荐一本书。。。">
+<meta property="og:image" content="http://ww3.sinaimg.cn/large/0065ewYjgw1f9t6gul26fj301s01s0si.jpg">
+<meta property="og:image" content="http://ww3.sinaimg.cn/large/0065ewYjgw1f9t6rtzwmrj304s064web.jpg">
+<meta property="og:updated_time" content="2016-11-16T12:51:07.667Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="记首次使用hexo的尴尬历程">
-<meta name="twitter:description" content="2016年9月19号，第一次听说Hexo。据说用这个框架可以很快搭建出一个漂亮的博客，正好有朋友有这方面的需求，于是第二天尝试了一下，嗯，效果挺好，不过我想说说遇到的坑。。。">
-<meta name="twitter:image" content="https://ws1.sinaimg.cn/large/0065ewYjgw1f81fut0ujwj302s02sdfv.jpg">
+<meta name="twitter:title" content="js笔试题-2">
+<meta name="twitter:description" content="javascript 笔试题 续这些题目涉及对象的闭包,有万恶之源  this  , 于是我把它们单独拉出一个板块，文章最后是我看完这些题之后含泪推荐一本书。。。">
+<meta name="twitter:image" content="http://ww3.sinaimg.cn/large/0065ewYjgw1f9t6gul26fj301s01s0si.jpg">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -62,7 +59,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>记首次使用hexo的尴尬历程 | CM&#39;s Hexo Blog</title>
+<title>js笔试题-2 | CM&#39;s Hexo Blog</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -281,11 +278,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-记首次使用hexo的尴尬历程" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-js笔试题-2" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/blog/2016/09/21/记首次使用hexo的尴尬历程/" class="article-date">
-      <time datetime="2016-09-21T07:03:51.000Z" itemprop="datePublished">2016-09-21</time>
+      <a href="/blog/2016/11/15/js笔试题-2/" class="article-date">
+      <time datetime="2016-11-15T14:26:41.000Z" itemprop="datePublished">2016-11-15</time>
 </a>
 
 
@@ -300,7 +297,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      记首次使用hexo的尴尬历程
+      js笔试题-2
     </h1>
   
 
@@ -309,13 +306,13 @@
       <div class="article-info article-info-post">
         
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/blog/categories/尝鲜/">尝鲜</a><a class="article-category-link" href="/blog/categories/尝鲜/Hexo/">Hexo</a>
+    <a class="article-category-link" href="/blog/categories/Javascript/">Javascript</a><a class="article-category-link" href="/blog/categories/Javascript/闭包/">闭包</a><a class="article-category-link" href="/blog/categories/Javascript/闭包/面向对象/">面向对象</a>
     </div>
 
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/github/">github</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/hexo/">hexo</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/js/">js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/笔试题/">笔试题</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/闭包/">闭包</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/面向对象/">面向对象</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -325,22 +322,22 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>2016年9月19号，第一次听说<a href="https://hexo.io" target="_blank" rel="external">Hexo</a>。据说用这个框架可以很快搭建出一个漂亮的博客，正好有朋友有这方面的需求，于是第二天尝试了一下，嗯，效果挺好，不过我想说说遇到的坑。。。<br><a id="more"></a><br>我使用的主题是 <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" rel="external">Yelee</a>，<a href="https://hexo.io/themes" target="_blank" rel="external">Hexo主题传送门</a></p>
-<h3 id="坑1-站内搜索"><a href="#坑1-站内搜索" class="headerlink" title="坑1 : 站内搜索"></a>坑1 : 站内搜索</h3><p>本来一行命令就可以解决的事到我这边却莫名其妙的出了问题。。。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install --save hexo-generator-search</div></pre></td></tr></table></figure>
-<p>最让我恼火的是不知道什么原因就好了，感觉一个多小时的查找都付之东流了。。。<br>不过我发现这个主题在手机和平板的竖屏状态下是没有搜索栏的，看了一下代码发现作者把搜索栏放到了左边栏的位置，竖屏后不好调整代码位置，索性直接隐藏了。我想尝试将搜索框完善一下，不过这样要改动的地方不会少，漫漫长路。。。</p>
-<h3 id="坑2-tag-云"><a href="#坑2-tag-云" class="headerlink" title="坑2 : tag 云"></a>坑2 : tag 云</h3><p>文档创建tags文件,生成一个index.md文件，按文档所说（后来才知道我以为的并不是我以为的T_T）标签云在index.md文件中生成，于是我就把所有标签定义在index.md文件中，由此开启了悲惨之旅。。。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo new post tags</div></pre></td></tr></table></figure>
-<p>正确的理解是：tags中的index.md会集中显示标签，同时又不需要在index.md文件中定义任何标签，因为模板会将所有文件中的标签整合，去重，然后在tags里显示。<br>没错，事实是tags的index.md文件就是单纯的显示模块，而我花了一个多小时的时间去尝试改变标签的定义方式，标签云的引用，甚至于标签云样式的定义。。。表示已经哭晕在厕所。。。</p>
-<h3 id="坑3-上传"><a href="#坑3-上传" class="headerlink" title="坑3 : 上传"></a>坑3 : 上传</h3><p>历经重重艰辛，终于到了上传的时刻。<br><img src="https://ws1.sinaimg.cn/large/0065ewYjgw1f81fut0ujwj302s02sdfv.jpg" alt="激动的图"><br>满怀期待的输入了 <strong> hexo d </strong>,Duang 的一下就弹出了一堆警告，仔细一看是编码问题：windows的CRLF,linux的LF，两家一直不对付，不过好在不影响效果,也就无所谓了。<br>然而紧接着就是一个华丽的报错：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Error: bash: /dev/tty/:No such device or address</div><div class="line">error: failed to execute proment script (<span class="built_in">exit</span> code 1)</div></pre></td></tr></table></figure>
-<p><img src="https://ws1.sinaimg.cn/large/0065ewYjgw1f81gr9pmbtj30q70eidiu.jpg" alt="报错"></p>
-<p>在网上折腾半小时之后我才想起来用的 <strong> ssh </strong>上传到 github,<strong> _config.yml </strong>文件的配置里居然用的 https,被自己蠢哭了。。。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">  <span class="built_in">type</span>: git</div><div class="line">  repo: https://github.com:xxx/xxx.xxx.io.git</div><div class="line">  branch: [master]</div></pre></td></tr></table></figure>
-<p>正确配置：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">  <span class="built_in">type</span>: git</div><div class="line">  repo: git@github.com:xxx/xxx.xxx.io.git</div><div class="line">  branch: [master]</div></pre></td></tr></table></figure>
-<p>问题解决，继续上传，<strong> hexo d </strong>,还是老一套的警告，没有报错证明确实是配置文件的协议有问题，然而就在我等这下文的时候它却华丽丽的停下了！没错，没有一点点防备的停下了，没有开始上传的提示，也没有报错，就这么停了。。。<br><img src="https://ws4.sinaimg.cn/large/0065ewYjgw1f81g6wqae2j30i40d242p.jpg" alt="hexo d"><br>当时我就懵逼了，不过经历一下午的坎坷，抗打击能力确实有所提高。。。话说我应该高兴吗。。。<br><img src="https://ws3.sinaimg.cn/large/0065ewYjgw1f81gf80qdij302s02smx4.jpg" alt="泪奔"><br>我决定等一等再说，不管是电脑卡了还是网络延迟又或者是后台传输（当然这是最好的情况）都不宜强行中断，而且当时网络确实不咋地。终于在我吃完饭之后看到了成功的讯号。。。话说时间也太长了吧。。。<br><img src="https://ws4.sinaimg.cn/large/0065ewYjgw1f81gnf925vj30ls05ijsn.jpg" alt="上传成功"></p>
-<p>顺带提一句，我的同学告诉我hexo-deployer-git 插件使用ssh上传内容到github,但同时这个插件却没有输入密码的部分，因此总是报错：权限不足，于是他告诫我ssh不要有密码。我将ssh密码置为空之后果然没有出现他所说的报错。<br>但是从程序员的角度来说，虽然ssh本身有一层加密，但不能设密码这一点算是个小缺点。事实上本人并没有亲自试过能不能带密码上传，同学的错误代码也没有保留下来，因此希望有志之士试过之后告诉我。。。</p>
+        <h2 id="javascript-笔试题-续"><a href="#javascript-笔试题-续" class="headerlink" title="javascript 笔试题 续"></a>javascript 笔试题 续</h2><p>这些题目涉及对象的闭包,有万恶之源 <strong> this </strong> , 于是我把它们单独拉出一个板块，文章最后是我看完这些题之后含泪推荐一本书。。。<br><img src="http://ww3.sinaimg.cn/large/0065ewYjgw1f9t6gul26fj301s01s0si.jpg" alt="哭"><br><a id="more"></a></p>
+<h4 id="先来一道简单的开胃菜"><a href="#先来一道简单的开胃菜" class="headerlink" title="先来一道简单的开胃菜"></a>先来一道简单的开胃菜</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">var arr=[];</div><div class="line"><span class="keyword">function</span> <span class="function"><span class="title">fun</span></span>()&#123;</div><div class="line">  <span class="keyword">for</span>(var i=0;i&lt;4;i++)&#123;</div><div class="line">    var x=&#123;&#125;;</div><div class="line">    x.no=i; // 无关代码，可忽略</div><div class="line">    x.text=arr[i];// 无关代码，可忽略</div><div class="line">    x.fun=<span class="function"><span class="title">function</span></span>()&#123;console.log(i)&#125;;</div><div class="line">    arr.push(x);</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">fun();</div><div class="line">arr[0].fun();</div><div class="line">arr[1].fun();</div><div class="line">arr[2].fun();</div><div class="line">arr[3].fun();</div></pre></td></tr></table></figure>
+<p><strong> 分析： </strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">fun() 执行结束之后：</div><div class="line">      i = 4;</div><div class="line">      arr数组中所有元素都是对象,</div><div class="line">      而对象中的fun为：function()&#123;console.log(i)&#125;;</div><div class="line">  所以所有输出都是 4</div></pre></td></tr></table></figure></p>
+<p><strong> 运行结果： </strong></p>
+<hr>
+<h4 id="下面是主菜，主要涉及对-this和变量作用域的理解"><a href="#下面是主菜，主要涉及对-this和变量作用域的理解" class="headerlink" title="下面是主菜，主要涉及对 this和变量作用域的理解"></a>下面是主菜，主要涉及对 this和变量作用域的理解</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">window.a=300;</div><div class="line"> <span class="keyword">function</span> <span class="function"><span class="title">fn1</span></span>()&#123;</div><div class="line">   this.a=100;</div><div class="line">   this.b=200;</div><div class="line">   <span class="built_in">return</span> <span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">     alert(this.a);</div><div class="line">   &#125;.call(arguments[0]);</div><div class="line"> &#125;</div><div class="line"> <span class="keyword">function</span> <span class="function"><span class="title">fn2</span></span>()&#123;</div><div class="line">   this.a=new fn1();</div><div class="line">        //&#123;a:100,b:200&#125;</div><div class="line"> &#125;</div><div class="line"> var a=new fn1().b;//300</div><div class="line"> //a:200</div><div class="line"> var v=new fn1(fn2());//200</div><div class="line"> //a:&#123;a:100,b:200&#125;//[object Object]</div><div class="line"> //v:&#123;a:100,b:200&#125;</div></pre></td></tr></table></figure>
+<p><strong> 提示： </strong></p>
+<ul>
+<li>this指 调用 函数/属性的元素，或是 new 出的新元素，所有无主的 this 都指 window * </li>
+</ul>
+<p><strong> 分析： </strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">第一步：</div><div class="line">  var a = new fn1().b</div><div class="line">  1.1):  new 完得到 &#123;a:100; b:200;&#125;</div><div class="line">      <span class="built_in">return</span> 的函数被 call()强行调用,由于没有传参 ==&gt; argument[0] = undefined,即call函数绑定 this 为 undefined ==&gt; this代表 window  ==&gt;  alert (wondow.a) ==&gt; 300;</div><div class="line">   1.2): var a = &#123;a:100; b:200;&#125;.b alert (200)</div><div class="line"></div><div class="line">第二步：</div><div class="line">  var v = new fn1(fn2())</div><div class="line">  2.1): 先执行 fn2() 函数: this.a = new fn1();</div><div class="line">      注意：此处 this 指 window  且此时 window.a 由 1.2 改为 200;</div><div class="line">      同 1.1 ==&gt; alert(window.a) ==&gt; 200</div><div class="line">      最后 window.a =&#123;a:100; b:200;&#125;;</div><div class="line">      注意：没有返回值 ==&gt;  返回undefined</div><div class="line">  2.2): ==&gt; v = new fn1() ==&gt; alert(window.a) ==&gt; [object,Object]</div></pre></td></tr></table></figure></p>
+<p><strong> 运行效果： </strong></p>
+<h4 id="另一道主菜。。。"><a href="#另一道主菜。。。" class="headerlink" title="另一道主菜。。。"></a>另一道主菜。。。</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">var number=2;</div><div class="line">var obj=&#123;</div><div class="line">    number:4,</div><div class="line">    fn1:(<span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">      // 此处 this 指window，执行后 window.number =&gt; 4</div><div class="line">      this.number*=2;</div><div class="line">      // 无用代码，根据声明提前，此处number 为局部变量，无论此处如何操作都会在下一行重新赋值为3</div><div class="line">      // 不过此处不会报错，未经赋值， number 为 undefined</div><div class="line">      number*=2;  // ==&gt; number = NaN</div><div class="line">      var number=3;</div><div class="line">      <span class="built_in">return</span> <span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">        // this 指 window</div><div class="line">        this.number*=2;</div><div class="line">        number*=3;</div><div class="line">        console.log(number);</div><div class="line">      &#125;</div><div class="line">    &#125;)()</div><div class="line">  &#125;</div><div class="line">  var fn1=obj.fn1;</div><div class="line">  console.log(number);</div><div class="line">  fn1();</div><div class="line">  obj.fn1();</div></pre></td></tr></table></figure>
+<p><strong> 分析： </strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">执行自调函数 ==&gt; fn1 : function()&#123; </div><div class="line">                // 此处 this 指window</div><div class="line">                        this.number*=2;</div><div class="line">                // 此处 number 是闭包保护变量，值为 3</div><div class="line">                        number*=3;</div><div class="line">                        console.log(number);</div><div class="line">                    &#125;</div><div class="line">第一步：var fn1 = obj.fn1; // 单纯引用，没有执行函数，不会有输出</div><div class="line"></div><div class="line">第二步：console.log(number); // 输出全局变量 number ==&gt; 4 : 在执行自调函数时改变</div><div class="line"></div><div class="line">第三步：fn1();  ==&gt; 输出闭包中的 number ==&gt; 3*3 ==&gt; 9</div><div class="line"></div><div class="line">第四步：obj.fn1(); ==&gt; 输出闭包中的 number ==&gt; 9*3 ==&gt; 27</div><div class="line">        注意：obj.fn1() 中的 this.number ==&gt;  obj.number</div></pre></td></tr></table></figure></p>
+<hr>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>到此为止，所有的题目总结起来就是一个字“绕”，<br><img src="http://ww3.sinaimg.cn/large/0065ewYjgw1f9t6rtzwmrj304s064web.jpg" alt="javascript从入门到放弃"></p>
 
       
     </div>
@@ -352,16 +349,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/blog/2016/09/23/恼人的this/">
-                    恼人的this
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/blog/2016/09/20/jquery小记/">
-                    jquery小记
+                <a href="/blog/2016/11/15/js笔试题/">
+                    js笔试题
                 </a>
             </div>
         
@@ -373,7 +364,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#坑1-站内搜索"><span class="toc-number">1.</span> <span class="toc-text">坑1 : 站内搜索</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#坑2-tag-云"><span class="toc-number">2.</span> <span class="toc-text">坑2 : tag 云</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#坑3-上传"><span class="toc-number">3.</span> <span class="toc-text">坑3 : 上传</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#javascript-笔试题-续"><span class="toc-number">1.</span> <span class="toc-text">javascript 笔试题 续</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#先来一道简单的开胃菜"><span class="toc-number">1.0.1.</span> <span class="toc-text">先来一道简单的开胃菜</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#下面是主菜，主要涉及对-this和变量作用域的理解"><span class="toc-number">1.0.2.</span> <span class="toc-text">下面是主菜，主要涉及对 this和变量作用域的理解</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#另一道主菜。。。"><span class="toc-number">1.0.3.</span> <span class="toc-text">另一道主菜。。。</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#总结"><span class="toc-number">1.1.</span> <span class="toc-text">总结</span></a></li></ol></li></ol>
         
     </div>
     <style>
@@ -409,7 +400,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"记首次使用hexo的尴尬历程　| CM's Hexo Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"js笔试题-2　| CM's Hexo Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -425,7 +416,7 @@
     
       <div class="duoshuo" id="comments">
     <div id="comment-box" ></div>
-    <div class="ds-thread" id="ds-thread" data-thread-key="2016/09/21/记首次使用hexo的尴尬历程/" data-title="记首次使用hexo的尴尬历程" data-url="http://www.cmeng.cc/blog/2016/09/21/记首次使用hexo的尴尬历程/"></div>
+    <div class="ds-thread" id="ds-thread" data-thread-key="2016/11/15/js笔试题-2/" data-title="js笔试题-2" data-url="http://www.cmeng.cc/blog/2016/11/15/js笔试题-2/"></div>
     <script>
         var duoshuoQuery = {short_name:"cmeng"};
         var loadComment = function(){
@@ -449,15 +440,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/blog/2016/09/23/恼人的this/" title="上一篇: 恼人的this">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/blog/2016/09/20/jquery小记/" title="下一篇: jquery小记">
+            <a href="/blog/2016/11/15/js笔试题/" title="下一篇: js笔试题">
                 <i class="fa fa-angle-right"></i>
             </a>
         
