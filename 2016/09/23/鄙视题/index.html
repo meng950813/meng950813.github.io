@@ -15,12 +15,19 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="CM's Hexo Blog">
-<meta property="og:url" content="http://www.cmeng.cc/categories/Javascript/闭包/面向对象/index.html">
+<meta name="description" content="jQuery$.each(source,function(index,value){…}) VS $(…).each(function(index,element){…})$.each 是 jQuery 全局方法,存储在jQuery全局对象上,主要遍历普通数组
+$(…).each 是 jQuery 对象方法,存储在原型对象 jQuery.fn 上,主要用于对查询结果中的每个 DOM 元素执行操作">
+<meta property="og:type" content="article">
+<meta property="og:title" content="鄙视题">
+<meta property="og:url" content="http://www.cmeng.cc/2016/09/23/鄙视题/index.html">
 <meta property="og:site_name" content="CM's Hexo Blog">
+<meta property="og:description" content="jQuery$.each(source,function(index,value){…}) VS $(…).each(function(index,element){…})$.each 是 jQuery 全局方法,存储在jQuery全局对象上,主要遍历普通数组
+$(…).each 是 jQuery 对象方法,存储在原型对象 jQuery.fn 上,主要用于对查询结果中的每个 DOM 元素执行操作">
+<meta property="og:updated_time" content="2016-09-24T01:15:24.400Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CM's Hexo Blog">
+<meta name="twitter:title" content="鄙视题">
+<meta name="twitter:description" content="jQuery$.each(source,function(index,value){…}) VS $(…).each(function(index,element){…})$.each 是 jQuery 全局方法,存储在jQuery全局对象上,主要遍历普通数组
+$(…).each 是 jQuery 对象方法,存储在原型对象 jQuery.fn 上,主要用于对查询结果中的每个 DOM 元素执行操作">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -52,7 +59,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>Category: 面向对象 | CM&#39;s Hexo Blog</title>
+<title>鄙视题 | CM&#39;s Hexo Blog</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -62,10 +69,10 @@
         fancybox: true,
         animate: true,
         isHome: false,
-        isPost: false,
+        isPost: true,
         isArchive: false,
         isTag: false,
-        isCategory: true,
+        isCategory: false,
         fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
         scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
         search: true
@@ -271,60 +278,182 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap">
+      <div class="body-wrap"><article id="post-鄙视题" class="article article-type-post" itemscope itemprop="blogPost">
   
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/blog/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/blog/2016/11/15/js笔试题-2/" class="archive-article-date">
-      <time datetime="2016-11-15T14:26:41.000Z" itemprop="datePublished">11-15</time>
+    <div class="article-meta">
+      <a href="/blog/2016/09/23/鄙视题/" class="article-date">
+      <time datetime="2016-09-23T07:03:51.000Z" itemprop="datePublished">2016-09-23</time>
 </a>
 
 
-        </div>
-         
+    </div>
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/blog/2016/11/15/js笔试题-2/">jsTopic_2</a>
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      鄙视题
     </h1>
   
 
-        <div class="article-info info-on-archive">
-          
+      </header>
+      
+      <div class="article-info article-info-post">
+        
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/blog/categories/Javascript/">Javascript</a><a class="article-category-link" href="/blog/categories/Javascript/闭包/">闭包</a><a class="article-category-link" href="/blog/categories/Javascript/闭包/面向对象/">面向对象</a>
+    <a class="article-category-link" href="/blog/categories/鄙视题/">鄙视题</a>
     </div>
 
 
-          
+        
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/js/">js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/笔试题/">笔试题</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/闭包/">闭包</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/面向对象/">面向对象</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/jquery/">jquery</a></li></ul>
     </div>
 
-        </div>
         <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h2 id="jQuery"><a href="#jQuery" class="headerlink" title="jQuery"></a>jQuery</h2><h3 id="each-source-function-index-value-…-VS-…-each-function-index-element-…"><a href="#each-source-function-index-value-…-VS-…-each-function-index-element-…" class="headerlink" title="$.each(source,function(index,value){…}) VS $(…).each(function(index,element){…})"></a>$.each(source,function(index,value){…}) VS $(…).each(function(index,element){…})</h3><p>$.each 是 jQuery 全局方法,存储在jQuery全局对象上,主要遍历普通数组</p>
+<p>$(…).each 是 jQuery 对象方法,存储在原型对象 jQuery.fn 上,主要用于对查询结果中的每个 DOM 元素执行操作</p>
 
+      
+    </div>
+    
+  </div>
+  
     
 
+
+    <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/blog/2016/11/15/js笔试题/">
+                    jsTopic
+                </a>
+            </div>
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/blog/2016/09/23/恼人的this/">
+                    trouble_this
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#jQuery"><span class="toc-number">1.</span> <span class="toc-text">jQuery</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#each-source-function-index-value-…-VS-…-each-function-index-element-…"><span class="toc-number">1.1.</span> <span class="toc-text">$.each(source,function(index,value){…}) VS $(…).each(function(index,element){…})</span></a></li></ol></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"鄙视题　| CM's Hexo Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    
+      <div class="duoshuo" id="comments">
+    <div id="comment-box" ></div>
+    <div class="ds-thread" id="ds-thread" data-thread-key="2016/09/23/鄙视题/" data-title="鄙视题" data-url="http://www.cmeng.cc/blog/2016/09/23/鄙视题/"></div>
+    <script>
+        var duoshuoQuery = {short_name:"cmeng"};
+        var loadComment = function(){
+            var d = document, s = d.createElement('script');
+            // s.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+            s.src ="https://meng950813.github.io/js/embed.js";
+            s.async = true; s.charset = 'UTF-8';
+            (d.head || d.body).appendChild(s);
+        }
+
+        
+    </script>
+    
+    <script> loadComment(); </script>
+
+</div>
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/blog/2016/11/15/js笔试题/" title="上一篇: jsTopic">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/blog/2016/09/23/恼人的this/" title="下一篇: trouble_this">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/blog/2016/11/15/js笔试题-2/">jsTopic_2</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/11/15/js笔试题/">jsTopic</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/09/23/鄙视题/">鄙视题</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/09/23/恼人的this/">trouble_this</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/09/21/记首次使用hexo的尴尬历程/">awkwardExperienceOfHexo</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/09/20/jquery小记/">jquery</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/09/20/hello-world/">Hello World</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
 </div>
       <footer id="footer">
     <div class="outer">
