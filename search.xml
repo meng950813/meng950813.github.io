@@ -4,8 +4,8 @@
   
     
     <entry>
-      <title><![CDATA[Javascript Written Test-2]]></title>
-      <url>http://www.cmeng.cc/2016/11/15/Javascript%20Written%20Test-2/</url>
+      <title><![CDATA[Javascript_Written_Test_2]]></title>
+      <url>http://www.cmeng.cc/2016/11/15/Javascript_Written_Test_2/</url>
       <content type="html"><![CDATA[<h2 id="javascript-笔试题-续"><a href="#javascript-笔试题-续" class="headerlink" title="javascript 笔试题 续"></a>javascript 笔试题 续</h2><p>这些题目涉及对象的闭包,有万恶之源 <strong> this </strong> , 于是我把它们单独拉出一个板块，文章最后是我看完这些题之后含泪推荐一本书。。。<br><img src="http://ww3.sinaimg.cn/large/0065ewYjgw1f9t6gul26fj301s01s0si.jpg" alt="哭"><br><a id="more"></a></p>
 <h4 id="先来一道简单的开胃菜"><a href="#先来一道简单的开胃菜" class="headerlink" title="先来一道简单的开胃菜"></a>先来一道简单的开胃菜</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">var arr=[];</div><div class="line"><span class="keyword">function</span> <span class="function"><span class="title">fun</span></span>()&#123;</div><div class="line">  <span class="keyword">for</span>(var i=0;i&lt;4;i++)&#123;</div><div class="line">    var x=&#123;&#125;;</div><div class="line">    x.no=i; // 无关代码，可忽略</div><div class="line">    x.text=arr[i];// 无关代码，可忽略</div><div class="line">    x.fun=<span class="function"><span class="title">function</span></span>()&#123;console.log(i)&#125;;</div><div class="line">    arr.push(x);</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">fun();</div><div class="line">arr[0].fun();</div><div class="line">arr[1].fun();</div><div class="line">arr[2].fun();</div><div class="line">arr[3].fun();</div></pre></td></tr></table></figure>
 <p><strong> 分析： </strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">fun() 执行结束之后：</div><div class="line">      i = 4;</div><div class="line">      arr数组中所有元素都是对象,</div><div class="line">      而对象中的fun为：function()&#123;console.log(i)&#125;;</div><div class="line">  所以所有输出都是 4</div></pre></td></tr></table></figure></p>
@@ -26,8 +26,8 @@
     </entry>
     
     <entry>
-      <title><![CDATA[Javascript Written Test]]></title>
-      <url>http://www.cmeng.cc/2016/11/15/Javascript%20Written%20Test/</url>
+      <title><![CDATA[Javascript_Written_Test]]></title>
+      <url>http://www.cmeng.cc/2016/11/15/Javascript_Written_Test/</url>
       <content type="html"><![CDATA[<h2 id="javascript-笔试题"><a href="#javascript-笔试题" class="headerlink" title="javascript 笔试题"></a>javascript 笔试题</h2><p>最近朋友给我推荐了几道关于javascript闭包和面向对象的面试题，兴冲冲的看了一下，本来就没想过会很简单，但是看完之后依然一脸懵逼，写这篇博客梳理一遍知识点同时也引以为戒。。。<img src="http://ww3.sinaimg.cn/large/0065ewYjgw1f9t6gul26fj301s01s0si.jpg" alt="哭"><br>不过做完这些题之后不禁想到了一本书。。。<br><a id="more"></a></p>
 <h2 id="考点：变量作用域"><a href="#考点：变量作用域" class="headerlink" title="考点：变量作用域"></a>考点：变量作用域</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">var f=<span class="function"><span class="title">function</span></span>()&#123;var a=b=1;&#125;;</div><div class="line">f();</div><div class="line">console.log(b); //1</div><div class="line">console.log(a); //报错</div><div class="line"></div><div class="line">var i,j=0,fn=<span class="function"><span class="title">function</span></span>()&#123;var i=j=2;&#125;;</div><div class="line">fn();</div><div class="line">console.log(i,j);//undefined 2</div></pre></td></tr></table></figure>
 <h4 id="知识点：js-中所有未定义直接使用的变量都默认为全局变量"><a href="#知识点：js-中所有未定义直接使用的变量都默认为全局变量" class="headerlink" title="知识点：js 中所有未定义直接使用的变量都默认为全局变量"></a>知识点：js 中所有未定义直接使用的变量都默认为全局变量</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">第一题:</div><div class="line">  var a=b=1 的赋值方式被计算机理解为：</div><div class="line">   var a=1;   b=1;</div><div class="line">  结果：a是局部变量，b是全局变量</div><div class="line">        console输出未定义的变量 -&gt; 报错</div><div class="line">所以：不要使用 连续赋值</div><div class="line"></div><div class="line">第二题:</div><div class="line">    j被当作全局变量重新赋值</div><div class="line">    i 是局部变量，对全局变量 i 没有影响，所以全局变量还是 未赋值 -&gt;undefined</div></pre></td></tr></table></figure>
@@ -61,14 +61,14 @@ descriptor
     </entry>
     
     <entry>
-      <title><![CDATA[trouble_this]]></title>
-      <url>http://www.cmeng.cc/2016/09/23/The%20trouble%20this/</url>
+      <title><![CDATA[The_trouble_this]]></title>
+      <url>http://www.cmeng.cc/2016/09/23/The_trouble_this/</url>
       <content type="html"></content>
     </entry>
     
     <entry>
-      <title><![CDATA[The awkward experience of first use Hexo]]></title>
-      <url>http://www.cmeng.cc/2016/09/21/The%20awkward%20experience%20of%20first%20use%20Hexo/</url>
+      <title><![CDATA[The_awkward_experience_of_first_use_Hexo]]></title>
+      <url>http://www.cmeng.cc/2016/09/21/The_awkward_experience_of_first_use_Hexo/</url>
       <content type="html"><![CDATA[<p>2016年9月19号，第一次听说<a href="https://hexo.io" target="_blank" rel="external">Hexo</a>。据说用这个框架可以很快搭建出一个漂亮的博客，正好有朋友有这方面的需求，于是第二天尝试了一下，嗯，效果挺好，不过我想说说遇到的坑。。。<br><a id="more"></a><br>我使用的主题是 <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" rel="external">Yelee</a>，<a href="https://hexo.io/themes" target="_blank" rel="external">Hexo主题传送门</a></p>
 <h3 id="坑1-站内搜索"><a href="#坑1-站内搜索" class="headerlink" title="坑1 : 站内搜索"></a>坑1 : 站内搜索</h3><p>本来一行命令就可以解决的事到我这边却莫名其妙的出了问题。。。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install --save hexo-generator-search</div></pre></td></tr></table></figure>
