@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="author" content="CMeng" />
+
+
+
+<meta name="description" content="模块化与WebPack学习教程本文主要介绍模块化以及打包工具WebPack的使用。关于webpack使用部分转载自简书-WebPack简明学习教程 by hutou">
+<meta property="og:type" content="article">
+<meta property="og:title" content="webpack_jiao_cheng">
+<meta property="og:url" content="http://www.cmeng.cc/2017/02/25/webpack_jiao_cheng/index.html">
+<meta property="og:site_name" content="CM's Hexo Blog">
+<meta property="og:description" content="模块化与WebPack学习教程本文主要介绍模块化以及打包工具WebPack的使用。关于webpack使用部分转载自简书-WebPack简明学习教程 by hutou">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/401663-3b68765ce208588f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2017-02-24T18:15:14.475Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="webpack_jiao_cheng">
+<meta name="twitter:description" content="模块化与WebPack学习教程本文主要介绍模块化以及打包工具WebPack的使用。关于webpack使用部分转载自简书-WebPack简明学习教程 by hutou">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/401663-3b68765ce208588f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+
+<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
+
+
+    <link rel="alternate" href="/atom.xml" title="CM&#39;s Hexo Blog" type="application/atom+xml">
+
+
+
+    <link rel="shortcut icon" href="/favicon.png">
+
+
+
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+
+
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>webpack_jiao_cheng | CM&#39;s Hexo Blog</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: true
+    }
+</script>
+
+
+    <script>
+        yiliaConfig.jquery_ui = [true, "//cdn.bootcss.com/jqueryui/1.10.4/jquery-ui.min.js", "//cdn.bootcss.com/jqueryui/1.10.4/css/jquery-ui.min.css"];
+    </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+
+
+
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/avatar.png" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">CMeng</a></h1>
+        </hgroup>
+
+        
+
+        
+            <form id="search-form">
+            <input type="text" id="local-search-input" name="q" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off" searchonload="true" />
+            <i class="fa fa-times" onclick="resetSearch()"></i>
+            </form>
+            <div id="local-search-result"></div>
+            <p class='no-result'>No results found <i class='fa fa-spinner fa-pulse'></i></p>
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                            <li><a href="/about/">关于我</a></li>
+                        
+                            <li><a href="/mygames/">小游戏</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" href="mailto:meng950813@163.com" title="Email"></a>
+                            
+                                <a class="fa 新浪微博" href="http://weibo.com" title="新浪微博"></a>
+                            
+                                <a class="fa GitHub" href="https://github.com" title="GitHub"></a>
+                            
+                                <a class="fa V2EX" href="https://www.v2ex.com" title="V2EX"></a>
+                            
+                                <a class="fa 知乎" href="https://www.zhihu.com" title="知乎"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/">github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jquery/">jquery</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js/">js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webpack/">webpack</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端笔试题/">前端笔试题</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/模块化/">模块化</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/闭包/">闭包</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面向对象/">面向对象</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://pages.github.com/">GitHub</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">在全栈的道路上摸爬滚打</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">CMeng</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/avatar.png" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">CMeng</a></h1>
+            </hgroup>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                    <li><a href="/mygames/">小游戏</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <ul class="social">
+                    
+                        <a class="fa Email" target="_blank" href="mailto:meng950813@163.com" title="Email"></a>
+                    
+                        <a class="fa 新浪微博" target="_blank" href="http://weibo.com" title="新浪微博"></a>
+                    
+                        <a class="fa GitHub" target="_blank" href="https://github.com" title="GitHub"></a>
+                    
+                        <a class="fa V2EX" target="_blank" href="https://www.v2ex.com" title="V2EX"></a>
+                    
+                        <a class="fa 知乎" target="_blank" href="https://www.zhihu.com" title="知乎"></a>
+                    
+                </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
+</nav>
+      <div class="body-wrap"><article id="post-webpack_jiao_cheng" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/02/25/webpack_jiao_cheng/" class="article-date">
+      <time datetime="2017-02-24T16:27:12.000Z" itemprop="datePublished">2017-02-25</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      webpack_jiao_cheng
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Javascript/">Javascript</a><a class="article-category-link" href="/categories/Javascript/工具使用/">工具使用</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/webpack/">webpack</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/模块化/">模块化</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h2 id="模块化与WebPack学习教程"><a href="#模块化与WebPack学习教程" class="headerlink" title="模块化与WebPack学习教程"></a>模块化与WebPack学习教程</h2><p>本文主要介绍模块化以及打包工具WebPack的使用。<br>关于webpack使用部分转载自<a href="http://http://www.jianshu.com/p/b95bbcfc590d" target="_blank" rel="external">简书-WebPack简明学习教程 by hutou</a><br><a id="more"></a></p>
+<p>##模块化</p>
+<ul>
+<li>模块就是实现特定功能的文件。</li>
+<li>模块化是一种处理复杂系统分解成为更好的可管理模块的方式，把系统代码划分为一系列职责单一，高度解耦且可替换的模块，提高系统的可维护性。</li>
+</ul>
+<h2 id="WebPack"><a href="#WebPack" class="headerlink" title="WebPack"></a>WebPack</h2><blockquote>
+<ol>
+<li>一个打包工具</li>
+<li>一个模块加载工具</li>
+<li>各种资源都可以当成模块来处理</li>
+<li>网站 <a href="http://webpack.github.io/" target="_blank" rel="external">http://webpack.github.io/</a></li>
+</ol>
+</blockquote>
+<p>如今，越来越多的JavaScript代码被使用在页面上，我们添加很多的内容在浏览器里。如何去很好的组织这些代码，成为了一个必须要解决的难题。</p>
+<p>对于模块的组织，通常有如下几种方法：</p>
+<ol>
+<li>通过书写在不同文件中，使用script标签进行加载</li>
+<li>CommonJS进行加载（NodeJS就使用这种方式）</li>
+<li>AMD进行加载（require.js使用这种方式）</li>
+<li>ES6模块</li>
+</ol>
+<p><strong>思考：为什么只有JS需要被模块化管理，前台的很多预编译内容，不需要管理吗？</strong></p>
+<p>基于以上的思考，WebPack项目有如下几个目标：</p>
+<ul>
+<li>将依赖树拆分，保证按需加载</li>
+<li>保证初始加载的速度</li>
+<li>所有静态资源可以被模块化</li>
+<li>可以整合第三方的库和模块</li>
+<li>可以构造大系统</li>
+</ul>
+<p>从下图可以比较清晰的看出WebPack的功能<br><img src="http://upload-images.jianshu.io/upload_images/401663-3b68765ce208588f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="webpack功能"></p>
+<p><strong>WebPack的特点</strong></p>
+<ul>
+<li>丰富的插件，方便进行开发工作</li>
+<li>大量的加载器，包括加载各种静态资源</li>
+<li>代码分割，提供按需加载的能力</li>
+<li>发布工具</li>
+</ul>
+<p><strong>WebPack的优势</strong></p>
+<blockquote>
+<ul>
+<li>webpack 是以 commonJS 的形式来书写脚本滴，但对 AMD/CMD 的支持也很全面，方便旧项目进行代码迁移。</li>
+<li>能被模块化的不仅仅是 JS 了。</li>
+<li>开发便捷，能替代部分 grunt/gulp 的工作，比如打包、压缩混淆、图片转base64等。</li>
+<li>扩展性强，插件机制完善，特别是支持 React 热插拔（见 react-hot-loader ）的功能让人眼前一亮。</li>
+</ul>
+</blockquote>
+<h2 id="WebPack的安装"><a href="#WebPack的安装" class="headerlink" title="WebPack的安装"></a>WebPack的安装</h2><ol>
+<li><p>安装命令</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install webpack -g</div></pre></td></tr></table></figure>
+</li>
+<li><p>使用webpack</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ npm init <span class="comment">#会自动生产一个 package.json文件</span></div><div class="line">$ npm install webpack --save-dev <span class="comment">#将webpack增加到package.json 文件中</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>可以使用不同的版本</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install webpack@<span class="number">1.2</span>.x --save-dev</div></pre></td></tr></table></figure>
+</li>
+<li><p>如果想安装开发工具</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install webpack-dev-server --save-dev</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="WebPack的配置"><a href="#WebPack的配置" class="headerlink" title="WebPack的配置"></a>WebPack的配置</h2><blockquote>
+<p>每个项目下都必须配置有一个 webpack.config.js ，它的作用如同常规的 gulpfile.js/Gruntfile.js ，就是一个配置项，告诉 webpack 它需要做什么。</p>
+</blockquote>
+<p>下面是一个例子<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line">var webpack = require(<span class="string">'webpack'</span>);</div><div class="line">var commonsPlugin = new webpack.optimize.CommonsChunkPlugin(<span class="string">'common.js'</span>);</div><div class="line">module.exports = &#123;</div><div class="line">    //插件项</div><div class="line">    plugins: [commonsPlugin],</div><div class="line">    //页面入口文件配置</div><div class="line">    entry: &#123;</div><div class="line">        index : <span class="string">'./src/js/page/index.js'</span></div><div class="line">    &#125;,</div><div class="line">    //入口文件输出配置</div><div class="line">    output: &#123;</div><div class="line">        path: <span class="string">'dist/js/page'</span>,</div><div class="line">        filename: <span class="string">'[name].js'</span></div><div class="line">    &#125;,</div><div class="line">    module: &#123;</div><div class="line">        //加载器配置</div><div class="line">        loaders: [</div><div class="line">            &#123; <span class="built_in">test</span>: /\.css$/, loader: <span class="string">'style-loader!css-loader'</span> &#125;,</div><div class="line">            &#123; <span class="built_in">test</span>: /\.js$/, loader: <span class="string">'jsx-loader?harmony'</span> &#125;,</div><div class="line">            &#123; <span class="built_in">test</span>: /\.scss$/, loader: <span class="string">'style!css!sass?sourceMap'</span>&#125;,</div><div class="line">            &#123; <span class="built_in">test</span>: /\.(png|jpg)$/, loader: <span class="string">'url-loader?limit=8192'</span>&#125;</div><div class="line">        ]</div><div class="line">    &#125;,</div><div class="line">    //其它解决方案配置</div><div class="line">    resolve: &#123;</div><div class="line">        root: <span class="string">'E:/github/flux-example/src'</span>, //绝对路径</div><div class="line">        extensions: [<span class="string">''</span>, <span class="string">'.js'</span>, <span class="string">'.json'</span>, <span class="string">'.scss'</span>],</div><div class="line">        <span class="built_in">alias</span>: &#123;</div><div class="line">            AppStore : <span class="string">'js/stores/AppStores.js'</span>,</div><div class="line">            ActionType : <span class="string">'js/actions/ActionType.js'</span>,</div><div class="line">            AppAction : <span class="string">'js/actions/AppAction.js'</span></div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
+<ol>
+<li>plugins 是插件项，这里我们使用了一个 CommonsChunkPlugin的插件，它用于提取多个入口文件的公共脚本部分，然后生成一个 common.js 来方便多页面之间进行复用。</li>
+<li>entry 是页面入口文件配置，output 是对应输出项配置 （即入口文件最终要生成什么名字的文件、存放到哪里）</li>
+<li>module.loaders 是最关键的一块配置。它告知 webpack 每一种文件都需要使用什么加载器来处理。 所有加载器需要使用npm来加载</li>
+<li>最后是 resolve 配置，配置查找模块的路径和扩展名和别名（方便书写）</li>
+</ol>
+<h2 id="WebPack开始使用"><a href="#WebPack开始使用" class="headerlink" title="WebPack开始使用"></a>WebPack开始使用</h2><ol>
+<li>正确安装了WebPack，方法可以参考上面</li>
+<li><p>书写entry.js文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">document.write(<span class="string">"看看如何让它工作！"</span>);</div></pre></td></tr></table></figure>
+</li>
+<li><p>书写index.html文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&lt;html&gt;</div><div class="line">&lt;head&gt;</div><div class="line">&lt;meta charset=<span class="string">"utf-8"</span>&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">&lt;script <span class="built_in">type</span>=<span class="string">"text/javascript"</span> src=<span class="string">"bundle.js"</span> charset=<span class="string">"utf-8"</span>&gt;&lt;/script&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>执行命令，生成bundle.js文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ webpack ./entry.js bundle.js</div></pre></td></tr></table></figure>
+</li>
+<li><p>在浏览器中打开index.html文件，可以正常显示出预期</p>
+</li>
+<li><p>增加一个content.js文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">module.exports = <span class="string">"现在的内容是来自于content.js文件！"</span>;</div></pre></td></tr></table></figure>
+</li>
+<li><p>修改entry.js文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">document.write(require(<span class="string">"./content.js"</span>));</div></pre></td></tr></table></figure>
+</li>
+<li><p>执行第四步的命令</p>
+</li>
+</ol>
+<p><strong>进行加载器试验</strong></p>
+<ol>
+<li><p>增加style.css文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">body &#123;</div><div class="line">background: yellow;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>修改entry.js文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">require(<span class="string">"!style!css!./style.css"</span>);</div><div class="line">document.write(require(<span class="string">"./content.js"</span>));</div></pre></td></tr></table></figure>
+</li>
+<li><p>执行命令，安装加载器</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install css-loader style-loader   <span class="comment"># 安装的时候不使用 -g</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>执行webpack命令，运行看效果</p>
+</li>
+<li><p>可以在命令行中使用loader</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ webpack ./entry.js bundle.js --module-bind <span class="string">"css=style!css"</span></div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p><strong>使用配置文件</strong><br>默认的配置文件为webpack.config.js</p>
+<ol>
+<li><p>增加webpack.config.js文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">module.exports = &#123;</div><div class="line"> entry: <span class="string">"./entry.js"</span>,</div><div class="line"> output: &#123;</div><div class="line">     path: __dirname,</div><div class="line">     filename: <span class="string">"bundle.js"</span></div><div class="line"> &#125;,</div><div class="line"> module: &#123;</div><div class="line">     loaders: [</div><div class="line">         &#123; <span class="built_in">test</span>: /\.css$/, loader: <span class="string">"style!css"</span> &#125;</div><div class="line">     ]</div><div class="line"> &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+</li>
+<li><p>执行程序</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ webpack</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p><strong>发布服务器</strong></p>
+<ol>
+<li><p>安装服务器</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ npm install webpack-dev-server -g</div><div class="line">$ webpack-dev-server --progress --colors</div></pre></td></tr></table></figure>
+</li>
+<li><p>服务器可以自动生成和刷新，修改代码保存后自动更新画面</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">http://localhost:8080/webpack-dev-server/bundle</div></pre></td></tr></table></figure></li>
+</ol>
+
+      
+    </div>
+    
+  </div>
+  
+    
+
+
+    <nav id="article-nav">
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2016/11/15/Javascript_Written_Test_2/">
+                    Javascript_Written_Test_2
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#模块化与WebPack学习教程"><span class="toc-number">1.</span> <span class="toc-text">模块化与WebPack学习教程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#WebPack"><span class="toc-number">2.</span> <span class="toc-text">WebPack</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#WebPack的安装"><span class="toc-number">3.</span> <span class="toc-text">WebPack的安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#WebPack的配置"><span class="toc-number">4.</span> <span class="toc-text">WebPack的配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#WebPack开始使用"><span class="toc-number">5.</span> <span class="toc-text">WebPack开始使用</span></a></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"webpack_jiao_cheng　| CM's Hexo Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    
+      <div class="duoshuo" id="comments">
+    <div id="comment-box" ></div>
+    <div class="ds-thread" id="ds-thread" data-thread-key="2017/02/25/webpack_jiao_cheng/" data-title="webpack_jiao_cheng" data-url="http://www.cmeng.cc/2017/02/25/webpack_jiao_cheng/"></div>
+    <script>
+        var duoshuoQuery = {short_name:"cmeng"};
+        var loadComment = function(){
+            var d = document, s = d.createElement('script');
+            // s.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+            s.src ="https://meng950813.github.io/js/embed.js";
+            s.async = true; s.charset = 'UTF-8';
+            (d.head || d.body).appendChild(s);
+        }
+
+        
+    </script>
+    
+    <script> loadComment(); </script>
+
+</div>
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2016/11/15/Javascript_Written_Test_2/" title="下一篇: Javascript_Written_Test_2">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/02/25/webpack_jiao_cheng/">webpack_jiao_cheng</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/15/Javascript_Written_Test_2/">Javascript_Written_Test_2</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/15/Javascript_Written_Test/">Javascript_Written_Test</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/21/The_awkward_experience_of_first_use_Hexo/">The_awkward_experience_of_first_use_Hexo</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/20/jquery/">jquery</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/20/hello-world/">Hello World</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2016-2017 CMeng
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>| </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#847e72"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 2;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+            
+            
+            
+            
+            
+            
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+             menu: ".header-menu a", 
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
+</html>

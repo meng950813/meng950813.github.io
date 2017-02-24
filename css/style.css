@@ -772,20 +772,20 @@ a {
   -ms-transform: scale(1.1);
   transform: scale(1.1);
 }
-#header .header-nav .social .新浪微博 {
-  background: url("/img/新浪微博.png") center no-repeat #ecc260;
+#header .header-nav .social .sina {
+  background: url("/img/sina.png") center no-repeat #ecc260;
   -webkit-background-size: 80%;
   -moz-background-size: 80%;
   background-size: 80%;
 }
-#header .header-nav .social .知乎 {
-  background: url("/img/知乎.png") center no-repeat #0078d8;
+#header .header-nav .social .zhihu {
+  background: url("/img/zhihu.png") center no-repeat #0078d8;
   -webkit-background-size: 90%;
   -moz-background-size: 90%;
   background-size: 90%;
 }
-#header .header-nav .social .豆瓣 {
-  background: url("/img/豆瓣.png") center no-repeat #06c611;
+#header .header-nav .social .duoban {
+  background: url("/img/duoban.png") center no-repeat #06c611;
   -webkit-background-size: 88%;
   -moz-background-size: 88%;
   background-size: 88%;
@@ -802,8 +802,8 @@ a {
   -moz-background-size: 82%;
   background-size: 82%;
 }
-#header .header-nav .social .简书 {
-  background: url("/img/简书.png") center no-repeat #e99888;
+#header .header-nav .social .jianshu {
+  background: url("/img/jianshu.png") center no-repeat #e99888;
   -webkit-background-size: 82%;
   -moz-background-size: 82%;
   background-size: 82%;
@@ -814,14 +814,14 @@ a {
   -moz-background-size: 80%;
   background-size: 80%;
 }
-#header .header-nav .social .网易云音乐 {
-  background: url("/img/网易云音乐.png") center no-repeat #e51e02;
+#header .header-nav .social .wagnyiyun {
+  background: url("/img/wagnyiyun.png") center no-repeat #e51e02;
   -webkit-background-size: 80%;
   -moz-background-size: 80%;
   background-size: 80%;
 }
-#header .header-nav .social .虾米音乐 {
-  background: url("/img/虾米音乐.png") center no-repeat #ff6a00;
+#header .header-nav .social .xia {
+  background: url("/img/xia.png") center no-repeat #ff6a00;
   -webkit-background-size: 82%;
   -moz-background-size: 82%;
   background-size: 82%;
@@ -832,8 +832,8 @@ a {
   -moz-background-size: 82%;
   background-size: 82%;
 }
-#header .header-nav .social .博客园 {
-  background: url("/img/博客园.png") center no-repeat #217ed4;
+#header .header-nav .social .blog {
+  background: url("/img/blog.png") center no-repeat #217ed4;
   -webkit-background-size: 95%;
   -moz-background-size: 95%;
   background-size: 95%;
