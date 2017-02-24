@@ -4,11 +4,10 @@
   
     
     <entry>
-      <title><![CDATA[webpack_jiao_cheng]]></title>
+      <title><![CDATA[模块化与WebPack学习教程]]></title>
       <url>http://www.cmeng.cc/2017/02/25/webpack_jiao_cheng/</url>
       <content type="html"><![CDATA[<h2 id="模块化与WebPack学习教程"><a href="#模块化与WebPack学习教程" class="headerlink" title="模块化与WebPack学习教程"></a>模块化与WebPack学习教程</h2><p>本文主要介绍模块化以及打包工具WebPack的使用。<br>关于webpack使用部分转载自<a href="http://http://www.jianshu.com/p/b95bbcfc590d" target="_blank" rel="external">简书-WebPack简明学习教程 by hutou</a><br><a id="more"></a></p>
-<p>##模块化</p>
-<ul>
+<h2 id="模块化"><a href="#模块化" class="headerlink" title="模块化"></a>模块化</h2><ul>
 <li>模块就是实现特定功能的文件。</li>
 <li>模块化是一种处理复杂系统分解成为更好的可管理模块的方式，把系统代码划分为一系列职责单一，高度解耦且可替换的模块，提高系统的可维护性。</li>
 </ul>
@@ -262,12 +261,6 @@ descriptor
     </entry>
     
     <entry>
-      <title><![CDATA[About me]]></title>
-      <url>http://www.cmeng.cc/about/index.html</url>
-      <content type="html"></content>
-    </entry>
-    
-    <entry>
       <title><![CDATA[tags]]></title>
       <url>http://www.cmeng.cc/tags/index.html</url>
       <content type="html"></content>
@@ -277,6 +270,12 @@ descriptor
       <title><![CDATA[个人小游戏]]></title>
       <url>http://www.cmeng.cc/mygames/index.html</url>
       <content type="html"><![CDATA[<h2 id="五子棋-nbsp-nbsp-俄罗斯方块-nbsp-nbsp-2048"><a href="#五子棋-nbsp-nbsp-俄罗斯方块-nbsp-nbsp-2048" class="headerlink" title="五子棋 &nbsp;&nbsp;俄罗斯方块&nbsp;&nbsp;2048"></a><a href="../gobang">五子棋</a> &nbsp;&nbsp;<a href="../tetris">俄罗斯方块</a>&nbsp;&nbsp;<a href="../2048">2048</a></h2>]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[About me]]></title>
+      <url>http://www.cmeng.cc/about/index.html</url>
+      <content type="html"></content>
     </entry>
     
   
