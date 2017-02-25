@@ -261,15 +261,15 @@ descriptor
     </entry>
     
     <entry>
-      <title><![CDATA[About me]]></title>
-      <url>http://www.cmeng.cc/about/index.html</url>
-      <content type="html"></content>
-    </entry>
-    
-    <entry>
       <title><![CDATA[个人小游戏]]></title>
       <url>http://www.cmeng.cc/mygames/index.html</url>
       <content type="html"><![CDATA[<h2 id="五子棋-nbsp-nbsp-俄罗斯方块-nbsp-nbsp-2048"><a href="#五子棋-nbsp-nbsp-俄罗斯方块-nbsp-nbsp-2048" class="headerlink" title="五子棋 &nbsp;&nbsp;俄罗斯方块&nbsp;&nbsp;2048"></a><a href="../gobang">五子棋</a> &nbsp;&nbsp;<a href="../tetris">俄罗斯方块</a>&nbsp;&nbsp;<a href="../2048">2048</a></h2>]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[About me]]></title>
+      <url>http://www.cmeng.cc/about/index.html</url>
+      <content type="html"></content>
     </entry>
     
     <entry>
