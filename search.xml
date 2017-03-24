@@ -4,9 +4,25 @@
   
     
     <entry>
+      <title><![CDATA[网页上传日志]]></title>
+      <url>http://www.cmeng.cc/2017/03/21/uploadDiary/</url>
+      <content type="html"><![CDATA[<h2 id="网页上传日志"><a href="#网页上传日志" class="headerlink" title="网页上传日志"></a>网页上传日志</h2><p>本次上传内容主要是各种特效，主要是canvas特效和css特效。<br>不久之前，楼主发现了一个有意思的网站，主要是关于各种网页特效等，<a href="https://tympanus.net/codrops/" target="_blank" rel="external"><strong>原网站传送门</strong></a>。<br>本文主要列举其中几个css的特效，为了防止忘记原网址也为了美化一下服务器，就自（臭）告（不）奋（要）勇（脸）的下载并修改了几个原始网页，上传到我的服务器。。。<br><img src="http://ww1.sinaimg.cn/large/0065ewYjgy1fdy9npr95ig300o00o741.gif" alt="斜眼笑"><br><a id="more"></a></p>
+<h2 id="css特效"><a href="#css特效" class="headerlink" title="css特效"></a>css特效</h2><h4 id="元素hover特效"><a href="#元素hover特效" class="headerlink" title="元素hover特效"></a>元素hover特效</h4><p><a href="http://115.159.92.11/specialEffects/css/CreativeLinkEffects/" target="_blank" rel="external"><strong>Creative Link Effects</strong></a></p>
+<h4 id="button点击特效"><a href="#button点击特效" class="headerlink" title="button点击特效"></a>button点击特效</h4><p><a href="http://115.159.92.11/specialEffects/css/CreativeButtons/" target="_blank" rel="external"><strong>Creative Button Styles</strong></a></p>
+<h4 id="显示进度的button"><a href="#显示进度的button" class="headerlink" title="显示进度的button"></a>显示进度的button</h4><p><a href="https://tympanus.net/Development/ProgressButtonStyles/" target="_blank" rel="external"><strong>Progress Button Styles</strong></a></p>
+<h4 id="文字图标hover特效"><a href="#文字图标hover特效" class="headerlink" title="文字图标hover特效"></a>文字图标hover特效</h4><p><a href="http://115.159.92.11/specialEffects/css/IconHoverEffects" target="_blank" rel="external"><strong>Icon Hover Effects</strong></a></p>
+<h2 id="canvas特效"><a href="#canvas特效" class="headerlink" title="canvas特效"></a>canvas特效</h2><ol>
+<li><a href="http://115.159.92.11/specialEffects/canvas/fireworks/" target="_blank" rel="external"><strong>烟花特效</strong></a></li>
+<li><a href="http://115.159.92.11/specialEffects/canvas/zhihuLogin/" target="_blank" rel="external"><strong>知乎登陆背景</strong></a></li>
+<li><a href="http://115.159.92.11/specialEffects/canvas/timer/" target="_blank" rel="external"><strong>canva绘制时钟</strong></a></li>
+</ol>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[模块化与WebPack学习教程]]></title>
       <url>http://www.cmeng.cc/2017/02/25/webpack_jiao_cheng/</url>
-      <content type="html"><![CDATA[<h2 id="模块化与WebPack学习教程"><a href="#模块化与WebPack学习教程" class="headerlink" title="模块化与WebPack学习教程"></a>模块化与WebPack学习教程</h2><p>本文主要介绍模块化以及打包工具WebPack的使用。<br>关于webpack使用部分转载自<a href="http://http://www.jianshu.com/p/b95bbcfc590d" target="_blank" rel="external">简书-WebPack简明学习教程 by hutou</a><br><a id="more"></a></p>
+      <content type="html"><![CDATA[<h2 id="模块化与WebPack学习教程"><a href="#模块化与WebPack学习教程" class="headerlink" title="模块化与WebPack学习教程"></a>模块化与WebPack学习教程</h2><p>本文主要介绍模块化以及打包工具WebPack的使用。<br>关于webpack使用部分转载自<a href="http://www.jianshu.com/p/b95bbcfc590d" target="_blank" rel="external">简书-WebPack简明学习教程 by hutou</a><br><a id="more"></a></p>
 <h2 id="模块化"><a href="#模块化" class="headerlink" title="模块化"></a>模块化</h2><ul>
 <li>模块就是实现特定功能的文件。</li>
 <li>模块化是一种处理复杂系统分解成为更好的可管理模块的方式，把系统代码划分为一系列职责单一，高度解耦且可替换的模块，提高系统的可维护性。</li>
@@ -261,15 +277,15 @@ descriptor
     </entry>
     
     <entry>
-      <title><![CDATA[个人小游戏]]></title>
-      <url>http://www.cmeng.cc/mygames/index.html</url>
-      <content type="html"><![CDATA[<h2 id="五子棋-nbsp-nbsp-俄罗斯方块-nbsp-nbsp-2048"><a href="#五子棋-nbsp-nbsp-俄罗斯方块-nbsp-nbsp-2048" class="headerlink" title="五子棋 &nbsp;&nbsp;俄罗斯方块&nbsp;&nbsp;2048"></a><a href="../gobang">五子棋</a> &nbsp;&nbsp;<a href="../tetris">俄罗斯方块</a>&nbsp;&nbsp;<a href="../2048">2048</a></h2>]]></content>
-    </entry>
-    
-    <entry>
       <title><![CDATA[About me]]></title>
       <url>http://www.cmeng.cc/about/index.html</url>
       <content type="html"></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[个人小游戏]]></title>
+      <url>http://www.cmeng.cc/mygames/index.html</url>
+      <content type="html"><![CDATA[<h2 id="五子棋-nbsp-nbsp-俄罗斯方块-nbsp-nbsp-2048"><a href="#五子棋-nbsp-nbsp-俄罗斯方块-nbsp-nbsp-2048" class="headerlink" title="五子棋 &nbsp;&nbsp;俄罗斯方块&nbsp;&nbsp;2048"></a><a href="../gobang">五子棋</a> &nbsp;&nbsp;<a href="../tetris">俄罗斯方块</a>&nbsp;&nbsp;<a href="../2048">2048</a></h2>]]></content>
     </entry>
     
     <entry>
