@@ -285,6 +285,12 @@ descriptor
     </entry>
     
     <entry>
+      <title><![CDATA[About me]]></title>
+      <url>http://www.cmeng.cc/about/index.html</url>
+      <content type="html"></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[tags]]></title>
       <url>http://www.cmeng.cc/tags/index.html</url>
       <content type="html"></content>
@@ -293,13 +299,12 @@ descriptor
     <entry>
       <title><![CDATA[个人小游戏]]></title>
       <url>http://www.cmeng.cc/mygames/index.html</url>
-      <content type="html"><![CDATA[<h2 id="五子棋-nbsp-nbsp-俄罗斯方块-nbsp-nbsp-2048"><a href="#五子棋-nbsp-nbsp-俄罗斯方块-nbsp-nbsp-2048" class="headerlink" title="五子棋 &nbsp;&nbsp;俄罗斯方块&nbsp;&nbsp;2048"></a><a href="../gobang">五子棋</a> &nbsp;&nbsp;<a href="../tetris">俄罗斯方块</a>&nbsp;&nbsp;<a href="../2048">2048</a></h2>]]></content>
-    </entry>
-    
-    <entry>
-      <title><![CDATA[About me]]></title>
-      <url>http://www.cmeng.cc/about/index.html</url>
-      <content type="html"></content>
+      <content type="html"><![CDATA[<h2 id="欢迎体验我的小游戏"><a href="#欢迎体验我的小游戏" class="headerlink" title="欢迎体验我的小游戏"></a>欢迎体验我的小游戏</h2><h4 id="支持响应式"><a href="#支持响应式" class="headerlink" title="支持响应式"></a>支持响应式</h4><ol>
+<li><a href="http://115.159.92.11/gobang" target="_blank" rel="external"><strong>五子棋</strong></a></li>
+<li><a href="http://115.159.92.11/2048" target="_blank" rel="external"><strong>2048</strong></a></li>
+<li><a href="http://115.159.92.11/tetris" target="_blank" rel="external"><strong>俄罗斯方块</strong></a></li>
+</ol>
+]]></content>
     </entry>
     
   
