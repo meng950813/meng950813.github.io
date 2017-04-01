@@ -16,14 +16,16 @@
 <p>修改如下位置<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">[client]</div><div class="line">port            = 3306</div><div class="line">socket          = /var/run/mysqld/mysqld.sock</div><div class="line"><span class="comment">#增加客户端的字符编码</span></div><div class="line">default-character-set=utf8</div></pre></td></tr></table></figure></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">[mysqld]</div><div class="line"><span class="comment">#增加服务器端的字符编码</span></div><div class="line">character-set-server=utf8</div><div class="line">collation-server=utf8_general_ci</div></pre></td></tr></table></figure>
 <p>让服务器可以远程访问，还是配置文件my.cnf<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#注释bind-address</span></div><div class="line"><span class="comment">#bind-address        = 127.0.0.1</span></div></pre></td></tr></table></figure></p>
-<h2 id="mysql-常用命令"><a href="#mysql-常用命令" class="headerlink" title="mysql 常用命令"></a>mysql 常用命令</h2><p><strong> 登录 </strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">//-u后面跟用户名，回车之后输入密码即可</div><div class="line">mysql -u root -p</div></pre></td></tr></table></figure></p>
+<h2 id="mysql-常用命令"><a href="#mysql-常用命令" class="headerlink" title="mysql 常用命令"></a>mysql 常用命令</h2><p><strong> 启动mysql </strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">service mysql start</div></pre></td></tr></table></figure></p>
+<p><strong> 停止mysql </strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">service mysql stop</div></pre></td></tr></table></figure></p>
+<p><strong> 登录 </strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">//-u后面跟用户名，回车之后输入密码即可</div><div class="line">mysql -u root -p</div></pre></td></tr></table></figure></p>
 <p><strong> 查看数据库字符集 </strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">show variables like <span class="string">'character%'</span>;</div></pre></td></tr></table></figure></p>
 <h2 id="数据库操作"><a href="#数据库操作" class="headerlink" title="数据库操作"></a>数据库操作</h2><p><strong> 创建数据库 </strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">create database &lt;数据库名&gt;;</div></pre></td></tr></table></figure></p>
 <p><strong> 显示所有数据库 </strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">show databases;</div></pre></td></tr></table></figure></p>
 <p><strong> 进入/切换数据库 </strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">use &lt;数据库名&gt;;</div></pre></td></tr></table></figure></p>
 <p><strong> 删除数据库 </strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">drop database &lt;数据库名&gt;;</div></pre></td></tr></table></figure></p>
 <p><strong> 查看当前使用数据库 </strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">select database();</div></pre></td></tr></table></figure></p>
-<p><strong> 导入数据库 </strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysql -u root -p 数据库名&lt;数据库文件; //导入时数据库必须存在，可以为空数据库</div></pre></td></tr></table></figure></p>
+<h2 id="数据库导入与导出-备份与恢复"><a href="#数据库导入与导出-备份与恢复" class="headerlink" title="数据库导入与导出(备份与恢复)"></a>数据库导入与导出(备份与恢复)</h2><p><strong> 导入数据库 </strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysql -u root -p 数据库名&lt;数据库文件; //导入时数据库必须存在，可以为空数据库</div></pre></td></tr></table></figure></p>
 <p><strong> 导出数据库 </strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysqldump -u root -p --opt 数据库名&gt;备份名; //进入到库目录</div></pre></td></tr></table></figure></p>
 <p><strong> 数据库授权 </strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">grant select,... on 数据库.*  to  用户名@登录主机 identified by <span class="string">"密码"</span>;</div></pre></td></tr></table></figure></p>
 <p>例-1：增加一个用户user001密码为123456，让他可以在任何主机上登录，并对所有数据库有查询、插入、修改、删除的权限:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">grant select,insert,update,delete on *.* to user001@<span class="string">"%"</span> Identified by <span class="string">"123456"</span>;</div></pre></td></tr></table></figure></p>
@@ -314,16 +316,16 @@ descriptor
   
     
     <entry>
-      <title><![CDATA[About me]]></title>
-      <url>http://www.cmeng.cc/about/index.html</url>
-      <content type="html"></content>
-    </entry>
-    
-    <entry>
       <title><![CDATA[404]]></title>
       <url>http://www.cmeng.cc//404.html</url>
       <content type="html"><![CDATA[<p>&lt;!DOCTYPE HTML&gt;</p>
 <html><br><head><br><meta http-equiv="content-type" content="text/html;charset=utf-8;"><br><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><br><meta name="robots" content="all"><br><meta name="robots" content="index,follow"><br><title>公益404页面 // CMeng的博客</title><br></head><br><body><br><script type="text/javascript" src="http://www.qq.com/404/search_children.js" charset="utf-8" homepageurl="http://cmeng.cc" homepagename="CMeng的博客"></script><br></body><br></html>]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[About me]]></title>
+      <url>http://www.cmeng.cc/about/index.html</url>
+      <content type="html"></content>
     </entry>
     
     <entry>
