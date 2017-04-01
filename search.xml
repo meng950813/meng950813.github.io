@@ -4,24 +4,6 @@
   
     
     <entry>
-      <title><![CDATA[linux 下安装配置 apache]]></title>
-      <url>http://www.cmeng.cc/2017/04/01/linux-apache/</url>
-      <content type="html"><![CDATA[<h2 id="linux-下安装配置-apache"><a href="#linux-下安装配置-apache" class="headerlink" title="linux 下安装配置 apache"></a>linux 下安装配置 apache</h2><p>本文介绍linux下安装apache服务器的流程,默认系统为ubuntu，安装apache2。<br>写这篇博客的只要用于备忘<img src="http://ww1.sinaimg.cn/large/0065ewYjgy1fdy9npr95ig300o00o741.gif" alt="斜眼笑">。<br><a id="more"></a></p>
-<h2 id="linux-下apache2"><a href="#linux-下apache2" class="headerlink" title="linux 下apache2"></a>linux 下apache2</h2><p><strong> 更新本地软件库的索引 </strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get update</div></pre></td></tr></table></figure></p>
-<p><strong> 安装服务器 </strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install apache2</div></pre></td></tr></table></figure></p>
-<p><strong> 查看服务器版本 </strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 二选一</span></div><div class="line">apachectl -v  </div><div class="line">httpd -v</div></pre></td></tr></table></figure></p>
-<h2 id="Linux系统为Ubuntu"><a href="#Linux系统为Ubuntu" class="headerlink" title="Linux系统为Ubuntu"></a>Linux系统为Ubuntu</h2><p><strong> Start Apache 2 Server /启动apache服务 </strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"> /etc/init.d/apache2 star</div><div class="line">or</div><div class="line">$ sudo /etc/init.d/apache2 start</div></pre></td></tr></table></figure></p>
-<p><strong> Restart Apache 2 Server /重启apache服务 </strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">/etc/init.d/apache2 restart</div><div class="line">or</div><div class="line">$ sudo /etc/init.d/apache2 restart</div></pre></td></tr></table></figure></p>
-<p><strong> Stop Apache 2 Server /停止apache服务 </strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"> /etc/init.d/apache2 stop</div><div class="line">or</div><div class="line">$ sudo /etc/init.d/apache2 stop</div></pre></td></tr></table></figure></p>
-<h2 id="其他linux-下-apache启动、停止、重启命令"><a href="#其他linux-下-apache启动、停止、重启命令" class="headerlink" title="其他linux 下 apache启动、停止、重启命令"></a>其他linux 下 apache启动、停止、重启命令</h2><p>基本的操作方法：<br>本文假设你的apahce安装目录为<code>/usr/local/apache2</code>，这些方法适合任何情况<br><strong> apahce启动命令：</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/usr/<span class="built_in">local</span>/apache2/bin/apachectl start apaceh</div></pre></td></tr></table></figure></p>
-<p><strong> apache停止命令: </strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/usr/local/apache2/bin/apachectl stop</div></pre></td></tr></table></figure></p>
-<p><strong> apache重新启动命令： </strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/usr/<span class="built_in">local</span>/apache2/bin/apachectl restart</div></pre></td></tr></table></figure></p>
-<p><strong> 要在重启 Apache 服务器时不中断当前的连接，则应运行：</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/usr/<span class="built_in">local</span>/sbin/apachectl graceful</div></pre></td></tr></table></figure></p>
-<p><strong> 如果apache安装成为linux的服务的话，可以用以下命令操作： </strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">service httpd start 启动</div><div class="line">service httpd restart 重新启动</div><div class="line">service httpd stop 停止服务</div></pre></td></tr></table></figure></p>
-]]></content>
-    </entry>
-    
-    <entry>
       <title><![CDATA[禁止apache显示目录索引]]></title>
       <url>http://www.cmeng.cc/2017/04/01/appache-forbide-file-dir/</url>
       <content type="html"><![CDATA[<h2 id="禁止apache显示目录索引"><a href="#禁止apache显示目录索引" class="headerlink" title="禁止apache显示目录索引"></a>禁止apache显示目录索引</h2><p>服务器上部署项目之后会显示文件索引，这很烦，也让网站很不安全，所以找办法禁止显示。下面是找到的禁止Apache显示目录索引的常见的2种方法。<img src="http://ww1.sinaimg.cn/large/0065ewYjgy1fdy9npr95ig300o00o741.gif" alt="斜眼笑"><br><a id="more"></a></p>
@@ -72,6 +54,24 @@
 <p><strong> 删除记录 </strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">delete from &lt;表名&gt; <span class="built_in">where</span> xxxx;</div></pre></td></tr></table></figure></p>
 <p><strong> 修改记录 </strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">update &lt;表名&gt; <span class="built_in">set</span> 字段名=<span class="string">"新值"</span> <span class="built_in">where</span> xxxx;</div></pre></td></tr></table></figure></p>
 <p><strong> 查询记录 </strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">select xxx from &lt;表名，...&gt;  <span class="built_in">where</span> xxxx;</div></pre></td></tr></table></figure></p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[linux 下安装配置 apache]]></title>
+      <url>http://www.cmeng.cc/2017/03/21/linux-apache/</url>
+      <content type="html"><![CDATA[<h2 id="linux-下安装配置-apache"><a href="#linux-下安装配置-apache" class="headerlink" title="linux 下安装配置 apache"></a>linux 下安装配置 apache</h2><p>本文介绍linux下安装apache服务器的流程,默认系统为ubuntu，安装apache2。<br>写这篇博客的只要用于备忘<img src="http://ww1.sinaimg.cn/large/0065ewYjgy1fdy9npr95ig300o00o741.gif" alt="斜眼笑">。<br><a id="more"></a></p>
+<h2 id="linux-下apache2"><a href="#linux-下apache2" class="headerlink" title="linux 下apache2"></a>linux 下apache2</h2><p><strong> 更新本地软件库的索引 </strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get update</div></pre></td></tr></table></figure></p>
+<p><strong> 安装服务器 </strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install apache2</div></pre></td></tr></table></figure></p>
+<p><strong> 查看服务器版本 </strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 二选一</span></div><div class="line">apachectl -v  </div><div class="line">httpd -v</div></pre></td></tr></table></figure></p>
+<h2 id="Linux系统为Ubuntu"><a href="#Linux系统为Ubuntu" class="headerlink" title="Linux系统为Ubuntu"></a>Linux系统为Ubuntu</h2><p><strong> Start Apache 2 Server /启动apache服务 </strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"> /etc/init.d/apache2 star</div><div class="line">or</div><div class="line">$ sudo /etc/init.d/apache2 start</div></pre></td></tr></table></figure></p>
+<p><strong> Restart Apache 2 Server /重启apache服务 </strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">/etc/init.d/apache2 restart</div><div class="line">or</div><div class="line">$ sudo /etc/init.d/apache2 restart</div></pre></td></tr></table></figure></p>
+<p><strong> Stop Apache 2 Server /停止apache服务 </strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"> /etc/init.d/apache2 stop</div><div class="line">or</div><div class="line">$ sudo /etc/init.d/apache2 stop</div></pre></td></tr></table></figure></p>
+<h2 id="其他linux-下-apache启动、停止、重启命令"><a href="#其他linux-下-apache启动、停止、重启命令" class="headerlink" title="其他linux 下 apache启动、停止、重启命令"></a>其他linux 下 apache启动、停止、重启命令</h2><p>基本的操作方法：<br>本文假设你的apahce安装目录为<code>/usr/local/apache2</code>，这些方法适合任何情况<br><strong> apahce启动命令：</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/usr/<span class="built_in">local</span>/apache2/bin/apachectl start apaceh</div></pre></td></tr></table></figure></p>
+<p><strong> apache停止命令: </strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/usr/local/apache2/bin/apachectl stop</div></pre></td></tr></table></figure></p>
+<p><strong> apache重新启动命令： </strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/usr/<span class="built_in">local</span>/apache2/bin/apachectl restart</div></pre></td></tr></table></figure></p>
+<p><strong> 要在重启 Apache 服务器时不中断当前的连接，则应运行：</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/usr/<span class="built_in">local</span>/sbin/apachectl graceful</div></pre></td></tr></table></figure></p>
+<p><strong> 如果apache安装成为linux的服务的话，可以用以下命令操作： </strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">service httpd start 启动</div><div class="line">service httpd restart 重新启动</div><div class="line">service httpd stop 停止服务</div></pre></td></tr></table></figure></p>
 ]]></content>
     </entry>
     
@@ -357,6 +357,17 @@ descriptor
     </entry>
     
     <entry>
+      <title><![CDATA[个人小游戏]]></title>
+      <url>http://www.cmeng.cc/mygames/index.html</url>
+      <content type="html"><![CDATA[<h2 id="欢迎体验我的小游戏"><a href="#欢迎体验我的小游戏" class="headerlink" title="欢迎体验我的小游戏"></a>欢迎体验我的小游戏</h2><h4 id="支持响应式"><a href="#支持响应式" class="headerlink" title="支持响应式"></a>支持响应式</h4><ol>
+<li><a href="http://115.159.92.11/gobang" target="_blank" rel="external"><strong>五子棋</strong></a></li>
+<li><a href="http://115.159.92.11/2048" target="_blank" rel="external"><strong>2048</strong></a></li>
+<li><a href="http://115.159.92.11/tetris" target="_blank" rel="external"><strong>俄罗斯方块</strong></a></li>
+</ol>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[About me]]></title>
       <url>http://www.cmeng.cc/about/index.html</url>
       <content type="html"></content>
@@ -366,17 +377,6 @@ descriptor
       <title><![CDATA[tags]]></title>
       <url>http://www.cmeng.cc/tags/index.html</url>
       <content type="html"></content>
-    </entry>
-    
-    <entry>
-      <title><![CDATA[个人小游戏]]></title>
-      <url>http://www.cmeng.cc/mygames/index.html</url>
-      <content type="html"><![CDATA[<h2 id="欢迎体验我的小游戏"><a href="#欢迎体验我的小游戏" class="headerlink" title="欢迎体验我的小游戏"></a>欢迎体验我的小游戏</h2><h4 id="支持响应式"><a href="#支持响应式" class="headerlink" title="支持响应式"></a>支持响应式</h4><ol>
-<li><a href="http://115.159.92.11/gobang" target="_blank" rel="external"><strong>五子棋</strong></a></li>
-<li><a href="http://115.159.92.11/2048" target="_blank" rel="external"><strong>2048</strong></a></li>
-<li><a href="http://115.159.92.11/tetris" target="_blank" rel="external"><strong>俄罗斯方块</strong></a></li>
-</ol>
-]]></content>
     </entry>
     
   
