@@ -15,18 +15,20 @@
 
 
 
-<meta name="description" content="网页上传日志本次上传内容主要是各种特效，主要是canvas特效和css特效。不久之前，楼主发现了一个有意思的网站，主要是关于各种网页特效等，原网站传送门。本文主要列举其中几个css的特效，为了防止忘记原网址也为了美化一下服务器，就自（臭）告（不）奋（要）勇（脸）的下载并修改了几个原始网页，上传到我的服务器。。。">
+<meta name="description" content="linux 下的 mysql 命令行操作突然发现又忘了服务器上的数据库怎么用的了。。。所以决定写这篇博客记录一下linux下的常用的mysql数据库命令。防忘标签注：所有命令基于ubuntu系统">
 <meta property="og:type" content="article">
-<meta property="og:title" content="网页上传日志">
-<meta property="og:url" content="http://www.cmeng.cc/2017/03/21/uploadDiary/index.html">
+<meta property="og:title" content="linux 下的 mysql 命令行操作">
+<meta property="og:url" content="http://www.cmeng.cc/2017/04/01/Linux-MySql/index.html">
 <meta property="og:site_name" content="CM's Hexo Blog">
-<meta property="og:description" content="网页上传日志本次上传内容主要是各种特效，主要是canvas特效和css特效。不久之前，楼主发现了一个有意思的网站，主要是关于各种网页特效等，原网站传送门。本文主要列举其中几个css的特效，为了防止忘记原网址也为了美化一下服务器，就自（臭）告（不）奋（要）勇（脸）的下载并修改了几个原始网页，上传到我的服务器。。。">
-<meta property="og:image" content="http://ww1.sinaimg.cn/large/0065ewYjgy1fdy9npr95ig300o00o741.gif">
-<meta property="og:updated_time" content="2017-04-01T06:10:27.277Z">
+<meta property="og:description" content="linux 下的 mysql 命令行操作突然发现又忘了服务器上的数据库怎么用的了。。。所以决定写这篇博客记录一下linux下的常用的mysql数据库命令。防忘标签注：所有命令基于ubuntu系统">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/0065ewYjgy1fe762j63jij300s00smx0.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/0065ewYjgy1fe76435sfrj300s00sjr5.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/0065ewYjgy1fe76ry44inj30jx01wa9y.jpg">
+<meta property="og:updated_time" content="2017-04-01T07:41:40.921Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="网页上传日志">
-<meta name="twitter:description" content="网页上传日志本次上传内容主要是各种特效，主要是canvas特效和css特效。不久之前，楼主发现了一个有意思的网站，主要是关于各种网页特效等，原网站传送门。本文主要列举其中几个css的特效，为了防止忘记原网址也为了美化一下服务器，就自（臭）告（不）奋（要）勇（脸）的下载并修改了几个原始网页，上传到我的服务器。。。">
-<meta name="twitter:image" content="http://ww1.sinaimg.cn/large/0065ewYjgy1fdy9npr95ig300o00o741.gif">
+<meta name="twitter:title" content="linux 下的 mysql 命令行操作">
+<meta name="twitter:description" content="linux 下的 mysql 命令行操作突然发现又忘了服务器上的数据库怎么用的了。。。所以决定写这篇博客记录一下linux下的常用的mysql数据库命令。防忘标签注：所有命令基于ubuntu系统">
+<meta name="twitter:image" content="http://ww1.sinaimg.cn/large/0065ewYjgy1fe762j63jij300s00smx0.jpg">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -58,7 +60,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>网页上传日志 | CM&#39;s Hexo Blog</title>
+<title>linux 下的 mysql 命令行操作 | CM&#39;s Hexo Blog</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -277,11 +279,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-uploadDiary" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-Linux-MySql" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2017/03/21/uploadDiary/" class="article-date">
-      <time datetime="2017-03-21T13:02:39.000Z" itemprop="datePublished">2017-03-21</time>
+      <a href="/2017/04/01/Linux-MySql/" class="article-date">
+      <time datetime="2017-04-01T06:08:23.000Z" itemprop="datePublished">2017-04-01</time>
 </a>
 
 
@@ -296,7 +298,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      网页上传日志
+      linux 下的 mysql 命令行操作
     </h1>
   
 
@@ -305,13 +307,13 @@
       <div class="article-info article-info-post">
         
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/css/">css</a><a class="article-category-link" href="/categories/css/特效/">特效</a><a class="article-category-link" href="/categories/css/特效/备忘/">备忘</a>
+    <a class="article-category-link" href="/categories/Linux/">Linux</a><a class="article-category-link" href="/categories/Linux/MySql/">MySql</a><a class="article-category-link" href="/categories/Linux/MySql/备忘/">备忘</a>
     </div>
 
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日志/">日志</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/特效/">特效</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mysql/">mysql</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/命令行/">命令行</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -321,24 +323,36 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h2 id="网页上传日志"><a href="#网页上传日志" class="headerlink" title="网页上传日志"></a>网页上传日志</h2><p>本次上传内容主要是各种特效，主要是canvas特效和css特效。<br>不久之前，楼主发现了一个有意思的网站，主要是关于各种网页特效等，<a href="https://tympanus.net/codrops/" target="_blank" rel="external"><strong>原网站传送门</strong></a>。<br>本文主要列举其中几个css的特效，为了防止忘记原网址也为了美化一下服务器，就自（臭）告（不）奋（要）勇（脸）的下载并修改了几个原始网页，上传到我的服务器。。。<br><img src="http://ww1.sinaimg.cn/large/0065ewYjgy1fdy9npr95ig300o00o741.gif" alt="斜眼笑"><br><a id="more"></a></p>
-<h2 id="css特效"><a href="#css特效" class="headerlink" title="css特效"></a>css特效</h2><h4 id="元素hover特效"><a href="#元素hover特效" class="headerlink" title="元素hover特效"></a>元素hover特效</h4><ol>
-<li><a href="http://115.159.92.11/specialEffects/css/CreativeLinkEffects/" target="_blank" rel="external"><strong>Creative Link Effects</strong></a></li>
-<li><a href="http://115.159.92.11/specialEffects/css/CreativeButtons/" target="_blank" rel="external"><strong>Creative Button Styles</strong></a></li>
-<li><a href="http://115.159.92.11/specialEffects/css/IconHoverEffects" target="_blank" rel="external"><strong>Icon Hover Effects</strong></a></li>
-<li><a href="https://tympanus.net/Development/AnimatedSVGIcons/" target="_blank" rel="external"><strong>Animated SVG Icons</strong></a></li>
-</ol>
-<h4 id="元素点击特效"><a href="#元素点击特效" class="headerlink" title="元素点击特效"></a>元素点击特效</h4><p><a href="https://tympanus.net/Development/ProgressButtonStyles/" target="_blank" rel="external"><strong>Progress Button Styles</strong></a></p>
-<h2 id="js实现特效"><a href="#js实现特效" class="headerlink" title="js实现特效"></a>js实现特效</h2><ol>
-<li><a href="http://115.159.92.11/specialEffects/js/tagCloud-3D/" target="_blank" rel="external"><strong>球状标签云</strong></a></li>
-</ol>
-<h2 id="canvas特效"><a href="#canvas特效" class="headerlink" title="canvas特效"></a>canvas特效</h2><ol>
-<li><a href="http://115.159.92.11/specialEffects/canvas/fireworks/" target="_blank" rel="external"><strong>烟花特效</strong></a></li>
-<li><a href="http://115.159.92.11/specialEffects/canvas/zhihuLogin/" target="_blank" rel="external"><strong>知乎登陆背景</strong></a></li>
-<li>[<strong>canva绘制时钟</strong>]git </li>
-</ol>
-<h2 id="一些炫酷的网站链接"><a href="#一些炫酷的网站链接" class="headerlink" title="一些炫酷的网站链接"></a>一些炫酷的网站链接</h2><p><a href="http://blacknegative.com" target="_blank" rel="external"><strong>blacknegative</strong></a><br><a href="http://www.georgeandjonathan.com/" target="_blank" rel="external"><strong>George &amp; Jonathan III</strong></a><br><a href="http://www.3gcs.com/" target="_blank" rel="external"><strong>另一种烟花特效</strong></a><br><a href="http://www.hugoware.net" target="_blank" rel="external"><strong>hugoware</strong></a></p>
-<h4 id="3d特效网站"><a href="#3d特效网站" class="headerlink" title="3d特效网站"></a>3d特效网站</h4><p><a href="https://threejs.org/" target="_blank" rel="external"><strong>three.js</strong></a><br><a href="http://i-remember.fr/en/" target="_blank" rel="external"><strong>I Remember</strong></a></p>
+        <h2 id="linux-下的-mysql-命令行操作"><a href="#linux-下的-mysql-命令行操作" class="headerlink" title="linux 下的 mysql 命令行操作"></a>linux 下的 mysql 命令行操作</h2><p>突然发现又忘了服务器上的数据库怎么用的了。。。<img src="http://ww1.sinaimg.cn/large/0065ewYjgy1fe762j63jij300s00smx0.jpg" alt="苦笑"><br>所以决定写这篇博客记录一下linux下的常用的mysql数据库命令。防忘标签<img src="http://ww1.sinaimg.cn/large/0065ewYjgy1fe76435sfrj300s00sjr5.jpg" alt="滑稽"><br>注：所有命令基于ubuntu系统<br><a id="more"></a></p>
+<h2 id="linux下安装mysql"><a href="#linux下安装mysql" class="headerlink" title="linux下安装mysql"></a>linux下安装mysql</h2><p><strong> 更新本地软件库的索引 </strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get update</div></pre></td></tr></table></figure></p>
+<p><strong> 安装服务器 </strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install mysql-server</div></pre></td></tr></table></figure></p>
+<p><strong> 安装客户端 </strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install mysql-client</div><div class="line">sudo apt-get install libmysqlclient-dev</div></pre></td></tr></table></figure></p>
+<p><strong> 判断是否安装成功 </strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">(sudo) netstat -tap|grep mysql</div></pre></td></tr></table></figure></p>
+<p>出现这个就是成功：<br><img src="http://ww1.sinaimg.cn/large/0065ewYjgy1fe76ry44inj30jx01wa9y.jpg" alt="检查mysql是否安装成功"></p>
+<h2 id="简单配置mysql"><a href="#简单配置mysql" class="headerlink" title="简单配置mysql"></a>简单配置mysql</h2><p><strong> 设置数据库编码 </strong><br>打开配置文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo nano /etc/mysql/my.cof</div></pre></td></tr></table></figure></p>
+<p>修改如下位置<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">[client]</div><div class="line">port            = 3306</div><div class="line">socket          = /var/run/mysqld/mysqld.sock</div><div class="line"><span class="comment">#增加客户端的字符编码</span></div><div class="line">default-character-set=utf8</div></pre></td></tr></table></figure></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">[mysqld]</div><div class="line"><span class="comment">#增加服务器端的字符编码</span></div><div class="line">character-set-server=utf8</div><div class="line">collation-server=utf8_general_ci</div></pre></td></tr></table></figure>
+<p>让服务器可以远程访问，还是配置文件my.cnf<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#注释bind-address</span></div><div class="line"><span class="comment">#bind-address        = 127.0.0.1</span></div></pre></td></tr></table></figure></p>
+<h2 id="mysql-常用命令"><a href="#mysql-常用命令" class="headerlink" title="mysql 常用命令"></a>mysql 常用命令</h2><p><strong> 登录 </strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">//-u后面跟用户名，回车之后输入密码即可</div><div class="line">mysql -u root -p</div></pre></td></tr></table></figure></p>
+<p><strong> 查看数据库字符集 </strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">show variables like <span class="string">'character%'</span>;</div></pre></td></tr></table></figure></p>
+<h2 id="数据库操作"><a href="#数据库操作" class="headerlink" title="数据库操作"></a>数据库操作</h2><p><strong> 创建数据库 </strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">create database &lt;数据库名&gt;;</div></pre></td></tr></table></figure></p>
+<p><strong> 显示所有数据库 </strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">show databases;</div></pre></td></tr></table></figure></p>
+<p><strong> 进入/切换数据库 </strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">use &lt;数据库名&gt;;</div></pre></td></tr></table></figure></p>
+<p><strong> 删除数据库 </strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">drop database &lt;数据库名&gt;;</div></pre></td></tr></table></figure></p>
+<p><strong> 查看当前使用数据库 </strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">select database();</div></pre></td></tr></table></figure></p>
+<p><strong> 导入数据库 </strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysql -u root -p 数据库名&lt;数据库文件; //导入时数据库必须存在，可以为空数据库</div></pre></td></tr></table></figure></p>
+<p><strong> 导出数据库 </strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysqldump -u root -p --opt 数据库名&gt;备份名; //进入到库目录</div></pre></td></tr></table></figure></p>
+<p><strong> 数据库授权 </strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">grant select,... on 数据库.*  to  用户名@登录主机 identified by <span class="string">"密码"</span>;</div></pre></td></tr></table></figure></p>
+<p>例-1：增加一个用户user001密码为123456，让他可以在任何主机上登录，并对所有数据库有查询、插入、修改、删除的权限:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">grant select,insert,update,delete on *.* to user001@<span class="string">"%"</span> Identified by <span class="string">"123456"</span>;</div></pre></td></tr></table></figure></p>
+<p>例-2:增加一个用户user002密码为123456,让此用户只可以在localhost上登录,也可以设置指定IP，并可以对数据库test进行查询、插入、修改、删除的操作 (localhost 指本地主机,即MySQL数据库所在的那台主机)<br>//这样用户即使用知道user_2的密码，他也无法从网上直接访问数据库，只能通过MYSQL主机来操作test库。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">grant select,insert,update,delete on test.* to user002@localhost identified by <span class="string">"123456"</span>;</div></pre></td></tr></table></figure></p>
+<h2 id="表操作"><a href="#表操作" class="headerlink" title="表操作"></a>表操作</h2><p><strong> 显示所有表 </strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">show tables;</div></pre></td></tr></table></figure></p>
+<p><strong> 显示表结构 </strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">describe &lt;表名&gt;;</div></pre></td></tr></table></figure></p>
+<p><strong> 建表 </strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">create table &lt;表名&gt;(字段属性);</div><div class="line">例：</div><div class="line">create table name(</div><div class="line">        id int auto_increment not null primary key ,</div><div class="line">        uname char(8)</div><div class="line">    );</div><div class="line">注： auto_increment 自增</div><div class="line">     primary key    主键</div><div class="line">     foreign key(字段名) references(表名.字段名) 外键</div></pre></td></tr></table></figure></p>
+<p><strong> 删表 </strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">drop table &lt;表名&gt;;</div></pre></td></tr></table></figure></p>
+<h2 id="记录操作（增删改查）"><a href="#记录操作（增删改查）" class="headerlink" title="记录操作（增删改查）"></a>记录操作（增删改查）</h2><p><strong> 增加记录 </strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">insert into &lt;表名&gt;(字段名,...) values(字段值,...);</div></pre></td></tr></table></figure></p>
+<p><strong> 删除记录 </strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">delete from &lt;表名&gt; <span class="built_in">where</span> xxxx;</div></pre></td></tr></table></figure></p>
+<p><strong> 修改记录 </strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">update &lt;表名&gt; <span class="built_in">set</span> 字段名=<span class="string">"新值"</span> <span class="built_in">where</span> xxxx;</div></pre></td></tr></table></figure></p>
+<p><strong> 查询记录 </strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">select xxx from &lt;表名，...&gt;  <span class="built_in">where</span> xxxx;</div></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -347,13 +361,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2017/03/21/uploadDiary/">网页上传日志</a></p>
+        <p><span>本文标题:</span><a href="/2017/04/01/Linux-MySql/">linux 下的 mysql 命令行操作</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">CMeng</a></p>
-        <p><span>发布时间:</span>2017-03-21, 21:02:39</p>
-        <p><span>最后更新:</span>2017-04-01, 14:10:27</p>
+        <p><span>发布时间:</span>2017-04-01, 14:08:23</p>
+        <p><span>最后更新:</span>2017-04-01, 15:41:40</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2017/03/21/uploadDiary/" title="网页上传日志">http://www.cmeng.cc/2017/03/21/uploadDiary/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://www.cmeng.cc/2017/03/21/uploadDiary/　　作者: CMeng" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2017/04/01/Linux-MySql/" title="linux 下的 mysql 命令行操作">http://www.cmeng.cc/2017/04/01/Linux-MySql/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://www.cmeng.cc/2017/04/01/Linux-MySql/　　作者: CMeng" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -365,16 +379,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2017/04/01/Linux-MySql/">
-                    linux 下的 mysql 命令行操作
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2017/02/25/webpack_jiao_cheng/">
-                    模块化与WebPack学习教程
+                <a href="/2017/03/21/uploadDiary/">
+                    网页上传日志
                 </a>
             </div>
         
@@ -386,7 +394,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#网页上传日志"><span class="toc-number">1.</span> <span class="toc-text">网页上传日志</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#css特效"><span class="toc-number">2.</span> <span class="toc-text">css特效</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#元素hover特效"><span class="toc-number">2.0.1.</span> <span class="toc-text">元素hover特效</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#元素点击特效"><span class="toc-number">2.0.2.</span> <span class="toc-text">元素点击特效</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#js实现特效"><span class="toc-number">3.</span> <span class="toc-text">js实现特效</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#canvas特效"><span class="toc-number">4.</span> <span class="toc-text">canvas特效</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#一些炫酷的网站链接"><span class="toc-number">5.</span> <span class="toc-text">一些炫酷的网站链接</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3d特效网站"><span class="toc-number">5.0.1.</span> <span class="toc-text">3d特效网站</span></a></li></ol></li></ol></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#linux-下的-mysql-命令行操作"><span class="toc-number">1.</span> <span class="toc-text">linux 下的 mysql 命令行操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#linux下安装mysql"><span class="toc-number">2.</span> <span class="toc-text">linux下安装mysql</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#简单配置mysql"><span class="toc-number">3.</span> <span class="toc-text">简单配置mysql</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#mysql-常用命令"><span class="toc-number">4.</span> <span class="toc-text">mysql 常用命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数据库操作"><span class="toc-number">5.</span> <span class="toc-text">数据库操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#表操作"><span class="toc-number">6.</span> <span class="toc-text">表操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#记录操作（增删改查）"><span class="toc-number">7.</span> <span class="toc-text">记录操作（增删改查）</span></a></li></ol>
         
     </div>
     <style>
@@ -422,7 +430,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"网页上传日志　| CM's Hexo Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"linux 下的 mysql 命令行操作　| CM's Hexo Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -456,15 +464,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2017/04/01/Linux-MySql/" title="上一篇: linux 下的 mysql 命令行操作">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2017/02/25/webpack_jiao_cheng/" title="下一篇: 模块化与WebPack学习教程">
+            <a href="/2017/03/21/uploadDiary/" title="下一篇: 网页上传日志">
                 <i class="fa fa-angle-right"></i>
             </a>
         
