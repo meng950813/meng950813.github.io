@@ -22,7 +22,7 @@
 <meta property="og:site_name" content="CM's Hexo Blog">
 <meta property="og:description" content="禁止apache显示目录索引服务器上部署项目之后会显示文件索引，这很烦，也让网站很不安全，所以找办法禁止显示。下面是找到的禁止Apache显示目录索引的常见的2种方法。">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/0065ewYjgy1fdy9npr95ig300o00o741.gif">
-<meta property="og:updated_time" content="2017-04-01T13:48:22.683Z">
+<meta property="og:updated_time" content="2017-04-01T14:15:39.370Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="禁止apache显示目录索引">
 <meta name="twitter:description" content="禁止apache显示目录索引服务器上部署项目之后会显示文件索引，这很烦，也让网站很不安全，所以找办法禁止显示。下面是找到的禁止Apache显示目录索引的常见的2种方法。">
@@ -330,7 +330,7 @@
 <p>注：Indexes 的作用就是当该目录下没有 index.html 文件时，就显示目录结构,去掉 Indexes, Apache 就不会显示该目录的列表了。</p>
 <h4 id="方法二：-通过-htaccess文件"><a href="#方法二：-通过-htaccess文件" class="headerlink" title="方法二： 通过.htaccess文件"></a>方法二： 通过.htaccess文件</h4><p>可以在根目录新建或修改 .htaccess 文件中添加如下代码：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;Files *&gt;</div><div class="line"> Options -Indexes</div><div class="line">&lt;/Files&gt;</div></pre></td></tr></table></figure></p>
 <p>就可以禁止Apache显示目录索引。</p>
-<p><strong> 保存修改文件，重启服务器 </strong><br>不会重启apache？狠狠点这里 <a href="https://meng950813.github.io/" target="_blank" rel="external">linux配置apache</a></p>
+<p><strong> 保存修改文件，重启服务器 </strong><br>不会重启apache？狠狠点这里 <a href="https://meng950813.github.io/2017/04/01/linux-apache/#more" target="_blank" rel="external">linux配置apache</a></p>
 
       
     </div>
@@ -342,7 +342,7 @@
         <p><span>本文标题:</span><a href="/2017/04/01/appache-forbide-file-dir/">禁止apache显示目录索引</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">CMeng</a></p>
         <p><span>发布时间:</span>2017-04-01, 19:45:21</p>
-        <p><span>最后更新:</span>2017-04-01, 21:48:22</p>
+        <p><span>最后更新:</span>2017-04-01, 22:15:39</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2017/04/01/appache-forbide-file-dir/" title="禁止apache显示目录索引">http://www.cmeng.cc/2017/04/01/appache-forbide-file-dir/</a>
             <span class="copy-path" data-clipboard-text="原文: http://www.cmeng.cc/2017/04/01/appache-forbide-file-dir/　　作者: CMeng" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -356,12 +356,6 @@
 
 
     <nav id="article-nav">
-        
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2017/04/01/linux-apache/">
-                    
-                </a>
-            </div>
         
         
             <div id="article-nav-older" class="article-nav-title">
@@ -448,9 +442,7 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2017/04/01/linux-apache/" title="上一篇: ">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
@@ -462,7 +454,7 @@
         
     </div>
 
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/04/01/linux-apache/">linux-apache</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/04/01/appache-forbide-file-dir/">禁止apache显示目录索引</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/04/01/Linux-MySql/">linux 下的 mysql 命令行操作</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/21/linux-apache/">linux 下安装配置 apache</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/21/uploadDiary/">网页上传日志</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/25/webpack_jiao_cheng/">模块化与WebPack学习教程</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/15/Javascript_Written_Test_2/">javascript 笔试题 续</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/15/Javascript_Written_Test/">javascript 笔试题</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/21/The_awkward_experience_of_first_use_Hexo/">记首次使用hexo的尴尬历程</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/20/jquery/">jquery</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/20/hello-world/">Hello World</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/04/01/appache-forbide-file-dir/">禁止apache显示目录索引</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/04/01/Linux-MySql/">linux 下的 mysql 命令行操作</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/21/linux-apache/">linux 下安装配置 apache</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/21/uploadDiary/">网页上传日志</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/25/webpack_jiao_cheng/">模块化与WebPack学习教程</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/15/Javascript_Written_Test_2/">javascript 笔试题 续</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/15/Javascript_Written_Test/">javascript 笔试题</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/21/The_awkward_experience_of_first_use_Hexo/">记首次使用hexo的尴尬历程</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/20/jquery/">jquery</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/20/hello-world/">Hello World</a></li></ul>
 
 
 
