@@ -58,24 +58,6 @@
     </entry>
     
     <entry>
-      <title><![CDATA[linux 下安装配置 apache]]></title>
-      <url>http://www.cmeng.cc/2017/03/21/linux-apache/</url>
-      <content type="html"><![CDATA[<h2 id="linux-下安装配置-apache"><a href="#linux-下安装配置-apache" class="headerlink" title="linux 下安装配置 apache"></a>linux 下安装配置 apache</h2><p>本文介绍linux下安装apache服务器的流程,默认系统为ubuntu，安装apache2。<br>写这篇博客的只要用于备忘<img src="http://ww1.sinaimg.cn/large/0065ewYjgy1fdy9npr95ig300o00o741.gif" alt="斜眼笑">。<br><a id="more"></a></p>
-<h2 id="linux-下apache2"><a href="#linux-下apache2" class="headerlink" title="linux 下apache2"></a>linux 下apache2</h2><p><strong> 更新本地软件库的索引 </strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get update</div></pre></td></tr></table></figure></p>
-<p><strong> 安装服务器 </strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install apache2</div></pre></td></tr></table></figure></p>
-<p><strong> 查看服务器版本 </strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 二选一</span></div><div class="line">apachectl -v  </div><div class="line">httpd -v</div></pre></td></tr></table></figure></p>
-<h2 id="Linux系统为Ubuntu"><a href="#Linux系统为Ubuntu" class="headerlink" title="Linux系统为Ubuntu"></a>Linux系统为Ubuntu</h2><p><strong> Start Apache 2 Server /启动apache服务 </strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"> /etc/init.d/apache2 star</div><div class="line">or</div><div class="line">$ sudo /etc/init.d/apache2 start</div></pre></td></tr></table></figure></p>
-<p><strong> Restart Apache 2 Server /重启apache服务 </strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">/etc/init.d/apache2 restart</div><div class="line">or</div><div class="line">$ sudo /etc/init.d/apache2 restart</div></pre></td></tr></table></figure></p>
-<p><strong> Stop Apache 2 Server /停止apache服务 </strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"> /etc/init.d/apache2 stop</div><div class="line">or</div><div class="line">$ sudo /etc/init.d/apache2 stop</div></pre></td></tr></table></figure></p>
-<h2 id="其他linux-下-apache启动、停止、重启命令"><a href="#其他linux-下-apache启动、停止、重启命令" class="headerlink" title="其他linux 下 apache启动、停止、重启命令"></a>其他linux 下 apache启动、停止、重启命令</h2><p>基本的操作方法：<br>本文假设你的apahce安装目录为<code>/usr/local/apache2</code>，这些方法适合任何情况<br><strong> apahce启动命令：</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/usr/<span class="built_in">local</span>/apache2/bin/apachectl start apaceh</div></pre></td></tr></table></figure></p>
-<p><strong> apache停止命令: </strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/usr/local/apache2/bin/apachectl stop</div></pre></td></tr></table></figure></p>
-<p><strong> apache重新启动命令： </strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/usr/<span class="built_in">local</span>/apache2/bin/apachectl restart</div></pre></td></tr></table></figure></p>
-<p><strong> 要在重启 Apache 服务器时不中断当前的连接，则应运行：</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/usr/<span class="built_in">local</span>/sbin/apachectl graceful</div></pre></td></tr></table></figure></p>
-<p><strong> 如果apache安装成为linux的服务的话，可以用以下命令操作： </strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">service httpd start 启动</div><div class="line">service httpd restart 重新启动</div><div class="line">service httpd stop 停止服务</div></pre></td></tr></table></figure></p>
-]]></content>
-    </entry>
-    
-    <entry>
       <title><![CDATA[网页上传日志]]></title>
       <url>http://www.cmeng.cc/2017/03/21/uploadDiary/</url>
       <content type="html"><![CDATA[<h2 id="网页上传日志"><a href="#网页上传日志" class="headerlink" title="网页上传日志"></a>网页上传日志</h2><p>本次上传内容主要是各种特效，主要是canvas特效和css特效。<br>不久之前，楼主发现了一个有意思的网站，主要是关于各种网页特效等，<a href="https://tympanus.net/codrops/" target="_blank" rel="external"><strong>原网站传送门</strong></a>。<br>本文主要列举其中几个css的特效，为了防止忘记原网址也为了美化一下服务器，就自（臭）告（不）奋（要）勇（脸）的下载并修改了几个原始网页，上传到我的服务器。。。<br><img src="http://ww1.sinaimg.cn/large/0065ewYjgy1fdy9npr95ig300o00o741.gif" alt="斜眼笑"><br><a id="more"></a></p>
@@ -350,10 +332,22 @@ descriptor
   
     
     <entry>
+      <title><![CDATA[About me]]></title>
+      <url>http://www.cmeng.cc/about/index.html</url>
+      <content type="html"></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[404]]></title>
       <url>http://www.cmeng.cc//404.html</url>
       <content type="html"><![CDATA[<p>&lt;!DOCTYPE HTML&gt;</p>
 <html><br><head><br><meta http-equiv="content-type" content="text/html;charset=utf-8;"><br><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><br><meta name="robots" content="all"><br><meta name="robots" content="index,follow"><br><title>公益404页面 // CMeng的博客</title><br></head><br><body><br><script type="text/javascript" src="http://www.qq.com/404/search_children.js" charset="utf-8" homepageurl="http://cmeng.cc" homepagename="CMeng的博客"></script><br></body><br></html>]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[tags]]></title>
+      <url>http://www.cmeng.cc/tags/index.html</url>
+      <content type="html"></content>
     </entry>
     
     <entry>
@@ -365,18 +359,6 @@ descriptor
 <li><a href="http://115.159.92.11/tetris" target="_blank" rel="external"><strong>俄罗斯方块</strong></a></li>
 </ol>
 ]]></content>
-    </entry>
-    
-    <entry>
-      <title><![CDATA[About me]]></title>
-      <url>http://www.cmeng.cc/about/index.html</url>
-      <content type="html"></content>
-    </entry>
-    
-    <entry>
-      <title><![CDATA[tags]]></title>
-      <url>http://www.cmeng.cc/tags/index.html</url>
-      <content type="html"></content>
     </entry>
     
   
