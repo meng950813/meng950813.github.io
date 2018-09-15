@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title><![CDATA[leetcode 刷题记录（简单篇）：NO.9 回文数]]></title>
+      <url>http://www.cmeng.cc/2018/09/13/leetcode%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95(%E7%AE%80%E5%8D%95%E7%AF%87)/</url>
+      <content type="html"><![CDATA[<h2 id="leetcode-刷题记录（简单篇）：NO-9-回文数"><a href="#leetcode-刷题记录（简单篇）：NO-9-回文数" class="headerlink" title="leetcode 刷题记录（简单篇）：NO.9 回文数"></a>leetcode 刷题记录（简单篇）：NO.9 回文数</h2><p><strong>问题描述：</strong>判断一个整数是否是回文数。回文数是指正序（从左向右）和倒序（从右向左）读都是一样的整数（负数的符号也计入在内 ==&gt; 负数是非回文数）。<br>[<strong>进阶</strong>]：<strong>不要使用将整数转换为字符串的方式解决问题</strong><br><a id="more"></a></p>
+<h2 id="示例："><a href="#示例：" class="headerlink" title="示例："></a>示例：</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">__输入:__ 121 ==&gt;  <span class="literal">true</span></div><div class="line">__输入:__ -121 ==&gt;  <span class="literal">false</span></div><div class="line">__输入:__ 10 ==&gt;  <span class="literal">false</span></div></pre></td></tr></table></figure>
+<p><strong> 思路1：暴力法 </strong><br>最常用的解题办法：将数x不断取余和取模倒序为另一个数，然后两相比较。<br>、、、bash<br>int n=x,m=0;<br>while(n){<br>    m = m*10 + x%10;<br>    x /= 10;<br>}<br>、、、<br>这种解法最主要的就是注意不能让反转后的数字越界，比如 4个字节的int取值范围是<strong>-2147483648 ~ 2147483647</strong>,<strong>x=1123456789</strong>是可行的，但反转出的<strong>9876543211</strong>就超出了int的范围，会变成另一个值。<br>可是就题目来看，如果是回文数，反转了也不会出现超出范围的情况；如果不是，就算超了也不会让他们相等的情况，这么一想，正中下怀啊，那就是你了<img src="http://ww1.sinaimg.cn/large/0065ewYjgy1fv829kuvcnj300s00sjr5" alt=""><br><strong>但是！但是！但是！</strong><br><a href="https://leetcode-cn.com" target="_blank" rel="external">leetcode</a>里的测试用例永远会给你搞出些幺蛾子,明明参数是int类型,却能给出一个超出int范围的数作为测试，然后给我报错（测试也得讲点基本法啊）<img src="http://ww3.sinaimg.cn/large/0065ewYjgw1f9t6gul26fj301s01s0si.jpg" alt="西湖的水，我的泪"></p>
+<p><strong> 思路2：转换法 </strong><br>简单来说就是把整数转换为字符串,然后通过一头一尾两个指针向中间挤，如果指针相遇前出现两指针值不同的情况，即为非回文数，否则就是回文数。<br>然而题目要求不要用。。。弃之。</p>
+<p><strong> 思路3：截半法（名字我瞎取的<img src="http://ww1.sinaimg.cn/large/0065ewYjgy1fdy9npr95ig300o00o741.gif" alt="斜眼笑">）</strong><br>这种办法类似于暴力法,区别在于是取后半段反转与前半段比较。那么重点在于如何判断已经取到中间。<br>最简单的办法是判断两数之间的大小：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">原数：m, 新数：n。 若：</div><div class="line">m &gt; n:表示还需要继续取余；</div><div class="line">m == n:返回 <span class="literal">true</span></div><div class="line">m &lt; n:返回 <span class="literal">false</span></div></pre></td></tr></table></figure></p>
+<p>然而这种做法对形如 121 的奇数位数无效：<br>    m=121,n=0 ==&gt; m=12,n=1 ==&gt; m=1,n=12 ==&gt; false ==&gt; GG <img src="http://ww1.sinaimg.cn/large/0065ewYjgy1fv826uacktj300s00sq2s" alt="小纠结"><br>所以还需要在取余之前判断一下 m 与 n</p>
+<p><strong>最终代码</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">bool isPalindrome(int m) &#123;</div><div class="line">    <span class="keyword">if</span>(m == 0 ) <span class="built_in">return</span> <span class="literal">true</span>;</div><div class="line"></div><div class="line">    <span class="keyword">if</span>(m &lt; 0 || m%10 == 0) <span class="built_in">return</span> <span class="literal">false</span>;</div><div class="line"></div><div class="line">    long n = 0;//被坑怕了</div><div class="line">    <span class="keyword">do</span>&#123;</div><div class="line">        n = n*10 + m%10;</div><div class="line">        <span class="keyword">if</span>(m  == n)</div><div class="line">            <span class="built_in">return</span> <span class="literal">true</span>;</div><div class="line">        m /= 10;</div><div class="line">    &#125;<span class="keyword">while</span>(m &gt; n);</div><div class="line"></div><div class="line">    <span class="keyword">if</span>(m == n)</div><div class="line">        <span class="built_in">return</span> <span class="literal">true</span>;</div><div class="line">    <span class="built_in">return</span> <span class="literal">false</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[禁止apache显示目录索引]]></title>
       <url>http://www.cmeng.cc/2017/04/01/appache-forbide-file-dir/</url>
       <content type="html"><![CDATA[<h2 id="禁止apache显示目录索引"><a href="#禁止apache显示目录索引" class="headerlink" title="禁止apache显示目录索引"></a>禁止apache显示目录索引</h2><p>服务器上部署项目之后会显示文件索引，这很烦，也让网站很不安全，所以找办法禁止显示。下面是找到的禁止Apache显示目录索引的常见的2种方法。<img src="http://ww1.sinaimg.cn/large/0065ewYjgy1fdy9npr95ig300o00o741.gif" alt="斜眼笑"><br><a id="more"></a></p>
@@ -294,7 +307,7 @@ descriptor
     </entry>
     
     <entry>
-      <title><![CDATA[jquery]]></title>
+      <title><![CDATA[jquery小记]]></title>
       <url>http://www.cmeng.cc/2016/09/20/jquery/</url>
       <content type="html"><![CDATA[<h2 id="jQuery"><a href="#jQuery" class="headerlink" title="jQuery"></a>jQuery</h2><p><strong>jQuery: $(document).ready(function(){…}) VS DOM: window.onload=function(){…}</strong><br>ready 的底层事件：DOM中的ondocumentcontentloaded:只要DOM树加载完成，就会触发<br>window.onload 在页面全部加载完成之后触发</p>
 <a id="more"></a>
@@ -332,6 +345,12 @@ descriptor
   
     
     <entry>
+      <title><![CDATA[tags]]></title>
+      <url>http://www.cmeng.cc/tags/index.html</url>
+      <content type="html"></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[About me]]></title>
       <url>http://www.cmeng.cc/about/index.html</url>
       <content type="html"></content>
@@ -342,12 +361,6 @@ descriptor
       <url>http://www.cmeng.cc//404.html</url>
       <content type="html"><![CDATA[<p>&lt;!DOCTYPE HTML&gt;</p>
 <html><br><head><br><meta http-equiv="content-type" content="text/html;charset=utf-8;"><br><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><br><meta name="robots" content="all"><br><meta name="robots" content="index,follow"><br><title>公益404页面 // CMeng的博客</title><br></head><br><body><br><script type="text/javascript" src="http://www.qq.com/404/search_children.js" charset="utf-8" homepageurl="http://cmeng.cc" homepagename="CMeng的博客"></script><br></body><br></html>]]></content>
-    </entry>
-    
-    <entry>
-      <title><![CDATA[tags]]></title>
-      <url>http://www.cmeng.cc/tags/index.html</url>
-      <content type="html"></content>
     </entry>
     
     <entry>

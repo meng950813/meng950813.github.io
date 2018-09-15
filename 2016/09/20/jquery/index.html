@@ -17,15 +17,15 @@
 
 <meta name="description" content="jQueryjQuery: $(document).ready(function(){…}) VS DOM: window.onload=function(){…}ready 的底层事件：DOM中的ondocumentcontentloaded:只要DOM树加载完成，就会触发window.onload 在页面全部加载完成之后触发">
 <meta property="og:type" content="article">
-<meta property="og:title" content="jquery">
+<meta property="og:title" content="jquery小记">
 <meta property="og:url" content="http://www.cmeng.cc/2016/09/20/jquery/index.html">
 <meta property="og:site_name" content="CM's Hexo Blog">
 <meta property="og:description" content="jQueryjQuery: $(document).ready(function(){…}) VS DOM: window.onload=function(){…}ready 的底层事件：DOM中的ondocumentcontentloaded:只要DOM树加载完成，就会触发window.onload 在页面全部加载完成之后触发">
 <meta property="og:image" content="https://ws3.sinaimg.cn/large/0065ewYjgw1f825osk8jtj30kj06e0tj.jpg">
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/0065ewYjgw1f825p93mq0j30fl02bmxb.jpg">
-<meta property="og:updated_time" content="2017-02-24T18:12:40.750Z">
+<meta property="og:updated_time" content="2017-04-02T05:06:59.731Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="jquery">
+<meta name="twitter:title" content="jquery小记">
 <meta name="twitter:description" content="jQueryjQuery: $(document).ready(function(){…}) VS DOM: window.onload=function(){…}ready 的底层事件：DOM中的ondocumentcontentloaded:只要DOM树加载完成，就会触发window.onload 在页面全部加载完成之后触发">
 <meta name="twitter:image" content="https://ws3.sinaimg.cn/large/0065ewYjgw1f825osk8jtj30kj06e0tj.jpg">
 
@@ -59,7 +59,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>jquery | CM&#39;s Hexo Blog</title>
+<title>jquery小记 | CM&#39;s Hexo Blog</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -199,7 +199,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/apache/">apache</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/">github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jquery/">jquery</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js/">js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql/">mysql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webpack/">webpack</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端笔试题/">前端笔试题</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/命令行/">命令行</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据库/">数据库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/日志/">日志</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/服务器/">服务器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/模块化/">模块化</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/特效/">特效</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/闭包/">闭包</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面向对象/">面向对象</a></li></ul>
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/apache/">apache</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/">github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jquery/">jquery</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js/">js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/leetcode/">leetcode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql/">mysql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webpack/">webpack</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端笔试题/">前端笔试题</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/命令行/">命令行</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据库/">数据库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/日志/">日志</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/服务器/">服务器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/模块化/">模块化</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/特效/">特效</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/算法/">算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/闭包/">闭包</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面向对象/">面向对象</a></li></ul>
                     </div>
                 </section>
                 
@@ -297,7 +297,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      jquery
+      jquery小记
     </h1>
   
 
@@ -306,13 +306,13 @@
       <div class="article-info article-info-post">
         
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/Javascript/">Javascript</a><a class="article-category-link" href="/categories/Javascript/JS函数库/">JS函数库</a>
+    <a class="article-category-link" href="/categories/Javascript/">Javascript</a><a class="article-category-link" href="/categories/Javascript/JQuery/">JQuery</a><a class="article-category-link" href="/categories/Javascript/JQuery/JS函数库/">JS函数库</a>
     </div>
 
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jquery/">jquery</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jquery/">jquery</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -343,12 +343,12 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2016/09/20/jquery/">jquery</a></p>
+        <p><span>本文标题:</span><a href="/2016/09/20/jquery/">jquery小记</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">CMeng</a></p>
         <p><span>发布时间:</span>2016-09-20, 14:53:15</p>
-        <p><span>最后更新:</span>2017-02-25, 02:12:40</p>
+        <p><span>最后更新:</span>2017-04-02, 13:06:59</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2016/09/20/jquery/" title="jquery">http://www.cmeng.cc/2016/09/20/jquery/</a>
+            <span>原始链接:</span><a class="post-url" href="/2016/09/20/jquery/" title="jquery小记">http://www.cmeng.cc/2016/09/20/jquery/</a>
             <span class="copy-path" data-clipboard-text="原文: http://www.cmeng.cc/2016/09/20/jquery/　　作者: CMeng" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -418,7 +418,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"jquery　| CM's Hexo Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"jquery小记　| CM's Hexo Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -466,7 +466,7 @@
         
     </div>
 
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/04/01/appache-forbide-file-dir/">禁止apache显示目录索引</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/04/01/Linux-MySql/">linux 下的 mysql 命令行操作</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/21/uploadDiary/">网页上传日志</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/25/webpack_jiao_cheng/">模块化与WebPack学习教程</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/15/Javascript_Written_Test_2/">javascript 笔试题 续</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/15/Javascript_Written_Test/">javascript 笔试题</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/21/The_awkward_experience_of_first_use_Hexo/">记首次使用hexo的尴尬历程</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/20/jquery/">jquery</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/20/hello-world/">Hello World</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/09/13/leetcode刷题记录(简单篇)/">leetcode 刷题记录（简单篇）：NO.9 回文数</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/04/01/appache-forbide-file-dir/">禁止apache显示目录索引</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/04/01/Linux-MySql/">linux 下的 mysql 命令行操作</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/21/uploadDiary/">网页上传日志</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/25/webpack_jiao_cheng/">模块化与WebPack学习教程</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/15/Javascript_Written_Test_2/">javascript 笔试题 续</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/15/Javascript_Written_Test/">javascript 笔试题</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/21/The_awkward_experience_of_first_use_Hexo/">记首次使用hexo的尴尬历程</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/20/jquery/">jquery小记</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/20/hello-world/">Hello World</a></li></ul>
 
 
 
@@ -480,7 +480,7 @@
         <div id="footer-info">
             <div class="footer-left">
                 <i class="fa fa-copyright"></i> 
-                2016-2017 CMeng
+                2016-2018 CMeng
             </div>
             <div class="footer-right">
                 <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
