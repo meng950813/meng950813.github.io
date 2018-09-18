@@ -351,36 +351,4 @@ descriptor
     
   
   
-    
-    <entry>
-      <title><![CDATA[404]]></title>
-      <url>http://www.cmeng.cc//404.html</url>
-      <content type="html"><![CDATA[<p>&lt;!DOCTYPE HTML&gt;</p>
-<html><br><head><br><meta http-equiv="content-type" content="text/html;charset=utf-8;"><br><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><br><meta name="robots" content="all"><br><meta name="robots" content="index,follow"><br><title>公益404页面 // CMeng的博客</title><br></head><br><body><br><script type="text/javascript" src="http://www.qq.com/404/search_children.js" charset="utf-8" homepageurl="http://cmeng.cc" homepagename="CMeng的博客"></script><br></body><br></html>]]></content>
-    </entry>
-    
-    <entry>
-      <title><![CDATA[About me]]></title>
-      <url>http://www.cmeng.cc/about/index.html</url>
-      <content type="html"></content>
-    </entry>
-    
-    <entry>
-      <title><![CDATA[个人小游戏]]></title>
-      <url>http://www.cmeng.cc/mygames/index.html</url>
-      <content type="html"><![CDATA[<h2 id="欢迎体验我的小游戏"><a href="#欢迎体验我的小游戏" class="headerlink" title="欢迎体验我的小游戏"></a>欢迎体验我的小游戏</h2><h4 id="支持响应式"><a href="#支持响应式" class="headerlink" title="支持响应式"></a>支持响应式</h4><ol>
-<li><a href="http://115.159.92.11/gobang" target="_blank" rel="external"><strong>五子棋</strong></a></li>
-<li><a href="http://115.159.92.11/2048" target="_blank" rel="external"><strong>2048</strong></a></li>
-<li><a href="http://115.159.92.11/tetris" target="_blank" rel="external"><strong>俄罗斯方块</strong></a></li>
-</ol>
-]]></content>
-    </entry>
-    
-    <entry>
-      <title><![CDATA[tags]]></title>
-      <url>http://www.cmeng.cc/tags/index.html</url>
-      <content type="html"></content>
-    </entry>
-    
-  
 </search>
