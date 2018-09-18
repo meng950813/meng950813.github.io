@@ -4,8 +4,16 @@
   
     
     <entry>
+      <title><![CDATA[leetcode刷题记录(中等篇) 05 最长回文子串]]></title>
+      <url>http://www.cmeng.cc/2018/09/18/leetcode%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95-%E4%B8%AD%E7%AD%89%E7%AF%87-05-%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E5%AD%90%E4%B8%B2/</url>
+      <content type="html"><![CDATA[<h2 id="leetcode刷题记录-中等篇-05-最长回文子串"><a href="#leetcode刷题记录-中等篇-05-最长回文子串" class="headerlink" title="leetcode刷题记录(中等篇) 05 最长回文子串"></a>leetcode刷题记录(中等篇) 05 最长回文子串</h2><p><img src="http://ww1.sinaimg.cn/large/0065ewYjgy1fve2rf9zbaj30oi0azaad.jpg" alt="leetcode刷题记录(中等篇) 05 最长回文子串"><br><a id="more"></a></p>
+<p><strong> 思路 </strong><br>考虑到回文子串的形式只有两种： <strong>..X..</strong>  以及  <strong>..XX..</strong><br>因此可以尝试从一个或两个坐标点开始向两边开始寻找，通过判断两边是否相同可以得出是否是回文数。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">//  以n1,n2为起点，向两边寻找回文字符串</div><div class="line">    string compare(string s,int n1,int n2)&#123;</div><div class="line">        int to_left = n1,to_right = n2 ,len = s.size();</div><div class="line">//         直到找不到回文字符或到头结束循环</div><div class="line">        <span class="keyword">while</span>(to_left &gt;= 0 &amp;&amp; to_right &lt; len &amp;&amp; s[to_left] == s[to_right])&#123;</div><div class="line">            to_left--;</div><div class="line">            to_right++;</div><div class="line">        &#125;</div><div class="line">        // 返回回文部分</div><div class="line">        <span class="built_in">return</span> s.substr(to_left+1,to_right-to_left-1);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    string longestPalindrome(string s) &#123;</div><div class="line">        int len = s.size();</div><div class="line">        <span class="keyword">if</span>(len == 0)</div><div class="line">            <span class="built_in">return</span> <span class="string">""</span>;</div><div class="line">        string longest=s.substr(0,1),p;</div><div class="line">        <span class="keyword">for</span>(int i = 0;i&lt;len-1;i++)&#123;</div><div class="line">        	// 。。X。。 形式的回文子串</div><div class="line">            p = this-&gt;compare(s,i,i);</div><div class="line">            <span class="keyword">if</span>(p.size() &gt; longest.size())</div><div class="line">                longest = p;</div><div class="line">			// 。。XX。。 形式的回文子串</div><div class="line">            p = this-&gt;compare(s,i,i+1);</div><div class="line">            <span class="keyword">if</span>(p.size()&gt;longest.size())</div><div class="line">                longest = p;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="built_in">return</span> longest;</div><div class="line">    &#125;</div></pre></td></tr></table></figure></p>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[leetcode 刷题记录（简单篇）：NO.9 回文数]]></title>
-      <url>http://www.cmeng.cc/2018/09/13/leetcode%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95(%E7%AE%80%E5%8D%95%E7%AF%87)/</url>
+      <url>http://www.cmeng.cc/2018/09/13/leetcode%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95(%E7%AE%80%E5%8D%95%E7%AF%87)09%20%E5%9B%9E%E6%96%87%E6%95%B0/</url>
       <content type="html"><![CDATA[<h2 id="leetcode-刷题记录（简单篇）：NO-9-回文数"><a href="#leetcode-刷题记录（简单篇）：NO-9-回文数" class="headerlink" title="leetcode 刷题记录（简单篇）：NO.9 回文数"></a>leetcode 刷题记录（简单篇）：NO.9 回文数</h2><p><strong>问题描述：</strong>判断一个整数是否是回文数。回文数是指正序（从左向右）和倒序（从右向左）读都是一样的整数（负数的符号也计入在内 ==&gt; 负数是非回文数）。<br>[<strong>进阶</strong>]：<strong>不要使用将整数转换为字符串的方式解决问题</strong><br><a id="more"></a></p>
 <h2 id="示例："><a href="#示例：" class="headerlink" title="示例："></a>示例：</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">__输入:__ 121 ==&gt;  <span class="literal">true</span></div><div class="line">__输入:__ -121 ==&gt;  <span class="literal">false</span></div><div class="line">__输入:__ 10 ==&gt;  <span class="literal">false</span></div></pre></td></tr></table></figure>
 <p><strong> 思路1：暴力法 </strong><br>最常用的解题办法：将数x不断取余和取模倒序为另一个数，然后两相比较。<br>、、、bash<br>int n=x,m=0;<br>while(n){<br>    m = m*10 + x%10;<br>    x /= 10;<br>}<br>、、、<br>这种解法最主要的就是注意不能让反转后的数字越界，比如 4个字节的int取值范围是<strong>-2147483648 ~ 2147483647</strong>,<strong>x=1123456789</strong>是可行的，但反转出的<strong>9876543211</strong>就超出了int的范围，会变成另一个值。<br>可是就题目来看，如果是回文数，反转了也不会出现超出范围的情况；如果不是，就算超了也不会让他们相等的情况，这么一想，正中下怀啊，那就是你了<img src="http://ww1.sinaimg.cn/large/0065ewYjgy1fv829kuvcnj300s00sjr5" alt=""><br><strong>但是！但是！但是！</strong><br><a href="https://leetcode-cn.com" target="_blank" rel="external">leetcode</a>里的测试用例永远会给你搞出些幺蛾子,明明参数是int类型,却能给出一个超出int范围的数作为测试，然后给我报错（测试也得讲点基本法啊）<img src="http://ww3.sinaimg.cn/large/0065ewYjgw1f9t6gul26fj301s01s0si.jpg" alt="西湖的水，我的泪"></p>
@@ -345,18 +353,6 @@ descriptor
   
     
     <entry>
-      <title><![CDATA[tags]]></title>
-      <url>http://www.cmeng.cc/tags/index.html</url>
-      <content type="html"></content>
-    </entry>
-    
-    <entry>
-      <title><![CDATA[About me]]></title>
-      <url>http://www.cmeng.cc/about/index.html</url>
-      <content type="html"></content>
-    </entry>
-    
-    <entry>
       <title><![CDATA[404]]></title>
       <url>http://www.cmeng.cc//404.html</url>
       <content type="html"><![CDATA[<p>&lt;!DOCTYPE HTML&gt;</p>
@@ -372,6 +368,18 @@ descriptor
 <li><a href="http://115.159.92.11/tetris" target="_blank" rel="external"><strong>俄罗斯方块</strong></a></li>
 </ol>
 ]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[About me]]></title>
+      <url>http://www.cmeng.cc/about/index.html</url>
+      <content type="html"></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[tags]]></title>
+      <url>http://www.cmeng.cc/tags/index.html</url>
+      <content type="html"></content>
     </entry>
     
   
